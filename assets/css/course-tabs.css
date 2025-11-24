@@ -1,0 +1,106 @@
+.course-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.course-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-tabs__tab {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.course-tabs__tab.is-active {
+  background: var(--accent, #22d3ee);
+  color: #020617;
+  border-color: transparent;
+}
+
+.course-tabs__panels {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: rgba(15,23,42,0.9);
+}
+
+.course-tabs__panel {
+  display: none;
+}
+
+.course-tabs__panel.is-active {
+  display: block;
+}
+
+.m138-module {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.m138-module__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.m138-module__checkbox {
+  width: 0.95rem;
+  height: 0.95rem;
+  cursor: pointer;
+}
+
+.m138-module-summary {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 0.3rem;
+}
+
+.m138-module-summary__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+}
+
+.m138-module-summary__label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.m138-module-summary__bar {
+  position: relative;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  overflow: hidden;
+}
+
+.m138-module-summary__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #4ade80);
+  transition: width 0.18s ease-out;
+}
+
+
+.course-tabs__tab.is-complete::after {
+  content: "✓";
+  margin-left: 0.35rem;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}

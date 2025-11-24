@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<div class="course-layout">
+  
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <span class="badge badge--{{ page.level | downcase }}">{{ page.level }}</span>
+      <h1 class="course-title-small">{{ page.title }}</h1>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="icon">⏱</span> {{ page.duration }}
+        </div>
+        <div class="meta-item">
+          <span class="icon">📚</span> {{ page.topic }}
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="{{ page.url }}:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </aside>
+
+      <main class="content-container">
+  <div class="course-content">
+    
+    {% if page.tabbed %}
+      <div class="course-tabs-wrapper">
+        {{ content }}
+      </div>
+    {% else %}
+      <div class="page-card content-body">
+        {{ content }}
+      </div>
+    {% endif %}
+</main>
+
+    <div class="course-footer page-card" style="margin-top: 2rem; text-align: center;">
+      <h3>Ready for the next challenge?</h3>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn--secondary" onclick="window.scrollTo(0,0)">Review Topic</button>
+        <a href="/games/" class="btn btn--primary">Test Skills</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .course-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Make the footer align with the main content column only */
+  .course-footer {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .course-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: relative; top: 0; margin-bottom: 2rem; }
+    .course-footer { grid-column: 1 / -1; } /* Full width on mobile */
+  }
+</style>
+
+</style>

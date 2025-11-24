@@ -1,0 +1,28 @@
+---
+permalink: /404.html
+layout: default
+title: "Call not found"
+---
+
+<section class="page-card" style="text-align: center; max-width: 640px; margin: 4rem auto;">
+  <p class="section-label">Dispatch 404</p>
+  <h1 style="font-size: 2.4rem; margin-bottom: 1rem;">
+    Wrong address, medic.
+  </h1>
+  <p style="margin-bottom: 1.5rem;">
+    You rolled up to a page that is not on this map.
+    The patient you are looking for is not here. 
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+    <a href="{{ '/' | relative_url }}" class="btn btn--primary">
+      Return to home
+    </a>
+    <a href="{{ '/lab/' | relative_url }}" class="btn btn--ghost">
+      Open Medic 138 Lab
+    </a>
+    <a href="{{ '/dispatch-notes/' | relative_url }}" class="btn btn--ghost">
+      Read dispatch notes
+    </a>
+  </div>
+</section>

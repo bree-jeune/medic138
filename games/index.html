@@ -1,0 +1,124 @@
+---
+layout: default
+title: "Medic 138 Lab"
+---
+
+<section class="section-header">
+  <div class="section-label">Lab</div>
+  <div class="section-header-body">
+    <h2>Medic 138 Lab</h2>
+    <p>Interactive drills, calculators, and decision games for EMS providers.</p>
+  </div>
+</section>
+
+<section class="lab-layout">
+  <!-- Left column: quick access -->
+  <div class="lab-sidebar">
+
+    <!-- Today’s drills -->
+    <article class="page-card lab-card">
+      <h3>Today’s drills</h3>
+      <p class="lab-card-text">Hop into a quick run to shake the rust off.</p>
+      <div class="lab-links">
+        <button class="btn btn--secondary btn--sm"
+                type="button"
+                onclick="startGame('oxygen_regulator')">
+          Oxygen Regulator Challenge
+        </button>
+        <button class="btn btn--secondary btn--sm"
+                type="button"
+                onclick="startGame('cardiac_rhythms')">
+          Cardiac Rhythm Flash Cards
+        </button>
+        <button class="btn btn--secondary btn--sm"
+                type="button"
+                onclick="startGame('intervention_matching')">
+          Intervention Matching
+        </button>
+      </div>
+    </article>
+
+    <!-- By system -->
+    <article class="page-card lab-card">
+      <h3>By system</h3>
+      <p class="lab-card-text">Pick a body system and run a focused drill.</p>
+      <ul class="lab-system-list">
+        <li>
+          <span class="lab-system-label">Airway</span>
+          <button class="btn btn--ghost btn--sm"
+                  type="button"
+                  onclick="startGame('airway_management')">
+            Airway Management Decision Tree
+          </button>
+        </li>
+        <li>
+          <span class="lab-system-label">Cardiac</span>
+          <button class="btn btn--ghost btn--sm"
+                  type="button"
+                  onclick="startGame('cardiac_rhythms')">
+            Cardiac Rhythm Flash Cards
+          </button>
+        </li>
+        <li>
+          <span class="lab-system-label">Trauma</span>
+          <button class="btn btn--ghost btn--sm"
+                  type="button"
+                  onclick="startGame('trauma_assessment')">
+            Trauma Assessment Priority
+          </button>
+        </li>
+        <li>
+          <span class="lab-system-label">Operations</span>
+          <button class="btn btn--ghost btn--sm"
+                  type="button"
+                  onclick="startGame('triage_scenarios')">
+            Triage Scenarios
+          </button>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Medical terminology card -->
+    <article class="page-card lab-card">
+      <h3>Medical terminology</h3>
+      <p class="lab-card-text">
+        Drill core terms by system so you stop blanking on scene.
+      </p>
+      <a href="/terminology/" class="btn btn--primary btn--sm">
+        Open terminology practice
+      </a>
+    </article>
+  </div>
+
+  <!-- Right column: main game engine -->
+  <section class="page-card lab-main">
+    <div id="app" style="min-height: 50vh;">
+      <div style="text-align: center; margin-top: 3rem;">
+        <div class="spinner"
+             style="display:inline-block; width:40px; height:40px; border:4px solid #eee; border-top-color:var(--primary); border-radius:50%; animation:spin 1s linear infinite;"></div>
+        <p>Loading Game Engine...</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+
+<script src="/games/data.js"></script>
+<script src="/games/games.js"></script>
+<script src="/games/ecg-canvas-engine.js"></script>
+<script src="/games/vent.js"></script>
+<script type="module">
+  import { renderGameMenu } from '/games/app.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof renderGameMenu === 'function') {
+      renderGameMenu();
+    } else {
+      document.getElementById('app').innerHTML =
+        "<p>Error loading game engine.</p>";
+    }
+  });
+</script>

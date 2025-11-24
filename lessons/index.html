@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Lessons"
+---
+
+<section class="section-header">
+  <div class="section-label">Lessons</div>
+  <div class="section-header-body">
+    <h2>Build your street sense</h2>
+    <p>Short, focused lessons you can run between calls.</p>
+  </div>
+</section>
+
+
+<section class="page-card">
+  <div class="lesson-list">
+    {% for lesson in site.lessons %}
+      <article class="lesson-card">
+        {% if lesson.level or lesson.duration %}
+        <div class="lesson-meta">
+          {% if lesson.level %}
+            <span class="lesson-tag">{{ lesson.level }}</span>
+          {% endif %}
+          {% if lesson.duration %}
+            <span class="lesson-tag lesson-tag--muted">{{ lesson.duration }}</span>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <h2>{{ lesson.title }}</h2>
+
+        {% if lesson.summary %}
+          <p>{{ lesson.summary }}</p>
+        {% else %}
+          <p>{{ lesson.excerpt | strip_html | truncate: 140 }}</p>
+        {% endif %}
+
+        <a href="{{ lesson.url | relative_url }}" class="link-arrow">Open lesson</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>

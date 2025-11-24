@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div class="course-layout">
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <h1 class="course-title-small">{{ page.title }}</h1>
+
+        <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="{{ page.url }}:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  
+    </div>
+  </aside>
+
+  <main class="content-container">
+    <div class="course-content">
+      {{ content }}
+
+      <div class="lesson-footer" style="margin-top: 3rem; display: flex; justify-content: space-between; gap: 1rem;">
+        <a href="/lessons/" class="btn btn--secondary">← Back to Lessons</a>
+        <a href="/games/" class="btn btn--primary">Take Quiz →</a>
+      </div>
+    </div>
+  </main>
+</div>

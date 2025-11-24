@@ -1,0 +1,75 @@
+---
+layout: default
+title: Dispatch notes
+pagination:
+  enabled: true
+---
+
+<section class="page-card">
+  <p class="section-label">Dispatch note</p>
+  <h1>{{ page.title }}</h1>
+
+  {% if page.date %}
+    <p><small>{{ page.date | date: "%B %-d, %Y" }}</small></p>
+  {% endif %}
+
+  {{ content }}
+
+  <!-- Audio slot if you want it on notes -->
+  {% if page.audio %}
+    <div class="note-audio">
+      <p class="audio-label">Listen to this call breakdown</p>
+      <audio controls class="lesson-audio">
+        <source src="{{ page.audio | relative_url }}" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+    </div>
+  {% endif %}
+</section>
+
+{% assign notes = site.dispatch_notes | sort: 'date' %}
+{% assign current_index = -1 %}
+{% for n in notes %}
+  {% if n.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index != -1 %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  <nav class="note-pagination">
+    {% if prev_index >= 0 %}
+      {% assign prev = notes[prev_index] %}
+      <a href="{{ prev.url | relative_url }}" class="btn btn--ghost">
+        ← Previous note
+      </a>
+    {% endif %}
+    {% if next_index < notes.size %}
+      {% assign nxt = notes[next_index] %}
+      <a href="{{ nxt.url | relative_url }}" class="btn btn--primary">
+        Next note →
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+
+  <nav class="pagination-nav">
+    {% if paginator.previous_page_path %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="btn btn--ghost">Newer</a>
+    {% endif %}
+    {% if paginator.next_page_path %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="btn btn--ghost">Older</a>
+    {% endif %}
+  </nav>
+</section>
+
+<section class="page-card">
+  <h2>More long-form content</h2>
+  <p>For deeper dives, subscribe to the long-form feed.</p>
+    <div class="blog-links">
+      <a href="{{ '/dispatch-notes/' | relative_url }}" class="btn btn--primary">More dispatch notes</a>
+      <a href="https://medic138.substack.com" class="btn btn--ghost">Subscribe (Substack)</a>
+    </div>
+</section>

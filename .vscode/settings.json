@@ -1,0 +1,7 @@
+{
+  "javascript.validate.enable": false,
+  "editor.maxTokenizationLineLength": 20000,
+  "files.associations": {
+    "*.js": "javascript"
+  }
+}
