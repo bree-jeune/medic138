@@ -1,0 +1,7 @@
+[2025-11-24T08:47:51.196Z] VISIT http://127.0.0.1:4000/games/
+[2025-11-24T08:47:53.504Z] SCRIPT_ERROR Error: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4000/games/
+    at navigate (/Users/zeyoung1/Documents/development-wip/medic138/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:184:27)
+    at async Deferred.race (/Users/zeyoung1/Documents/development-wip/medic138/node_modules/puppeteer-core/lib/cjs/puppeteer/util/Deferred.js:36:20)
+    at async CdpFrame.goto (/Users/zeyoung1/Documents/development-wip/medic138/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:150:25)
+    at async CdpPage.goto (/Users/zeyoung1/Documents/development-wip/medic138/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:572:20)
+    at async /Users/zeyoung1/Documents/development-wip/medic138/tools/check-games-console.js:41:7

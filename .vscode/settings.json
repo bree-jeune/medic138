@@ -3,5 +3,7 @@
   "editor.maxTokenizationLineLength": 20000,
   "files.associations": {
     "*.js": "javascript"
-  }
+  },
+  "dailyNotes.autoCommit": false,
+  "dailyNotes.autoSync": false
 }

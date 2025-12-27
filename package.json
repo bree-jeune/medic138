@@ -4,8 +4,10 @@
   "description": "Medic 138 is an interactive EMS education platform built for real‑world pattern recognition and rapid decision training. The project includes a modular Skills Drills Game Engine, a Firebase‑powered analytics dashboard, and Jekyll‑based course pages. The platform focuses on clinical reasoning, high‑signal scenarios, and fast iteration for instructors and learners.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "dev": "npm run dev --prefix v2-web",
+  "build": "npm run build --prefix v2-web",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,7 +16,7 @@
     "@capacitor/android": "^7.4.4",
     "@capacitor/cli": "^7.4.4",
     "@capacitor/core": "^7.4.4",
-    "@capacitor/ios": "^7.4.4"
+    "@capacitor/ios": "^7.4.4",
+    "puppeteer": "^24.31.0"
   }
 }
-

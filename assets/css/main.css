@@ -1201,3 +1201,189 @@ footer {
       0 0 30px rgba(34, 211, 238, 0.9);
   }
 }
+
+/* --- Playbook CTA --- */
+
+.playbook-cta {
+  margin-top: 2.5rem;
+}
+
+.playbook-cta__frame {
+  padding: 1px;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #3ac1c8, #8360f7);
+}
+
+.playbook-cta__inner {
+  border-radius: inherit;
+  background: radial-gradient(circle at top left, #152335, #050b13 55%);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playbook-cta__text {
+  max-width: 26rem;
+}
+
+.playbook-cta__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(209, 250, 255, 0.8);
+  margin-bottom: 0.35rem;
+}
+
+.playbook-cta__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.playbook-cta__body {
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.playbook-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: min(21rem, 100%);
+}
+
+.playbook-cta__btn {
+  width: 100%;
+  text-align: center;
+}
+
+.playbook-cta__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.playbook-cta__label {
+  font-size: 0.75rem;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.playbook-cta__input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 999px;
+  padding: 0.25rem 0.35rem 0.25rem 0.45rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.playbook-cta__patch {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.14);
+  color: rgba(125, 211, 252, 0.9);
+}
+
+.playbook-cta__input-row input[type="email"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+.playbook-cta__input-row input::placeholder {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.playbook-cta__btn-secondary {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  padding-inline: 0.9rem;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .playbook-cta__inner {
+    align-items: flex-start;
+  }
+  .playbook-cta__actions {
+    width: 100%;
+  }
+}
+
+/* --- Playbook sticky banner --- */
+
+.playbook-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 60;
+  padding: 0.55rem 1rem 0.7rem;
+  backdrop-filter: blur(16px);
+  background: radial-gradient(circle at top, rgba(58, 193, 200, 0.24), transparent 55%)
+              , rgba(10, 16, 28, 0.96);
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.playbook-banner.is-hidden {
+  display: none;
+}
+
+.playbook-banner__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playbook-banner__text {
+  font-size: 0.85rem;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.playbook-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.playbook-banner__close {
+  border: none;
+  background: transparent;
+  color: rgba(148, 163, 184, 0.9);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem;
+}
+
+.playbook-banner__close:hover {
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.btn--sm {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+/* Stack on mobile */
+@media (max-width: 640px) {
+  .playbook-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .playbook-banner__actions {
+    justify-content: space-between;
+  }
+}
+

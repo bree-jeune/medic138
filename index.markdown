@@ -20,12 +20,7 @@ title: "Home"
       <a href="/games/" class="btn btn--ghost">Run a 10-minute drill</a>
       <a href="/dispatch-notes/" class="btn btn--ghost">Learn from real calls</a>
     </div>
-    <br>
-    <br>
-
-    <hr>
-
-    <br>
+    
 
     <div class="hero-meta">
     <div class="hero-newsletter hero-newsletter--pill">
@@ -33,6 +28,55 @@ title: "Home"
   <p class="hero-newsletter-sub">
     Short trauma lessons, drills, and real-call debriefs in your inbox.
   </p>
+
+  <div class="playbook-cta">
+  <div class="playbook-cta__frame">
+    <div class="playbook-cta__inner">
+      <div class="playbook-cta__text">
+        <p class="playbook-cta__eyebrow">Free NREMT resource</p>
+        <h3 class="playbook-cta__title">Get the NREMT First-Time Pass Playbook</h3>
+        <p class="playbook-cta__body">
+          A tactical study plan for busy medics. Built for real shifts, not fantasy schedules.
+        </p>
+      </div>
+
+      <div class="playbook-cta__actions">
+        <!-- Main CTA → Gumroad Playbook -->
+        <a href="https://medic138.gumroad.com/l/dpnnbd"
+           class="btn btn--primary playbook-cta__btn">
+          Download the Playbook
+        </a>
+
+        <!-- Optional: Buttondown signup inline -->
+        <form
+          class="playbook-cta__form"
+          action="https://buttondown.email/api/emails/embed-subscribe/medic138"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.email/medic138', 'popupwindow')"
+        >
+          <label class="playbook-cta__label" for="playbook-email">
+            Get future drills by email:
+          </label>
+          <div class="playbook-cta__input-row">
+            <span class="playbook-cta__patch" aria-hidden="true">EMT</span>
+            <input
+              id="playbook-email"
+              type="email"
+              name="email"
+              placeholder="you@agency.com"
+              required
+            />
+            <button type="submit" class="btn btn--ghost playbook-cta__btn-secondary">
+              Join the list
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="hero-newsletter-substack">
   

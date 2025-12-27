@@ -120,5 +120,44 @@
 
   <script src="{{ '/assets/js/course-tabs.js' | relative_url }}"></script>
 
+  <div class="playbook-banner" id="playbook-banner">
+  <div class="playbook-banner__inner">
+    <p class="playbook-banner__text">
+      NREMT coming up? Grab the free Playbook and stop guessing on test day.
+    </p>
+    <div class="playbook-banner__actions">
+      <a href="https://medic138.gumroad.com/l/dpnnbd"
+         class="btn btn--primary btn--sm">
+        Get the Playbook
+      </a>
+      <button type="button"
+              class="playbook-banner__close"
+              aria-label="Dismiss Playbook banner">
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var banner = document.getElementById('playbook-banner');
+    if (!banner) return;
+
+    if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+      banner.classList.add('is-hidden');
+      return;
+    }
+
+    var closeBtn = banner.querySelector('.playbook-banner__close');
+    if (!closeBtn) return;
+
+    closeBtn.addEventListener('click', function () {
+      banner.classList.add('is-hidden');
+      localStorage.setItem('medic138_playbook_banner_hidden', '1');
+    });
+  })();
+</script>
+
 </body>
 </html>
