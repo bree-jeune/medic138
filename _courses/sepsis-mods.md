@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Sepsis to MODS"
+title: Sepsis to MODS
+topic: Sepsis,
+duration: Deep
 ---
-
 # Sepsis Mods
 
 **Level:** Advanced

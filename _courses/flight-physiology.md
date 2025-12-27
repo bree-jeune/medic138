@@ -1,6 +1,9 @@
 ---
 layout: course
-title: "Flight Physiology"
+title: Flight Physiology
+level: Advanced
+topic: Flight
+duration: '50'
 ---
 # Flight Physiology
 

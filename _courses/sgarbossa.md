@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Sgarbossa"
+title: Sgarbossa
+topic: ECG
+duration: Deep
 ---
-
 # Sgarbossa Criteria
 
 **Level:** Advanced

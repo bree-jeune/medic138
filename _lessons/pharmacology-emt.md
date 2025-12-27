@@ -1,9 +1,10 @@
 ---
 layout: lesson
-title: "Pharmacology for EMTs"
-permalink: /lessons/pharmacology-emt/
+title: Pharmacology for EMTs
+permalink: "/lessons/pharmacology-emt/"
+summary: '--- title: "Pharmacology for EMTs" level: "EMT" topic: "Pharmacology" duration:
+  "25 minutes" summary: "Understand EMT-approved meds the way ...'
 ---
-
 ---
 title: "Pharmacology for EMTs"
 level: "EMT"

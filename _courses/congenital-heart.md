@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Congenital Heart"
+title: Congenital Heart
+level: Advanced
+topic: Pediatric
+duration: '90'
 ---
-
 # Congenital Heart Disease
 
 **Level:** Advanced  

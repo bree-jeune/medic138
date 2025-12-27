@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Radiographic Interpretation"
+title: Radiographic Interpretation
+topic: Imaging
+duration: Deep
 ---
-
 # Radiographic Interpretation
 
 **Level:** Advanced

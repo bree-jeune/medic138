@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Blood Administration"
+title: Blood Administration
+level: Advanced
+topic: Critical
+duration: '75'
 ---
-
 # Blood Administration
 
 **Level:** Advanced  

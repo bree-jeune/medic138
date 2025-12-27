@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Stemi Mimics"
+title: Stemi Mimics
+topic: ECG,
+duration: Deep
 ---
-
 # STEMI Mimics
 
 **Level:** Advanced

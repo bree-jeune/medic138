@@ -1,6 +1,5 @@
 ---
 layout: lesson
-title: "Trauma Assessment"
-permalink: /lessons/trauma-assessment/
+title: Trauma Assessment
+permalink: "/lessons/trauma-assessment/"
 ---
-

@@ -1,5 +1,4 @@
 ---
 layout: course
-title: "Respiratory Emergencies"
+title: Respiratory Emergencies
 ---
-

@@ -1,8 +1,8 @@
 ---
 layout: course
-title: "Twelve Lead"
+title: Twelve Lead
+topic: ECG,
 ---
-
 # Complete Guide to Twelve Lead Interpretation
 
 **Level:** Advanced

@@ -1,14 +1,13 @@
 ---
 layout: lesson
-title: "Bleeding & Hemorrhage Control – EMT"
-level: "EMT"
-topic: "Trauma"
-duration: "30 minutes"
-summary: "Recognize life-threatening hemorrhage and apply evidence-based bleeding control in the field."
-permalink: /lesson/bleeding-hemorrhage-emt/
+title: Bleeding & Hemorrhage Control – EMT
+level: EMT
+topic: Trauma
+duration: 30 minutes
+summary: Recognize life-threatening hemorrhage and apply evidence-based bleeding control
+  in the field.
+permalink: "/lesson/bleeding-hemorrhage-emt/"
 ---
-
-
 ## Arrival Scenario
 
 You arrive at a parking lot.  

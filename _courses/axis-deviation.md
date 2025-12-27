@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Axis Deviation"
+title: Axis Deviation
+level: Intermediate
+topic: Cardiology
+duration: '45'
 ---
-
 # Axis Deviation
 
 **Level:** Intermediate  

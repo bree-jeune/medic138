@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Ecg Basics"
+title: Ecg Basics
+level: Beginner
+topic: Cardiology
+duration: '75'
 ---
-
 # ECG Basics
 
 **Level:** Beginner to Intermediate  

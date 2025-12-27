@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Burns"
+title: Burns
+level: Intermediate
+topic: Trauma
+duration: '60'
 ---
-
 # Burns
 
 **Level:** Intermediate  

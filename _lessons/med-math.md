@@ -1,9 +1,10 @@
 ---
 layout: lesson
-title: "Med Math Practice"
-permalink: /lessons/med-math/
+title: Med Math Practice
+permalink: "/lessons/med-math/"
+summary: '--- title: "Medical Math Practice" level: "All Levels" topic: "Med Math"
+  duration: "20 minutes" summary: "Practice IV drip and medication ca...'
 ---
-
 ---
 title: "Medical Math Practice"
 level: "All Levels"

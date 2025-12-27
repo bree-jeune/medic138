@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Gas Laws: Deeper Dive"
-permalink: /courses/gas-laws-2/
+title: 'Gas Laws: Deeper Dive'
+permalink: "/courses/gas-laws-2/"
+topic: Flight
+duration: Comprehensive
 ---
-
-
 # Gas Laws for Flight and Critical Care
 
 **Level:** Advanced

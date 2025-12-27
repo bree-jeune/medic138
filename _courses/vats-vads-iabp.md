@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Vats Vads IABP"
+title: Vats Vads IABP
+topic: Mechanical
+duration: Deep
 ---
-
 # VATS, VADs, IABP: Mechanical Circulatory Support
 
 **Level:** Advanced

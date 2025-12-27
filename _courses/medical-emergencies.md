@@ -1,29 +1,29 @@
 ---
 layout: course
 title: Medical Emergencies
-permalink: /courses/medical-emergencies/
+permalink: "/courses/medical-emergencies/"
 level: Advanced
 topic: Medical · Critical Care
 duration: 4–6 hours
 tabbed: true
-
 modules:
-  - id: overview
-    label: Overview
-  - id: respiratory
-    label: Respiratory
-  - id: neuro
-    label: Neuro
-  - id: endocrine
-    label: Endocrine/Metabolic
-  - id: infectious
-    label: Infectious & Sepsis
-  - id: renal
-    label: Renal
-  - id: electrolytes
-    label: Electrolytes
+- id: overview
+  label: Overview
+- id: respiratory
+  label: Respiratory
+- id: neuro
+  label: Neuro
+- id: endocrine
+  label: Endocrine/Metabolic
+- id: infectious
+  label: Infectious & Sepsis
+- id: renal
+  label: Renal
+- id: electrolytes
+  label: Electrolytes
+summary: <div class="course-tabs" data-default="overview" data-course-key="{{ page.url
+  }}">...
 ---
-
 <div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">
 
   <nav class="course-tabs__nav">

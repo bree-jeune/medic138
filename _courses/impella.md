@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Impella"
+title: Impella
+topic: Cardiac
+duration: Comprehensive
 ---
-
 # Impella: Real-World Mastery for the EMS Clinician
 
 **Level:** Advanced

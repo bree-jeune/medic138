@@ -1,9 +1,10 @@
 ---
 layout: lesson
-title: "Pediatric Assessment Triangle"
-permalink: /lesson/pediatric-assessment-triangle/
+title: Pediatric Assessment Triangle
+permalink: "/lesson/pediatric-assessment-triangle/"
+summary: 'layout: lesson title: "Pediatric Assessment Triangle (PAT)"  level: "All
+  Levels" topic: "Pediatrics" duration: "30 minutes"  summary: "The 3...'
 ---
-
 layout: lesson title: "Pediatric Assessment Triangle (PAT)" 
 level: "All Levels" topic: "Pediatrics" duration: "30 minutes" 
 summary: "The 30-second, hands-off assessment tool that tells you if a child is sick—or just having a bad day."

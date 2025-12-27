@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Toxicology"
+title: Toxicology
+topic: Poisoning,
+duration: Deep
 ---
-
 # Toxicology
 
 **Level:** Advanced

@@ -1,23 +1,10 @@
-# Environmental Emergencies
-
-**Level:** Intermediate  
-**Topic:** Emergency Medicine / Wilderness Medicine  
-**Duration:** 70 minutes
-
 ---
-
-## Arrival Scenario
-
-It's July in the desert. You're dispatched to a hiking trail for an "unconscious person." Temperature is 112°F.
-
-On arrival, you find a 24-year-old male lying in the shade, surrounded by friends. He's confused, combative, dry skin, flushed. Rectal temp 106.8°F. His friends say he "just got dizzy and passed out" after 6 miles.
-
-One of them asks, "Should we give him water?"
-
-**This is heat stroke. And you have minutes, not hours.**
-
+--- |-
+  It's July in the desert. You're dispatched to a hiking trail for an "unconscious person." Temperature is 112°F.
+  On arrival, you find a 24-year-old male lying in the shade, surrounded by friends. He's confused, combative, dry skin, flushed. Rectal temp 106.8°F. His friends say he "just got dizzy and passed out" after 6 miles.
+  One of them asks, "Should we give him water?"
+  **This is heat stroke. And you have minutes, not hours.**
 ---
-
 ## Warm-Up Questions
 
 Before we break down environmental emergencies, answer these:

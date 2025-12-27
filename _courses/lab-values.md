@@ -6,8 +6,6 @@ topic: Critical Care
 duration: 90 minutes
 summary: Deep-dive review of lab interpretation for FP-C/CCP-C exam prep.
 ---
-
-
 # Lab Values for Flight and Critical Care
 
 **Level:** Advanced

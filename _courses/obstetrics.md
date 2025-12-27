@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Obstetrics"
+title: Obstetrics
+summary: 'layout: course title: "Obstetrics Emergencies"  level: "Advanced" topic:
+  "OB · Critical Care"  duration: "90 minutes"...'
 ---
-
 layout: course title: "Obstetrics Emergencies" 
 level: "Advanced" topic: "OB · Critical Care" 
 duration: "90 minutes"

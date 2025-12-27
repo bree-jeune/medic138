@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Understanding Arterial Blood Gases"
+title: Understanding Arterial Blood Gases
+level: Advanced
+topic: Critical
+duration: '60'
 ---
-
 ## ABG Interpretation Overview
 
 **Level:** Advanced  

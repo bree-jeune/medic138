@@ -1,15 +1,16 @@
 ---
 layout: course
-title: "Gas Laws for Flight and Critical Care"
-description: "How Boyle, Dalton, Henry, and Charles team up to mess with your patients at altitude."
-level: "Advanced"
-topic: "Flight / Critical Care"
-duration: "40–60 minutes"
-permalink: /courses/gas-laws/
+title: Gas Laws for Flight and Critical Care
+description: How Boyle, Dalton, Henry, and Charles team up to mess with your patients
+  at altitude.
+level: Advanced
+topic: Flight / Critical Care
+duration: 40–60 minutes
+permalink: "/courses/gas-laws/"
 tabbed: true
+summary: <div class="course-tabs" data-default="overview" data-course-key="{{ page.url
+  }}">...
 ---
-
-
 <div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">
 
   <div class="course-tabs__nav">

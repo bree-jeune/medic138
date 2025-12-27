@@ -22,88 +22,20 @@ title: "Home"
     </div>
     
 
-    <div class="hero-meta">
-    <div class="hero-newsletter hero-newsletter--pill">
-  <p class="hero-newsletter-title">Get weekly EMS breakdowns.</p>
-  <p class="hero-newsletter-sub">
-    Short trauma lessons, drills, and real-call debriefs in your inbox.
-  </p>
-
-  <div class="playbook-cta">
-  <div class="playbook-cta__frame">
-    <div class="playbook-cta__inner">
-      <div class="playbook-cta__text">
-        <p class="playbook-cta__eyebrow">Free NREMT resource</p>
-        <h3 class="playbook-cta__title">Get the NREMT First-Time Pass Playbook</h3>
-        <p class="playbook-cta__body">
-          A tactical study plan for busy medics. Built for real shifts, not fantasy schedules.
-        </p>
-      </div>
-
-      <div class="playbook-cta__actions">
-        <!-- Main CTA → Gumroad Playbook -->
-        <a href="https://medic138.gumroad.com/l/dpnnbd"
-           class="btn btn--primary playbook-cta__btn">
-          Download the Playbook
-        </a>
-
-        <!-- Optional: Buttondown signup inline -->
-        <form
-          class="playbook-cta__form"
-          action="https://buttondown.email/api/emails/embed-subscribe/medic138"
-          method="post"
-          target="popupwindow"
-          onsubmit="window.open('https://buttondown.email/medic138', 'popupwindow')"
-        >
-          <label class="playbook-cta__label" for="playbook-email">
-            Get future drills by email:
-          </label>
-          <div class="playbook-cta__input-row">
-            <span class="playbook-cta__patch" aria-hidden="true">EMT</span>
-            <input
-              id="playbook-email"
-              type="email"
-              name="email"
-              placeholder="you@agency.com"
-              required
-            />
-            <button type="submit" class="btn btn--ghost playbook-cta__btn-secondary">
-              Join the list
-            </button>
-          </div>
-        </form>
+    <div class="hero-newsletter-row">
+      <div class="hero-newsletter-card">
+        <div class="card-badge">NREMT Resource</div>
+        <h3 class="card-title">Get the First-Time Pass Playbook</h3>
+        <p class="card-text">A tactical study plan for busy medics. Built for real shifts, not fantasy schedules.</p>
+        <div class="card-actions">
+          <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary">Download Free Playbook</a>
+          <form class="native-form" action="https://buttondown.email/api/emails/embed-subscribe/medic138" method="post" target="popupwindow">
+            <input type="email" name="email" placeholder="you@agency.com" required>
+            <button type="submit" class="btn btn--ghost">Join the list</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-  <div class="hero-newsletter-substack">
-  
-    <iframe src="https://medic138.substack.com/embed"
-            width="100%" height="180"
-            style="border:0; background:transparent;"
-            frameborder="0" scrolling="no"></iframe>
-  </div>
-
-  <form
-    action="https://medic138.substack.com/api/v1/free?nojs=1"
-    method="post"
-    target="_blank"
-    class="hero-newsletter-form hero-newsletter-form--icon"
-  >
-    <div class="hero-newsletter-input-wrap">
-    <span class="hero-newsletter-icon" aria-hidden="true"> <img src="/assets/img/ui/emt-patch.svg" alt=""></span>
-    <input
-      type="email"
-      name="email"
-      placeholder="Enter your email"
-      required
-    >
-  </div>
-  <button type="submit">Subscribe</button>
-</form>
-</div>
 
 
   <div class="hero-panel">

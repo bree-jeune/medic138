@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "RSI vs DSI"
+title: RSI vs DSI
+topic: Airway
+duration: Deep
 ---
-
 # RSI vs DSI 
 
 **Level:** Advanced

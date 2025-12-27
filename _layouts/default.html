@@ -1,97 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }} | Medic 138</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
 
-  <!-- Global styles -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/interactive.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/terminology/medterms.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/progress.css' | relative_url }}">
 
   {% if page.custom_css %}
-    <link rel="stylesheet"
-          href="{{ '/assets/css/' | append: page.custom_css | append: '.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: page.custom_css | append: '.css' | relative_url }}">
   {% endif %}
 
   {% if page.tabbed %}
-    <link rel="stylesheet" href="{{ '/assets/css/course-tabs.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/course-tabs.css' | relative_url }}">
   {% endif %}
 
   {% if page.title contains "Gas Laws" %}
   <link rel="stylesheet" href="{{ '/assets/css/gaslaws.css' | relative_url }}">
-{% endif %}
-
-
+  {% endif %}
 
 </head>
 
 <body>
-<header>
-  <nav class="navbar">
-    <div class="nav-header">
-      {% if page.url != "/" %}
-        <a href="javascript:history.back()" class="back-arrow" style="margin-right: 10px; text-decoration: none;">←</a>
-      {% endif %}
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        {% if page.url != "/" %}
+        {% assign parent_url = page.url | split: '/' | slice: 0, 2 | join: '/' | append: '/' %}
+        <a href="{{ parent_url | relative_url }}" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        {% endif %}
 
-      <!-- Brand logo links home once -->
-      <a href="{{ '/' | relative_url }}" class="brand">
-        <img src="/assets/img/branding/medic-138-logo.svg"
-             alt="Medic 138 logo"
-             height="50"
-             width="50">
-      </a>
-
-      <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>
-
-    <div class="nav-links" id="js-nav-links">
-      <a href="{{ '/' | relative_url }}" class="nav-item">Home</a>
-      <a href="{{ '/courses/' | relative_url }}" class="nav-item">Courses</a>
-      <a href="{{ '/lessons/' | relative_url }}" class="nav-item">Mini-lessons</a>
-      <a href="{{ '/lab/' | relative_url }}" class="nav-item">Lab</a>
-      <a href="{{ '/dispatch-notes/' | relative_url }}" class="nav-item">Dispatch notes</a>
-      <a href="{{ '/resources/' | relative_url }}" class="nav-item">Resources</a>
-
-      <div class="auth-container">
-        <a href="/dashboard/" id="nav-dashboard-link"
-           class="hidden nav-item"
-           style="font-weight: 700; color: var(--primary);">
-          Dashboard
+        <a href="{{ '/' | relative_url }}" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
         </a>
-        <span id="userDisplay" class="nav-user-display"></span>
-        <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
-        <button id="logoutBtn" class="btn btn--sm btn--secondary hidden" onclick="window.authService.logout()">Logout</button>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
-    </div>
-  </nav>
-</header>
 
+      <div class="nav-links" id="js-nav-links">
+        <a href="{{ '/courses/' | relative_url }}" class="nav-item">Courses</a>
+        <a href="{{ '/lessons/' | relative_url }}" class="nav-item">Lessons</a>
+        <a href="{{ '/lab/' | relative_url }}" class="nav-item">Lab</a>
+        <a href="{{ '/dispatch-notes/' | relative_url }}" class="nav-item">Dispatch Notes</a>
+        <a href="{{ '/resources/' | relative_url }}" class="nav-item">Resources</a>
 
-    <main>
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
     {{ content }}
   </main>
 
-  <footer class="site-footer" style="background: var(--bg-surface); padding: 3rem 1rem; margin-top: 4rem; border-top: 1px solid var(--border); text-align: center;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-      <h4 style="color: var(--primary); margin-bottom: 1rem;">Medic 138</h4>
-      
-      <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <a href="/about/" style="color: var(--text-muted);">About</a>
-        <a href="mailto:connect@medic138.com" style="color: var(--text-muted);">Contact Support</a>
-        <a href="#" style="color: var(--text-muted);">Privacy Policy</a>
-        <a href="#" style="color: var(--text-muted);">Terms of Service</a>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
       </div>
-      
-      <p style="font-size: 0.8rem; color: var(--text-muted);">
-        &copy; 2025 Medic 138.
-      </p>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
     </div>
   </footer>
 
@@ -102,62 +129,60 @@
   <script type="module" src="{{ '/assets/js/firebase-auth.js' | relative_url }}"></script>
 
   {% if page.title contains "Gas Laws" %}
-<script src="{{ '/assets/js/gaslaws.js' | relative_url }}"></script>
-{% endif %}
+  <script src="{{ '/assets/js/gaslaws.js' | relative_url }}"></script>
+  {% endif %}
 
 
   {% if page.custom_js %}
-    <script src="{{ '/assets/js/' | append: page.custom_js | append: '.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/' | append: page.custom_js | append: '.js' | relative_url }}"></script>
   {% endif %}
 
   {% if page.tabbed %}
-    <script src="{{ '/assets/js/course-tabs.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/course-tabs.js' | relative_url }}"></script>
   {% endif %}
 
   {% if page.custom_js == "scenarios" %}
-    <script src="{{ '/assets/js/scenarios.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/scenarios.js' | relative_url }}"></script>
   {% endif %}
 
   <script src="{{ '/assets/js/course-tabs.js' | relative_url }}"></script>
 
   <div class="playbook-banner" id="playbook-banner">
-  <div class="playbook-banner__inner">
-    <p class="playbook-banner__text">
-      NREMT coming up? Grab the free Playbook and stop guessing on test day.
-    </p>
-    <div class="playbook-banner__actions">
-      <a href="https://medic138.gumroad.com/l/dpnnbd"
-         class="btn btn--primary btn--sm">
-        Get the Playbook
-      </a>
-      <button type="button"
-              class="playbook-banner__close"
-              aria-label="Dismiss Playbook banner">
-        ✕
-      </button>
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  (function () {
-    var banner = document.getElementById('playbook-banner');
-    if (!banner) return;
+  <script>
+    (function () {
+      var banner = document.getElementById('playbook-banner');
+      if (!banner) return;
 
-    if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
-      banner.classList.add('is-hidden');
-      return;
-    }
+      if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+        banner.classList.add('is-hidden');
+        return;
+      }
 
-    var closeBtn = banner.querySelector('.playbook-banner__close');
-    if (!closeBtn) return;
+      var closeBtn = banner.querySelector('.playbook-banner__close');
+      if (!closeBtn) return;
 
-    closeBtn.addEventListener('click', function () {
-      banner.classList.add('is-hidden');
-      localStorage.setItem('medic138_playbook_banner_hidden', '1');
-    });
-  })();
-</script>
+      closeBtn.addEventListener('click', function () {
+        banner.classList.add('is-hidden');
+        localStorage.setItem('medic138_playbook_banner_hidden', '1');
+      });
+    })();
+  </script>
 
 </body>
+
 </html>

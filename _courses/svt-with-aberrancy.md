@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "SVT with Aberrancy"
+title: SVT with Aberrancy
+topic: Cardiology,
+duration: Deep
 ---
-
 # SVT with Aberrancy
 
 **Level:** Advanced

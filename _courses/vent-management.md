@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Ventilator Management"
+title: Ventilator Management
+topic: Ventilator,
+duration: Deep
 ---
-
 # Ventilator Management
 
 **Level:** Advanced

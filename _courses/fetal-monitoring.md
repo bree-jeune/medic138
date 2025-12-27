@@ -1,8 +1,10 @@
 ---
 layout: course
-title: "Fetal Monitoring"
+title: Fetal Monitoring
+level: Advanced
+topic: Obstetrics
+duration: '60'
 ---
-
 # Fetal Monitoring
 
 **Level:** Advanced  

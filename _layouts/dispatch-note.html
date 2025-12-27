@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | Medic 138</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+---
+layout: default
+---
 
-  <!-- Reuse global styles from default layout -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/terminology/medterms.css' | relative_url }}">
-
-</head>
-
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="{{ '/' | relative_url }}" class="brand">Medic 138</a>
-    </nav>
-  </header>
-
-  <main class="dispatch-note">
-    <article>
+<div class="lesson-layout dispatch-layout">
+  <main class="content-container">
+    <div class="dispatch-header">
+      <p class="section-label">Dispatch Note</p>
       <h1>{{ page.title }}</h1>
-      <p class="meta">{{ page.date | date: "%b %d, %Y" }}</p>
+      <div class="dispatch-meta-row">
+        <span class="meta-item">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.duration %}
+        <span class="meta-item divider">|</span>
+        <span class="meta-item">{{ page.duration }} read</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <article class="dispatch-body">
       {{ content }}
     </article>
+
+    <footer class="dispatch-footer" style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+      <div class="footer-cta">
+        <h3>What did you take away?</h3>
+        <p>Real learning happens in the reflection. What would you have done differently?</p>
+      </div>
+      <div class="footer-nav" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+        <a href="/dispatch-notes/" class="btn btn--secondary">← All notes</a>
+        <a href="https://medic138.substack.com" class="btn btn--ghost">Subscribe for more</a>
+      </div>
+    </footer>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Medic 138</p>
-  </footer>
-
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-</body>
-</html>
+</div>

@@ -1,8 +1,9 @@
 ---
 layout: course
-title: "Neonatal"
+title: Neonatal
+topic: Neonatology
+duration: Deep
 ---
-
 # Neonatal Emergencies
 
 **Level:** Advanced

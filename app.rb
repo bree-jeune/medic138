@@ -53,13 +53,17 @@ def load_collection(dir_name)
 end
 
 # Load all collections at startup
-$site_data = {
-  'title' => 'Medic 138',
-  'baseurl' => '',
-  'courses' => load_collection('courses'),
-  'lessons' => load_collection('lessons'),
-  'dispatch_notes' => load_collection('dispatch_notes')
-}
+# In Sinatra, we can use a before block to set up data for Liquid
+before do
+  @site_data = {
+    'title' => 'Medic 138',
+    'baseurl' => '',
+    'courses' => load_collection('courses'),
+    'lessons' => load_collection('lessons'),
+    'dispatch_notes' => load_collection('dispatch_notes')
+  }
+end
+
 
 # Helper to read and render content
 def render_page(path)
@@ -79,7 +83,7 @@ def render_page(path)
 
   # First pass: render Liquid in body content
   liquid_body = Liquid::Template.parse(body)
-  rendered_body = liquid_body.render('site' => $site_data, 'page' => front_matter)
+  rendered_body = liquid_body.render('site' => @site_data, 'page' => front_matter)
 
   # Convert Markdown to HTML
   html_body = Kramdown::Document.new(rendered_body).to_html
@@ -106,7 +110,7 @@ def render_page(path)
     result = liquid_layout.render(
       'content' => result,
       'page' => front_matter,
-      'site' => $site_data
+      'site' => @site_data
     )
     
     # Check if this layout has a parent layout

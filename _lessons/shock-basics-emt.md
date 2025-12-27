@@ -1,13 +1,13 @@
 ---
 layout: lesson
-title: "Shock Basics for EMTs"
-level: "EMT"
-topic: "Trauma"
-duration: "25 minutes"
-summary: "Recognize compensated vs decompensated shock and what to actually do about it."
-permalink: /lesson/shock-basics-emt/
+title: Shock Basics for EMTs
+level: EMT
+topic: Trauma
+duration: 25 minutes
+summary: Recognize compensated vs decompensated shock and what to actually do about
+  it.
+permalink: "/lesson/shock-basics-emt/"
 ---
-
 ## Warm-up Scenario
 
 You walk into a back bedroom.  

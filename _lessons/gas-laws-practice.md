@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Gas Laws for Flight and Critical Care"
-permalink: /courses/gas-laws-practice/
+title: Gas Laws for Flight and Critical Care
+permalink: "/courses/gas-laws-practice/"
+topic: Flight
+duration: Comprehensive
 ---
-
-
 # Gas Laws for Flight and Critical Care
 
 **Level:** Advanced

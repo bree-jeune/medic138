@@ -1,5 +1,4 @@
 ---
 layout: course
-title: "Neuro Emergencies"
+title: Neuro Emergencies
 ---
-

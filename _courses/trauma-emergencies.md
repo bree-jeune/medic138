@@ -1,14 +1,16 @@
 ---
 layout: course
-title: "Trauma Emergencies"
-description: "From first impact to OR doors: trauma patterns, assessments, and field decisions."
-level: "Advanced"
-topic: "Trauma / Critical Care"
-duration: "Deep Dive"
-permalink: /courses/trauma-emergencies/
+title: Trauma Emergencies
+description: 'From first impact to OR doors: trauma patterns, assessments, and field
+  decisions.'
+level: Advanced
+topic: Trauma / Critical Care
+duration: Deep Dive
+permalink: "/courses/trauma-emergencies/"
 tabbed: true
+summary: <div class="course-tabs" data-default="overview" data-course-key="{{ page.url
+  }}">...
 ---
-
 <div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">
 
   <div class="course-tabs__tabs">
