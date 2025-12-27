@@ -84,20 +84,36 @@ def render_page(path)
   # Convert Markdown to HTML
   html_body = Kramdown::Document.new(rendered_body).to_html
 
-  # Render with layout
+  # Render with layout (supports nested layouts like lesson.html -> default.html)
   layout_name = front_matter['layout'] || 'default'
-  layout_file = File.join(settings.views, "#{layout_name}.html")
-
-  if File.exist?(layout_file)
-    liquid_layout = Liquid::Template.parse(File.read(layout_file))
-    liquid_layout.render(
-      'content' => html_body,
+  result = html_body
+  
+  while layout_name
+    layout_file = File.join(settings.views, "#{layout_name}.html")
+    break unless File.exist?(layout_file)
+    
+    layout_content = File.read(layout_file)
+    layout_front_matter = {}
+    layout_body = layout_content
+    
+    # Parse layout's own frontmatter (for nested layouts)
+    if layout_content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
+      layout_front_matter = YAML.unsafe_load($1) || {}
+      layout_body = $'
+    end
+    
+    liquid_layout = Liquid::Template.parse(layout_body)
+    result = liquid_layout.render(
+      'content' => result,
       'page' => front_matter,
       'site' => $site_data
     )
-  else
-    html_body
+    
+    # Check if this layout has a parent layout
+    layout_name = layout_front_matter['layout']
   end
+  
+  result
 end
 
 # Routes
