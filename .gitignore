@@ -6,3 +6,4 @@ vendor
 node_modules
 android
 .DS_store
+.vscode
