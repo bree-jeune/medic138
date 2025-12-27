@@ -4,10 +4,10 @@ title: Courses
 ---
 
 <section class="section-header">
-  <div class="section-label">Lessons</div>
+  <div class="section-label">Courses</div>
   <div class="section-header-body">
-    <h2>Build your street sense</h2>
-    <p>Short, focused lessons you can run between calls.</p>
+    <h2>Deep-dive training modules</h2>
+    <p>Comprehensive courses that build real competency.</p>
   </div>
 </section>
 
@@ -17,17 +17,17 @@ title: Courses
 
   <div class="course-list">
     {% for course in site.courses %}
-      <article class="course-card">
-        <h2><a href="{{ course.url | relative_url }}">{{ course.title }}</a></h2>
-        <p>
-          <strong>Level:</strong> {{ course.level }} ·
-          <strong>Topic:</strong> {{ course.topic }} ·
-          <strong>Duration:</strong> {{ course.duration }}
-        </p>
-        {% if course.summary %}
-          <p>{{ course.summary }}</p>
-        {% endif %}
-      </article>
+    <article class="course-card">
+      <h2><a href="{{ course.url | relative_url }}">{{ course.title }}</a></h2>
+      <p>
+        <strong>Level:</strong> {{ course.level }} ·
+        <strong>Topic:</strong> {{ course.topic }} ·
+        <strong>Duration:</strong> {{ course.duration }}
+      </p>
+      {% if course.summary %}
+      <p>{{ course.summary }}</p>
+      {% endif %}
+    </article>
     {% endfor %}
   </div>
 </section>

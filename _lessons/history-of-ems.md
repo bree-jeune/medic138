@@ -1,17 +1,15 @@
 ---
 layout: lesson
-title: "History of EMS"
-permalink: /lessons/history-of-ems/
----
-
 title: "The Not-Boring History of EMS"
-level: "Everyone"
+level: "EMT"
 topic: "EMS Systems"
 duration: "15 minutes"
 summary: "A fast, interactive walk-through of how EMS actually came to be."
+permalink: /lesson/history-of-ems/
 ---
 
 ## Start Here
+
 
 EMS wasn’t designed.  
 It was patched together by:

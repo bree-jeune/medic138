@@ -1,5 +1,0 @@
----
-layout: course
-title: "Pediatrics"
----
-

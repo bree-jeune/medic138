@@ -5,7 +5,7 @@ level: "EMT"
 topic: "Trauma"
 duration: "30 minutes"
 summary: "Recognize life-threatening hemorrhage and apply evidence-based bleeding control in the field."
-permalink: /lessons/bleeding-hemorrhage-emts/
+permalink: /lesson/bleeding-hemorrhage-emt/
 ---
 
 

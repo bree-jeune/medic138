@@ -5,7 +5,7 @@ level: "EMT"
 topic: "Trauma"
 duration: "25 minutes"
 summary: "Recognize compensated vs decompensated shock and what to actually do about it."
-permalink: /lessons/shock-basics-emt/
+permalink: /lesson/shock-basics-emt/
 ---
 
 ## Warm-up Scenario
