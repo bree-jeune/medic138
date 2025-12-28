@@ -12,31 +12,57 @@ title: "Lessons"
 </section>
 
 
-<section class="page-card">
-  <div class="lesson-list">
+<div class="search-control">
+  <div class="search-field-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="lesson-search" class="search-input"
+      placeholder="Search lessons by title, topic, or clinical keywords...">
+  </div>
+
+  <div class="filter-pills">
+    <span class="filter-label">Filter by Scope:</span>
+    <button class="filter-pill is-active" data-filter="level" data-value="all">All</button>
+    <button class="filter-pill" data-filter="level" data-value="EMT">EMT</button>
+    <button class="filter-pill" data-filter="level" data-value="Advanced">Advanced</button>
+    <button class="filter-pill" data-filter="level" data-value="Intermediate">Intermediate</button>
+  </div>
+</div>
+
+<div id="search-empty" class="search-empty-state" style="display: none;">
+  <h3>No matches found</h3>
+  <p>Try different keywords or clear your filters.</p>
+</div>
+
+<section class="page-card" style="background: transparent; border: none; padding: 0;">
+  <div class="lesson-list" id="lesson-grid">
     {% for lesson in site.lessons %}
-      <article class="lesson-card">
-        {% if lesson.level or lesson.duration %}
-        <div class="lesson-meta">
-          {% if lesson.level %}
-            <span class="lesson-tag">{{ lesson.level }}</span>
-          {% endif %}
-          {% if lesson.duration %}
-            <span class="lesson-tag lesson-tag--muted">{{ lesson.duration }}</span>
-          {% endif %}
-        </div>
+    <article class="lesson-card" data-title="{{ lesson.title | downcase }}" data-level="{{ lesson.level }}"
+      data-topic="{{ lesson.topic | downcase }}">
+      {% if lesson.level or lesson.duration %}
+      <div class="lesson-meta">
+        {% if lesson.level %}
+        <span class="lesson-status-badge">{{ lesson.level }}</span>
         {% endif %}
+        {% if lesson.duration %}
+        <span class="lesson-tag lesson-tag--muted">{{ lesson.duration }} min</span>
+        {% endif %}
+      </div>
+      {% endif %}
 
-        <h2>{{ lesson.title }}</h2>
+      <h2>{{ lesson.title }}</h2>
 
+      <p class="card-text">
         {% if lesson.summary %}
-          <p>{{ lesson.summary }}</p>
+        {{ lesson.summary }}
         {% else %}
-          <p>{{ lesson.excerpt | strip_html | truncate: 140 }}</p>
+        {{ lesson.excerpt | strip_html | truncate: 140 }}
         {% endif %}
+      </p>
 
-        <a href="{{ lesson.url | relative_url }}" class="link-arrow">Open lesson</a>
-      </article>
+      <a href="{{ lesson.url | relative_url }}" class="link-arrow">Open lesson</a>
+    </article>
     {% endfor %}
   </div>
 </section>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

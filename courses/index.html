@@ -12,22 +12,52 @@ title: Courses
 </section>
 
 
-<section class="page-card">
-  <h1>Courses</h1>
+<div class="search-control">
+  <div class="search-field-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="lesson-search" class="search-input"
+      placeholder="Search courses by title, topic, or clinical keywords...">
+  </div>
 
-  <div class="course-list">
+  <div class="filter-pills">
+    <span class="filter-label">Filter by Scope:</span>
+    <button class="filter-pill is-active" data-filter="level" data-value="all">All</button>
+    <button class="filter-pill" data-filter="level" data-value="EMT">EMT</button>
+    <button class="filter-pill" data-filter="level" data-value="Advanced">Advanced</button>
+    <button class="filter-pill" data-filter="level" data-value="Intermediate">Intermediate</button>
+  </div>
+</div>
+
+<div id="search-empty" class="search-empty-state" style="display: none;">
+  <h3>No matches found</h3>
+  <p>Try different keywords or clear your filters.</p>
+</div>
+
+<section class="page-card" style="background: transparent; border: none; padding: 0;">
+  <div class="course-list" id="lesson-grid">
     {% for course in site.courses %}
-    <article class="course-card">
+    <article class="course-card" data-title="{{ course.title | downcase }}" data-level="{{ course.level }}"
+      data-topic="{{ course.topic | downcase }}">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">{{ course.level }}</span>
+        <span class="lesson-tag lesson-tag--muted">{{ course.duration }} min · {{ course.topic }}</span>
+      </div>
+
       <h2><a href="{{ course.url | relative_url }}">{{ course.title }}</a></h2>
-      <p>
-        <strong>Level:</strong> {{ course.level }} ·
-        <strong>Topic:</strong> {{ course.topic }} ·
-        <strong>Duration:</strong> {{ course.duration }}
-      </p>
+
       {% if course.summary %}
-      <p>{{ course.summary }}</p>
+      <p class="card-text">{{ course.summary }}</p>
+      {% else %}
+      <p class="card-text">{{ course.excerpt | strip_html | truncate: 140 }}</p>
       {% endif %}
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="{{ course.url | relative_url }}" class="link-arrow">Start Course</a>
+      </div>
     </article>
     {% endfor %}
   </div>
 </section>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

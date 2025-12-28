@@ -2,9 +2,10 @@ require 'sinatra'
 require 'liquid'
 require 'kramdown'
 require 'yaml'
+require 'json'
 
 # Configuration
-use Rack::Static, :urls => ["/assets", "/terminology", "/games"], :root => "."
+use Rack::Static, :urls => ["/assets"], :root => "."
 set :views, '_layouts'
 
 # Configure Liquid
@@ -64,6 +65,30 @@ before do
   }
 end
 
+
+# JSON endpoint for client-side search
+get '/search.json' do
+  content_type :json
+  
+  data = site_data
+  results = []
+  
+  ['courses', 'lessons'].each do |type|
+    data[type].each do |item|
+      results << {
+        title: item['title'],
+        url: item['url'],
+        summary: item['summary'],
+        level: item['level'],
+        topic: item['topic'],
+        duration: item['duration'],
+        type: type
+      }
+    end
+  end
+  
+  results.to_json
+end
 
 # Helper to read and render content
 def render_page(path)
@@ -176,24 +201,48 @@ get '/courses/:slug/?' do |slug|
 end
 
 get '/*' do |path|
+  # Strip trailing slash for matching
+  path = path.chomp('/')
+  
+  # Special case for terminology and games which are directories in root
+  if path == "terminology" || path == "games"
+    return render_page("#{path}/index.html")
+  end
+
+  # Try direct file paths
   candidates = [
     "#{path}.markdown",
     "#{path}.md",
     "#{path}/index.markdown",
-    "#{path}/index.html",
-    "_lessons/#{path}.markdown",
-    "_lessons/#{path}.md",
-    "_courses/#{path}.markdown",
-    "_courses/#{path}.md",
-    "_dispatch_notes/#{path}.markdown",
-    "_dispatch_notes/#{path}.md"
+    "#{path}/index.md",
+    "#{path}/index.html"
   ]
+
+  # Check if it's a static file that should be served directly (js, css, etc)
+  if path =~ /\.(css|js|png|jpg|svg|json|pdf)$/ && File.exist?(path)
+    return send_file path
+  end
+
+  # Collection-specific logic
+  if path.start_with?('lessons/')
+    slug = path.sub('lessons/', '')
+    candidates << "_lessons/#{slug}.markdown"
+    candidates << "_lessons/#{slug}.md"
+  elsif path.start_with?('courses/')
+    slug = path.sub('courses/', '')
+    candidates << "_courses/#{slug}.markdown"
+    candidates << "_courses/#{slug}.md"
+  elsif path.start_with?('dispatch-notes/')
+    slug = path.sub('dispatch-notes/', '')
+    candidates << "_dispatch_notes/#{slug}.markdown"
+    candidates << "_dispatch_notes/#{slug}.md"
+  end
 
   found = candidates.find { |f| File.exist?(f) }
   if found
     render_page(found)
   else
     status 404
-    "Not Found"
+    "Not Found: #{path}"
   end
 end

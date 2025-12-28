@@ -28,3 +28,5 @@ ios/
 # Logs
 logs/
 *.log
+.DS_Store
+assets/.DS_Store
