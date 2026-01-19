@@ -164,23 +164,23 @@
   </div>
 
   <script>
-    (function () {
-      var banner = document.getElementById('playbook-banner');
-      if (!banner) return;
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
 
-      if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
-        banner.classList.add('is-hidden');
-        return;
-      }
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
 
-      var closeBtn = banner.querySelector('.playbook-banner__close');
-      if (!closeBtn) return;
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
 
-      closeBtn.addEventListener('click', function () {
-        banner.classList.add('is-hidden');
-        localStorage.setItem('medic138_playbook_banner_hidden', '1');
-      });
-    })();
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
   </script>
 
 </body>

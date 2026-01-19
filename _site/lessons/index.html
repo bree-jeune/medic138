@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lessons | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/lessons/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-header">
+  <div class="section-label">Lessons</div>
+  <div class="section-header-body">
+    <h2>Build your street sense</h2>
+    <p>Short, focused lessons you can run between calls.</p>
+  </div>
+</section>
+
+
+<div class="search-control">
+  <div class="search-field-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="lesson-search" class="search-input"
+      placeholder="Search lessons by title, topic, or clinical keywords...">
+  </div>
+
+  <div class="filter-pills">
+    <span class="filter-label">Filter by Scope:</span>
+    <button class="filter-pill is-active" data-filter="level" data-value="all">All</button>
+    <button class="filter-pill" data-filter="level" data-value="EMT">EMT</button>
+    <button class="filter-pill" data-filter="level" data-value="Advanced">Advanced</button>
+    <button class="filter-pill" data-filter="level" data-value="Intermediate">Intermediate</button>
+  </div>
+</div>
+
+<div id="search-empty" class="search-empty-state" style="display: none;">
+  <h3>No matches found</h3>
+  <p>Try different keywords or clear your filters.</p>
+</div>
+
+<section class="page-card" style="background: transparent; border: none; padding: 0;">
+  <div class="lesson-list" id="lesson-grid">
+    
+    <article class="lesson-card" data-title="bleeding & hemorrhage control – emt" data-level="EMT"
+      data-topic="trauma">
+      
+      <div class="lesson-meta">
+        
+        <span class="lesson-status-badge">EMT</span>
+        
+        
+        <span class="lesson-tag lesson-tag--muted">30 minutes min</span>
+        
+      </div>
+      
+
+      <h2>Bleeding & Hemorrhage Control – EMT</h2>
+
+      <p class="card-text">
+        
+        Recognize life-threatening hemorrhage and apply evidence-based bleeding control in the field.
+        
+      </p>
+
+      <a href="/lesson/bleeding-hemorrhage-emt/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="ems systems" data-level=""
+      data-topic="">
+      
+
+      <h2>Ems Systems</h2>
+
+      <p class="card-text">
+        
+        
+
+        
+      </p>
+
+      <a href="/lessons/ems-systems/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="gas laws: deeper dive" data-level=""
+      data-topic="flight">
+      
+      <div class="lesson-meta">
+        
+        
+        <span class="lesson-tag lesson-tag--muted">Comprehensive min</span>
+        
+      </div>
+      
+
+      <h2>Gas Laws: Deeper Dive</h2>
+
+      <p class="card-text">
+        
+        Gas Laws for Flight and Critical Care
+
+        
+      </p>
+
+      <a href="/courses/gas-laws-2/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="gas laws for flight and critical care" data-level=""
+      data-topic="flight">
+      
+      <div class="lesson-meta">
+        
+        
+        <span class="lesson-tag lesson-tag--muted">Comprehensive min</span>
+        
+      </div>
+      
+
+      <h2>Gas Laws for Flight and Critical Care</h2>
+
+      <p class="card-text">
+        
+        Gas Laws for Flight and Critical Care
+
+        
+      </p>
+
+      <a href="/courses/gas-laws-practice/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="the not-boring history of ems" data-level="EMT"
+      data-topic="ems systems">
+      
+      <div class="lesson-meta">
+        
+        <span class="lesson-status-badge">EMT</span>
+        
+        
+        <span class="lesson-tag lesson-tag--muted">15 minutes min</span>
+        
+      </div>
+      
+
+      <h2>The Not-Boring History of EMS</h2>
+
+      <p class="card-text">
+        
+        A fast, interactive walk-through of how EMS actually came to be.
+        
+      </p>
+
+      <a href="/lesson/history-of-ems/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="med math practice" data-level=""
+      data-topic="">
+      
+
+      <h2>Med Math Practice</h2>
+
+      <p class="card-text">
+        
+        --- title: "Medical Math Practice" level: "All Levels" topic: "Med Math" duration: "20 minutes" summary: "Practice IV drip and medication ca...
+        
+      </p>
+
+      <a href="/lessons/med-math/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="medical assessment" data-level=""
+      data-topic="">
+      
+
+      <h2>Medical Assessment</h2>
+
+      <p class="card-text">
+        
+        
+
+        
+      </p>
+
+      <a href="/lessons/medical-assessment/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="pediatric assessment triangle" data-level=""
+      data-topic="">
+      
+
+      <h2>Pediatric Assessment Triangle</h2>
+
+      <p class="card-text">
+        
+        layout: lesson title: "Pediatric Assessment Triangle (PAT)"  level: "All Levels" topic: "Pediatrics" duration: "30 minutes"  summary: "The 3...
+        
+      </p>
+
+      <a href="/lesson/pediatric-assessment-triangle/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="pharmacology for emts" data-level=""
+      data-topic="">
+      
+
+      <h2>Pharmacology for EMTs</h2>
+
+      <p class="card-text">
+        
+        --- title: "Pharmacology for EMTs" level: "EMT" topic: "Pharmacology" duration: "25 minutes" summary: "Understand EMT-approved meds the way ...
+        
+      </p>
+
+      <a href="/lessons/pharmacology-emt/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="shock basics for emts" data-level="EMT"
+      data-topic="trauma">
+      
+      <div class="lesson-meta">
+        
+        <span class="lesson-status-badge">EMT</span>
+        
+        
+        <span class="lesson-tag lesson-tag--muted">25 minutes min</span>
+        
+      </div>
+      
+
+      <h2>Shock Basics for EMTs</h2>
+
+      <p class="card-text">
+        
+        Recognize compensated vs decompensated shock and what to actually do about it.
+        
+      </p>
+
+      <a href="/lesson/shock-basics-emt/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="spanish for medical providers" data-level=""
+      data-topic="">
+      
+
+      <h2>Spanish For Medical Providers</h2>
+
+      <p class="card-text">
+        
+        
+
+        
+      </p>
+
+      <a href="/lessons/spanish-medical/" class="link-arrow">Open lesson</a>
+    </article>
+    
+    <article class="lesson-card" data-title="trauma assessment" data-level=""
+      data-topic="">
+      
+
+      <h2>Trauma Assessment</h2>
+
+      <p class="card-text">
+        
+        
+
+        
+      </p>
+
+      <a href="/lessons/trauma-assessment/" class="link-arrow">Open lesson</a>
+    </article>
+    
+  </div>
+</section>
+
+<script src="/assets/js/search.js"></script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

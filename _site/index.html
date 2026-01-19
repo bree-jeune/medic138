@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero--home">
+  <div class="hero-body">
+    <p class="hero-kicker">Interactive training for real medics</p>
+    <h1 class="hero-title">
+      Street-smart EMS education<br />
+      for front line responders.
+    </h1>
+    <p class="hero-subtitle">
+      Less textbook trivia, more pattern recognition. Learn how to think on scene,
+      hand off clean, and walk away knowing you made the right calls.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="/courses/" class="btn btn--primary">Start a course</a>
+      <a href="/games/" class="btn btn--ghost">Run a 10-minute drill</a>
+      <a href="/dispatch-notes/" class="btn btn--ghost">Learn from real calls</a>
+    </div>
+    
+
+    <div class="hero-meta">
+    <div class="hero-newsletter hero-newsletter--pill">
+  <p class="hero-newsletter-title">Get weekly EMS breakdowns.</p>
+  <p class="hero-newsletter-sub">
+    Short trauma lessons, drills, and real-call debriefs in your inbox.
+  </p>
+
+  <div class="playbook-cta">
+  <div class="playbook-cta__frame">
+    <div class="playbook-cta__inner">
+      <div class="playbook-cta__text">
+        <p class="playbook-cta__eyebrow">Free NREMT resource</p>
+        <h3 class="playbook-cta__title">Get the NREMT First-Time Pass Playbook</h3>
+        <p class="playbook-cta__body">
+          A tactical study plan for busy medics. Built for real shifts, not fantasy schedules.
+        </p>
+      </div>
+
+      <div class="playbook-cta__actions">
+        <!-- Main CTA → Gumroad Playbook -->
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary playbook-cta__btn">
+          Download the Playbook
+        </a>
+
+        <!-- Optional: Buttondown signup inline -->
+        <form class="playbook-cta__form" action="https://buttondown.email/api/emails/embed-subscribe/medic138" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/medic138', 'popupwindow')">
+          <label class="playbook-cta__label" for="playbook-email">
+            Get future drills by email:
+          </label>
+          <div class="playbook-cta__input-row">
+            <span class="playbook-cta__patch" aria-hidden="true">EMT</span>
+            <input id="playbook-email" type="email" name="email" placeholder="you@agency.com" required="" />
+            <button type="submit" class="btn btn--ghost playbook-cta__btn-secondary">
+              Join the list
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="hero-newsletter-substack">
+  
+    <iframe src="https://medic138.substack.com/embed" width="100%" height="180" style="border:0; background:transparent;" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <form action="https://medic138.substack.com/api/v1/free?nojs=1" method="post" target="_blank" class="hero-newsletter-form hero-newsletter-form--icon">
+    <div class="hero-newsletter-input-wrap">
+    <span class="hero-newsletter-icon" aria-hidden="true"> <img src="/assets/img/ui/emt-patch.svg" alt="" /></span>
+    <input type="email" name="email" placeholder="Enter your email" required="" />
+  </div>
+  <button type="submit">Subscribe</button>
+</form>
+</div>
+
+
+  <div class="hero-panel">
+    <div class="hero-panel-header">
+      <span class="hero-panel-label">Today’s dispatch</span>
+
+      
+    </div>
+    <div>
+      <span class="hero-panel-tag">Medical, Shock &amp; Trauma Streams</span>
+      <div class="embed embed--youtube">
+        <div class="embed-inner">
+          <!-- Insert a valid YouTube video id in place of `VIDEO_ID` or set `page.video_id` in front matter. -->
+          <!-- If you don't want an embed, the iframe is intentionally omitted to avoid a broken placeholder. -->
+          <p style="color:var(--text-muted);">Video placeholder — add a YouTube video id or remove this section.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <ul class="hero-panel-list">
+      <li>
+        <span class="hero-chip">New</span>
+        <div>
+          <ul class="hero-panel-list">
+  <li>
+    <span class="hero-chip">New</span>
+    <div>
+      <p class="hero-panel-title">
+        <a href="/lessons/shock-basics-emt/">
+          Shock basics for EMTs
+        </a>
+      </p>
+      <p class="hero-panel-text">
+        Classify hemorrhagic vs distributive before the monitor tells you something’s wrong.
+      </p>
+    </div>
+  </li>
+  <li>
+    <span class="hero-chip hero-chip--green">Advanced</span>
+    <div>
+      <p class="hero-panel-title">
+        <a href="/courses/flight-physiology/" class="hero-panel-link">
+          Flight physiology primer
+        </a>
+      </p>
+      <p class="hero-panel-text">
+        Gas laws, altitude effects, and what actually happens to your vented patient at 8,000 feet.
+      </p>
+    </div>
+  </li>
+  <li>
+    <span class="hero-chip hero-chip--amber">Drill</span>
+    <div>
+      <p class="hero-panel-title">
+        <a href="/scenarios/" class="hero-panel-link">
+          10-minute polytrauma scenario
+        </a>
+      </p>
+      <p class="hero-panel-text">
+        Make three choices: triage, destination, and damage-control interventions.
+      </p>
+    </div>
+  </li>
+</ul>
+
+        </div>
+      </li>
+      <li>
+        <span class="hero-chip hero-chip--amber">Drill</span>
+        <div>
+          <p class="hero-panel-title">10-minute polytrauma scenario</p>
+          <p class="hero-panel-text">
+            Make three choices: triage, destination, and damage-control interventions.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+&lt;/section&gt;
+
+<!-- Where to start -->
+<section class="section-header">
+  <div class="section-label">Start here</div>
+  <div class="section-header-body">
+    <h2>Where to start</h2>
+    <p>Pick the track that fits your current scope and bandwidth.</p>
+  </div>
+</section>
+
+<section class="page-card home-section">
+  <div class="lesson-list">
+    <article class="lesson-card">
+      <h3>🚀 New to EMS?</h3>
+      <p>Start with the basics of shock and trauma assessment.</p>
+      <a href="/lessons/shock-basics-emt/" class="link-arrow">Go to Shock Basics</a>
+    </article>
+
+    <article class="lesson-card">
+      <h3>🫀 Advanced provider?</h3>
+      <p>Deep-dive into 12-lead ECGs and flight physiology.</p>
+      <a href="/courses/flight-physiology/" class="link-arrow">Start Flight Phys</a>
+    </article>
+
+    <article class="lesson-card">
+      <h3>🎮 Just need a quick drill?</h3>
+      <p>Test your knowledge with interactive scenarios and games.</p>
+      <a href="/games/" class="link-arrow">Play drills</a>
+    </article>
+  </div>
+</section>
+
+<!-- Latest dispatch notes -->
+<section class="section-header">
+  <div class="section-label">Dispatch notes</div>
+  <div class="section-header-body">
+    <h2>Latest dispatch notes</h2>
+    <p>Real calls, real lessons you can skim between tones.</p>
+  </div>
+</section>
+
+<section class="page-card home-section">
+  <div class="dispatch-list">
+    
+      <article class="dispatch-note">
+        <h3><a href="/dispatch-notes/hypotensive-transfer/">The Hypotensive Transfer That Wouldn't Behave</a></h3>
+        <p><small>November 23, 2025</small></p>
+        <p>A quick reflection on shock index, permissive hypotension, volume expanders versus fluid resuscitation, and what to do differently and when.</p>
+      </article>
+    
+  </div>
+</section>
+</div></div></section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

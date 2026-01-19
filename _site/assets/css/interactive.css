@@ -1,0 +1,138 @@
+.lesson {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+.lesson h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.lesson p,
+.lesson li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.lesson h2 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  color: var(--text-main);
+}
+
+.lesson h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+
+.lesson section,
+.lesson .scenario,
+.lesson .practice,
+.lesson .note-box {
+  margin: 1.2rem 0;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+}
+
+
+.lesson .scenario {
+  border-left: 4px solid var(--primary);
+}
+
+
+.lesson .practice {
+  border-left: 4px solid var(--secondary);
+}
+
+
+.lesson .page-card {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+.lesson .lesson-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.lesson-list-item {
+  margin-bottom: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lesson-list-link {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.lesson-list-link:hover {
+  text-decoration: underline;
+}
+
+.lesson-list-meta {
+  font-size: 0.9rem;
+  color: #b3bac2;
+  margin-top: 0.2rem;
+}
+
+.lesson-list-summary {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #dde2e7;
+}
+
+
+.lesson iframe {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-body);
+}
+
+.reveal-card {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.reveal-card summary {
+  list-style: none;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.reveal-card[open] {
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.reveal-card__answer {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+.reveal-card summary::-webkit-details-marker {
+  display: none;
+}
+

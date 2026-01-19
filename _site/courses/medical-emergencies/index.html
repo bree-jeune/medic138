@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Emergencies | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/assets/css/course-tabs.css">
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/courses/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="course-layout">
+  
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <span class="badge badge--advanced">Advanced</span>
+      <h1 class="course-title-small">Medical Emergencies</h1>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="icon">⏱</span> 4–6 hours
+        </div>
+        <div class="meta-item">
+          <span class="icon">📚</span> Medical · Critical Care
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="/courses/medical-emergencies/:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </aside>
+
+      <main class="content-container">
+  <div class="course-content">
+    
+    
+      <div class="course-tabs-wrapper">
+        <div class="course-tabs" data-default="overview" data-course-key="/courses/medical-emergencies/">
+
+  <nav class="course-tabs__nav">
+    
+      <button class="course-tabs__tab" type="button" data-target="overview">
+        Overview
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="respiratory">
+        Respiratory
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="neuro">
+        Neuro
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="endocrine">
+        Endocrine/Metabolic
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="infectious">
+        Infectious &amp; Sepsis
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="renal">
+        Renal
+      </button>
+    
+      <button class="course-tabs__tab" type="button" data-target="electrolytes">
+        Electrolytes
+      </button>
+    
+  </nav>
+
+  <section class="course-tabs__panels">
+
+    <div id="overview" class="course-tabs__panel">
+      <!-- High-level course intro, how to use, recommended order -->
+      
+
+    </div>
+
+    <div id="respiratory" class="course-tabs__panel">
+      
+
+    </div>
+
+    <div id="neuro" class="course-tabs__panel">
+      
+
+    </div>
+
+    <div id="endocrine" class="course-tabs__panel">
+      
+
+    </div>
+
+    <div id="infectious" class="course-tabs__panel">
+      
+
+    </div>
+
+    <div id="renal" class="course-tabs__panel">
+      
+
+    </div>
+
+    <div id="electrolytes" class="course-tabs__panel">
+      
+
+    </div>
+
+  </section>
+</div>
+
+<p>overview: |
+  ## How This Course Works</p>
+<ul>
+  <li>Work through each tab in order.</li>
+  <li>Warm-up scenarios, explanation, practice cases, reflection.</li>
+  <li>Use this with your Medic 138 lab and protocol review.</li>
+</ul>
+
+<p>## Course Structure</p>
+
+<ul>
+  <li><strong>Core Modules</strong> (each as a separate lesson):</li>
+</ul>
+
+<ol>
+  <li>Cardiac Emergencies</li>
+  <li>Respiratory Emergencies</li>
+  <li>Neurologic Emergencies</li>
+  <li>Endocrine \&amp; Metabolic Emergencies</li>
+  <li>Infectious \&amp; Sepsis Emergencies</li>
+  <li>Renal \&amp; Electrolyte Emergencies</li>
+  <li>GI \&amp; Hepatic Emergencies</li>
+  <li>Hematologic \&amp; Immunologic Emergencies</li>
+  <li>Toxicologic Emergencies and Overdose</li>
+  <li>Environmental \&amp; Temperature-related</li>
+  <li>Pediatric-Specific Medical Emergencies</li>
+  <li>Geriatric-Specific Medical Emergencies</li>
+  <li>OB-GYN Medical Emergencies (excluding trauma)</li>
+  <li>Syncope, Shock, and Collapse: Differential \&amp; Approach</li>
+  <li>“Unknown/Generalized” Medical Collapse</li>
+</ol>
+
+<p>general: |</p>
+<h2 id="overview-of-medical-emergencies">Overview of Medical Emergencies</h2>
+<h1 id="medical-emergencies-deep-dive-recognition--management">Medical Emergencies: Deep-Dive Recognition \&amp; Management</h1>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Multi-system · Emergency Medicine · Critical \&amp; Flight Care
+<strong>Duration:</strong> Comprehensive deep dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario">Arrival Scenario</h2>
+
+<p>You’re paged for a hospital transfer: “55M, ‘crashing’ chest pain, SOB, confused, BP dropping. Maybe ACS, maybe sepsis, maybe something worse. What’s your first move? What’s your pattern and what are the likely pitfalls if you fixate too soon?”</p>
+
+<hr />
+
+<h2 id="warm-up-questions">Warm-Up Questions</h2>
+
+<ol>
+  <li>What’s your process for differentiating cardiac vs. respiratory distress in minutes?</li>
+  <li>Which vital sign trend makes you suspect shock—even before hypotension sets in?</li>
+  <li>Name two findings that always prompt immediate escalation to higher level care.</li>
+  <li>How can you quickly distinguish between stroke, tox, and metabolic crisis?</li>
+  <li>Which medical emergency do most crews underestimate on scene, and why?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed">Optional Tally Embed</h2>
+
+<p><em>Insert Tally onboarding/knowledge check placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown">Explanation / Breakdown</h2>
+
+<h3 id="i-cardiac-emergencies"><strong>I. Cardiac Emergencies</strong></h3>
+
+<ul>
+  <li><strong>ACS (Acute Coronary Syndrome):</strong>
+    <ul>
+      <li>ST elevation, chest pain, diaphoresis</li>
+      <li>High-risk mimics: pericarditis, dissection, electrolyte disturbance</li>
+    </ul>
+  </li>
+  <li><strong>Arrhythmias:</strong>
+    <ul>
+      <li>SVT, VT, VF, bradycardia – rapid pattern recognition, pulse check, defib use, antiarrhythmic algorithms</li>
+    </ul>
+  </li>
+  <li><strong>Shock States:</strong>
+    <ul>
+      <li>Cardiogenic, obstructive, distributive, hypovolemic.</li>
+      <li>MAP &lt;65, altered mental status, rising lactate, skin findings.</li>
+    </ul>
+  </li>
+  <li><strong>Heart Failure/Pulmonary Edema:</strong>
+    <ul>
+      <li>Dyspnea, crackles, leg edema, pink frothy sputum, rapid BP shifts.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ii-neurologic-emergencies"><strong>II. Neurologic Emergencies</strong></h3>
+
+<ul>
+  <li><strong>Stroke/TIA:</strong>
+    <ul>
+      <li>Sudden neuro deficit, facial droop, arm drift, speech change.</li>
+      <li>BE-FAST pattern, rule out hypoglycemia.</li>
+    </ul>
+  </li>
+  <li><strong>Seizure/Status Epilepticus:</strong>
+    <ul>
+      <li>Recurrent/unremitting tonic-clonic or focal activity—ABC, glucose, benzos, airway management.</li>
+    </ul>
+  </li>
+  <li><strong>Encephalopathy/Delirium:</strong>
+    <ul>
+      <li>Sudden confusion, agitation—rule out infection, metabolic, structural brain injury.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="iii-respiratory-emergencies"><strong>III. Respiratory Emergencies</strong></h3>
+
+<ul>
+  <li><strong>Acute Asthma/COPD Exacerbation:</strong>
+    <ul>
+      <li>Wheeze, accessory muscle use, tripod, silent chest</li>
+    </ul>
+  </li>
+  <li><strong>Pneumothorax/Bronchospasm:</strong>
+    <ul>
+      <li>Sudden chest pain, dyspnea, diminished breath sounds, crepitus.</li>
+    </ul>
+  </li>
+  <li><strong>Hypoxemic/Hypercapnic Respiratory Failure:</strong>
+    <ul>
+      <li>Pulse ox &lt;90% on O₂, rising ETCO₂, confusion, lethargy.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="iv-metabolic--toxicologic-emergencies"><strong>IV. Metabolic \&amp; Toxicologic Emergencies</strong></h3>
+
+<ul>
+  <li><strong>DKA/HHS:</strong>
+    <ul>
+      <li>Polyuria, polydipsia, Kussmaul breathing, fruity breath, confusion.</li>
+    </ul>
+  </li>
+  <li><strong>Hypoglycemia:</strong>
+    <ul>
+      <li>AMS, diaphoresis, seizure-like activity—check glucose!</li>
+    </ul>
+  </li>
+  <li><strong>Electrolyte crisis:</strong>
+    <ul>
+      <li>Hyperkalemia: peaked T waves, arrhythmia risk.</li>
+      <li>HypoCa/Mg/Na: seizure, tetany, neuro changes.</li>
+    </ul>
+  </li>
+  <li><strong>Overdoses/Poisonings:</strong>
+    <ul>
+      <li>Opiates: pinpoint pupils, apnea.</li>
+      <li>Stimulants: hyperactivity, tachycardia, agitation.</li>
+      <li>Cholinergic/anticholinergic, TCA toxicity: special ECG findings, unique syndrome patterns.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="v-infectious-emergencies"><strong>V. Infectious Emergencies</strong></h3>
+
+<ul>
+  <li><strong>Sepsis:</strong>
+    <ul>
+      <li>Fever, tachycardia, hypotension, altered mental status, high lactate.</li>
+    </ul>
+  </li>
+  <li><strong>Meningitis:</strong>
+    <ul>
+      <li>Fever, nuchal rigidity, photophobia, AMS.</li>
+    </ul>
+  </li>
+  <li><strong>Other:</strong>
+    <ul>
+      <li>Rapid onset shock, organ failure, rash, pus, drainage, or abscess.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="vi-gi-and-renal-emergencies"><strong>VI. GI and Renal Emergencies</strong></h3>
+
+<ul>
+  <li><strong>GI Bleed:</strong>
+    <ul>
+      <li>Melena, hematemesis, tachycardia, hypotension (late).</li>
+    </ul>
+  </li>
+  <li><strong>Acute Abdomen:</strong>
+    <ul>
+      <li>Distension, rebound, guarding, referred pain.</li>
+    </ul>
+  </li>
+  <li><strong>Renal failure/Fluids/Acid-Base:</strong>
+    <ul>
+      <li>Oliguria, electrolyte change, acidotic labs, AMS.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="vii-hematologic--immunologic"><strong>VII. Hematologic \&amp; Immunologic</strong></h3>
+
+<ul>
+  <li><strong>Anaphylaxis:</strong>
+    <ul>
+      <li>Sudden wheezing, hypotension, urticaria, facial swelling—IM epi is first line.</li>
+    </ul>
+  </li>
+  <li><strong>Acute anemia, sickle crisis, thrombocytopenia:</strong>
+    <ul>
+      <li>AMS, tachycardia, pallor, bleeding/bruising.</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>Pattern Recognition:</strong> Always compare the “chief complaint” to the most lethal mimic (e.g., chest pain is ACS, PE, aortic dissection, tension pneumo, tox, GI, neuro).</p>
+</blockquote>
+
+<hr />
+
+<h2 id="common-mistakes">Common Mistakes</h2>
+
+<ul>
+  <li>Anchoring on initial diagnosis, missing mimics (e.g., calling every AMS “stroke” or every chest pain “ACS”).</li>
+  <li>Underestimating early shock (compensatory tachycardia can precede hypotension).</li>
+  <li>Missing airway compromise—late intervention increases risk.</li>
+  <li>Overdosing oxygen in certain COPDers, under-monitoring ETCO₂ in others.</li>
+  <li>Failing to recheck glucose after initial correction.</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls">Clinical Pearls</h2>
+
+<ul>
+  <li><strong>Assess patterns, not just findings:</strong> A “worried look” and unstable vitals trump numbers.</li>
+  <li><strong>Shock is more about mental status and perfusion than BP.</strong></li>
+  <li><strong>Reassess, reassess, reassess:</strong> Patterns evolve—make every 10-min check a micro-mental review.</li>
+  <li><strong>When in doubt, treat the worst-case mimic until proven otherwise.</strong></li>
+  <li><strong>Early push-dose pressors (if permitted) can buy time in crash hypotension.</strong></li>
+  <li>“If it feels wrong, it probably is”—trust your field sense, bring in help early.</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees">Decision Trees</h2>
+
+<p><strong>Medical Emergency Algorithm (Protocol-Agnostic):</strong></p>
+
+<ol>
+  <li><strong>Initial Assessment – “Sick or Not Sick”:</strong>
+    <ul>
+      <li>Altered, unstable, or toxic? → Go to resus, activate help.</li>
+      <li>Stable? → R/O mimics, begin focused pattern-check.</li>
+    </ul>
+  </li>
+  <li><strong>ABCs First:</strong>
+    <ul>
+      <li>Airway: Obstructed, threatened, compromised? → Secure airway</li>
+      <li>Breathing: Hypoxic? → Oxygen as needed, monitor, support</li>
+      <li>Circulation: Shock or perfusion deficit? → IV/IO access, fluids, pressors, labs</li>
+    </ul>
+  </li>
+  <li><strong>Focused System Drill:</strong>
+    <ul>
+      <li>Chest pain? → ECG, nitro if appropriate, O₂, rule out lethal causes</li>
+      <li>AMS? → Glucose, O₂, toxicology, neuro screen, treat as worst-case until better</li>
+      <li>Dyspnea? → Bilateral breath sounds, history, consider pneumothorax, PE, CHF, airway issue</li>
+      <li>Fever/signs infection? → Blood cultures, early antibiotics, fluids, repeat checks</li>
+    </ul>
+  </li>
+  <li><strong>Recheck at every change:</strong>
+    <ul>
+      <li>Neuro/resp/Cardiac worsen? → Escalate, modify plan, consider specialty input.</li>
+      <li>Stabilize or improve? → Prep for hand-off, document timeline, monitor closely.</li>
+    </ul>
+  </li>
+  <li><strong>If worsening, restart at step 1—fresh lens, new differential.</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases">Practice Cases</h2>
+
+<h3 id="case-1-stemi-vs-mimic">Case 1: STEMI vs. Mimic</h3>
+
+<ul>
+  <li>60M, chest pain, SOB. ECG: ST elevation V2-V4.
+Timeline: 0min—call received, 8min—first ECG, 15min—pain worsens.
+Vitals: HR 88, BP 110/64, SpO₂ 99%, RR 18.
+<em>Troponin negative, pain severe.</em>
+    <blockquote>
+      <p>What’s your next confirmatory test? What’s the mimic you’re ruling out?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-ams-mystery">Case 2: AMS Mystery</h3>
+
+<ul>
+  <li>45F, confused, slurred speech.
+Timeline: 0min—scene arrival, 5min—glucose 88, 10min—worsens.
+Vitals: HR 112, BP 136/84, RR 23, SpO₂ 97%, Temp 37.8°C.
+    <blockquote>
+      <p>What two labs will you check next? Most likely cause?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-silent-sepsis">Case 3: ‘Silent’ Sepsis</h3>
+
+<ul>
+  <li>70M, fever, chills, slightly low BP.
+Timeline: 0min—arrival, 12min—BP 94/62, lactate 3.2, mentation normal.
+Vitals: HR 124, BP 88/58, SpO₂ 94%, Temp 39.5°C.
+    <blockquote>
+      <p>What’s your risk if you delay fluids and antibiotics? Which findings are “red flags”?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-sudden-dyspnea--hypotension">Case 4: Sudden Dyspnea + Hypotension</h3>
+
+<ul>
+  <li>28F, PEA arrest after standing, “normal” chest x-ray.
+Timeline: 0min—collapse, 3min—ALS in progress, 8min—POC echo: RV dilated.
+Vitals: PEA, no pulse, SpO₂ undetectable.
+    <blockquote>
+      <p>Diagnosis? Life-saving maneuver?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-hyperkalemia-ecg">Case 5: Hyperkalemia ECG</h3>
+
+<ul>
+  <li>52M, ESRD, missed dialysis.
+Timeline: 0min—report, 13min—found unresponsive, ECG peaked T, wide QRS.
+Vitals: HR 54, BP 144/82, SpO₂ 97%, Temp 36.7°C.
+    <blockquote>
+      <p>Next three treatments to prevent arrest?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-pediatric-seizure">Case 6: Pediatric Seizure</h3>
+
+<ul>
+  <li>7F, tonic-clonic, not waking up.
+Timeline: 0min—call, 6min—midazolam given, 14min—no improvement.
+Vitals: HR 128, BP 92/58, SpO₂ 92%, Temp 38.0°C.
+    <blockquote>
+      <p>What do you do next? What workup is mandatory in transport?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection">Reflection</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which system-based emergencies do you feel most and least confident with?</li>
+  <li>Can you recall a call where a shift in “pattern” completely changed your management?</li>
+  <li>If you’re unsure whether a medical emergency is cardiac, respiratory, or neuro, what’s your “go-to” first diagnostic step?</li>
+  <li>How will you handle a scene where multiple emergencies present at once?</li>
+</ul>
+
+<p>respiratory: |
+  ## Respiratory Emergencies
+  # Respiratory Emergencies</p>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Airway \&amp; Breathing · Critical Care · EMS/Flight
+<strong>Duration:</strong> Deep Dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario-1">Arrival Scenario</h2>
+
+<p>Dispatch: 45F, “difficulty breathing.” On arrival—tripod position, audible wheezing, SpO₂ 86% on room air, speaking in two-word sentences. The family says she’s had a cold and now “can’t catch her breath.”
+Your mental checklist: Is this asthma, COPD, CHF, PE, airway obstruction, or something else altogether? What’s your first move to stabilize—and what early pattern triggers immediate escalation?</p>
+
+<hr />
+
+<h2 id="warm-up-questions-1">Warm-Up Questions</h2>
+
+<ol>
+  <li>What are the red-flag signs of “immediate threat” in respiratory distress?</li>
+  <li>Which breath sound patterns cue you to the underlying emergency?</li>
+  <li>How do you decide between CPAP, BVM, or intubation before even touching equipment?</li>
+  <li>How can skin signs help you differentiate hypoxemia from shock?</li>
+  <li>When should you NOT give high-flow oxygen?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-1">Optional Tally Embed</h2>
+
+<p><em>Insert Tally onboarding/knowledge check placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-1">Explanation / Breakdown</h2>
+
+<h3 id="rapid-pattern-recognition">Rapid Pattern Recognition</h3>
+
+<ul>
+  <li><strong>Listen:</strong> Wheezing (asthma/COPD), crackles (CHF/edema), stridor (upper airway), silence (severe obstruction), rhonchi (secretions).[^1][^7]</li>
+  <li><strong>Inspect:</strong> Tripoding, retractions, nasal flaring, cyanosis, AMS, silent chest, access muscle use.</li>
+  <li><strong>Palpate:</strong> Unequal expansion, crepitus, subcutaneous emphysema.[^1]</li>
+  <li><strong>Monitor:</strong> SpO₂, ETCO₂ (if available), respiratory rate/depth/pattern, work of breathing (WOB).[^5]</li>
+</ul>
+
+<h3 id="key-emergencies--their-field-patterns">Key Emergencies \&amp; Their Field Patterns</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Condition</th>
+      <th style="text-align: left">Typical Pattern</th>
+      <th style="text-align: left">Priority Interventions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Asthma/COPD</strong></td>
+      <td style="text-align: left">Wheeze, two-word sentences, silent chest as warning</td>
+      <td style="text-align: left">Nebs, steroids, CPAP, intubate if failing</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>CHF/Pulmonary Edema</strong></td>
+      <td style="text-align: left">Crackles, dyspnea, frothy sputum, high BP, pedal edema</td>
+      <td style="text-align: left">O₂, nitro, CPAP, diuretic route (ED/facility)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Pneumonia</strong></td>
+      <td style="text-align: left">Fever, cough, rhonchi/crackles, AMS</td>
+      <td style="text-align: left">O₂, monitor, mask, HOB up, rapid transport</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Pneumothorax</strong></td>
+      <td style="text-align: left">Unilateral diminished sounds, tracheal shift</td>
+      <td style="text-align: left">Needle decompression, O₂, rapid transport</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Anaphylaxis</strong></td>
+      <td style="text-align: left">Stridor, wheeze, facial swelling, urticaria</td>
+      <td style="text-align: left">IM epi, O₂, airway adjuncts, prep for intubation</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>PE</strong></td>
+      <td style="text-align: left">Sudden dyspnea, clear lungs, chest pain, tachycardia</td>
+      <td style="text-align: left">O₂, monitor, rapid transport, consider lytics (ED)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Obstruction</strong></td>
+      <td style="text-align: left">Stridor, inability to speak, cough, silence</td>
+      <td style="text-align: left">Heimlich, suction, advanced airway if needed</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="common-mistakes-1">Common Mistakes</h2>
+
+<ul>
+  <li><strong>Ignoring silent chest:</strong> True respiratory arrest may be seconds away.</li>
+  <li>**Anchoring on “asthma” or “COPD” and missing CHF or PE in older patients.</li>
+  <li>**Delaying airway intervention until patient unresponsive.</li>
+  <li>**Not reassessing sounds or WOB—patterns shift quickly.</li>
+  <li>**Overventilating with BVM (gastric distension, worsened hypoventilation).</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls-1">Clinical Pearls</h2>
+
+<ul>
+  <li><strong>Tripod = severe distress.</strong> Any patient upright, leaning forward deserves immediate advanced airway prep.</li>
+  <li>**CPAP is your friend for CHF and severe asthma/COPD—often reverses distress better than drugs.</li>
+  <li>If patient is speaking in one-word sentences or losing ability to talk: Prepare to intubate.</li>
+  <li><strong>Stridor = upper airway threat.</strong> Don’t wait—IM/IV epi and advanced airway.</li>
+  <li>Wheezing doesn’t always mean asthma—CHF, PE, anaphylaxis, airway burns all mimic.</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-1">Decision Trees</h2>
+
+<p><strong>Protocol-Agnostic Field Algorithm:</strong></p>
+
+<ol>
+  <li><strong>Is the airway open \&amp; protected?</strong>
+    <ul>
+      <li>If no → Immediate airway management (OPA/NPA, suction, prep for RSI)</li>
+      <li>If yes → Move to breathing assessment</li>
+    </ul>
+  </li>
+  <li><strong>Work of Breathing/WOB Severe?</strong>
+    <ul>
+      <li>Yes → CPAP, BVM if hypoventilating, prep for advanced airway</li>
+      <li>No → O₂ titrate to target, monitor, reassess</li>
+    </ul>
+  </li>
+  <li><strong>Pattern Identification:</strong>
+    <ul>
+      <li>Wheeze → Nebs/steroids, monitor for impending arrest</li>
+      <li>Crackles → CHF/edema: O₂, nitro, CPAP</li>
+      <li>Stridor → Anaphylaxis/obstruction: Epi, airway adjunct, rapid escalation</li>
+      <li>Silent chest → Immediate airway support, prep for arrest</li>
+    </ul>
+  </li>
+  <li><strong>Recheck at every change.</strong>
+    <ul>
+      <li>If worsening: Escalate, advanced airway, consider rapid transport</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-1">Practice Cases</h2>
+
+<h3 id="case-1-asthma-exacerbation">Case 1: Asthma Exacerbation</h3>
+
+<ul>
+  <li>17F, wheezing, unable to complete sentences, SpO₂ 87% on 4L NC.</li>
+  <li>Timeline: 0min—callout, 6min—first nebs, 10min—fatigue, silent chest.</li>
+  <li>Vitals: HR 148, BP 128/80, RR 36, Temp 37.2°C.
+    <blockquote>
+      <p>Is she failing? What’s your next step?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-chf-flash-pulmonary-edema">Case 2: CHF Flash Pulmonary Edema</h3>
+
+<ul>
+  <li>74M, acute dyspnea sitting up, pink frothy sputum, crackles.</li>
+  <li>Timeline: 0min—arrival, 4min—CPAP started, 8min—mental status improves.</li>
+  <li>Vitals: HR 104, BP 168/96, RR 32, SpO₂ 88% improving.
+    <blockquote>
+      <p>Why does CPAP help—and what else matters here?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-anaphylaxis-with-stridor">Case 3: Anaphylaxis with Stridor</h3>
+
+<ul>
+  <li>22F, bee sting, facial swelling, voice change, stridor audible.</li>
+  <li>Timeline: 0min—on scene, 4min—IM epi, 8min—prep airway.</li>
+  <li>Vitals: HR 124, BP 92/62, RR 26, SpO₂ 94%.
+    <blockquote>
+      <p>Ventilation priorities? What airway equipment for backup?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-suspected-pe">Case 4: Suspected PE</h3>
+
+<ul>
+  <li>59F, SOB, chest pain, lungs clear, tachycardic.</li>
+  <li>Timeline: 0min—arrival, 5min—EKG sinus tach, 10min—drop in SpO₂.</li>
+  <li>Vitals: HR 112, BP 130/72, RR 24, SpO₂ 89%.
+    <blockquote>
+      <p>What makes PE diagnosis challenging? Key supportive actions?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-pediatric-foreign-body-obstruction">Case 5: Pediatric Foreign Body Obstruction</h3>
+
+<ul>
+  <li>3M, cyanotic, gagging, stridor, unable to speak.</li>
+  <li>Timeline: 0min—arrival, 3min—&lt;1min Heimlich, airway clears.</li>
+  <li>Vitals: HR 150, BP 84/p, RR 0, SpO₂ undetectable, then rises.
+    <blockquote>
+      <p>What’s your post-obstruction monitoring plan?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-copd-crash">Case 6: COPD “Crash”</h3>
+
+<ul>
+  <li>67M, severe SOB, home O₂, Tripoding, SpO₂ 79% on home O₂.</li>
+  <li>Timeline: 0min—scene, 3min—CPAP, 7min—mental status compromise.</li>
+  <li>Vitals: HR 94, BP 110/68, RR 40, Temp 36.2°C.
+    <blockquote>
+      <p>Why not intubate right away? When do you escalate?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-placeholder">Reflection Placeholder</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Recall a patient where your initial impression changed after airway/breathing reassessment. How did your approach change?</li>
+  <li>Which breath sound patterns do you need to practice recognizing under stress?</li>
+  <li>How will you actively monitor for changes during each 10-minute block of respiratory emergencies?</li>
+  <li>What’s your backup airway plan if your first attempt fails in the field?</li>
+</ul>
+
+<p>neuro: |
+  ## Neuro Emergencies
+  # Neurologic Emergencies</p>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Neurology · Critical Care · EMS/Flight
+<strong>Duration:</strong> Deep Dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario-2">Arrival Scenario</h2>
+
+<p>You’re paged for a hospital transfer: “72F, sudden altered mental status, right-sided weakness. CT pending, BG normal. Family says she was well until one hour ago.”
+Your checklist: Is this ischemic stroke, hemorrhagic stroke, seizure, infection, metabolic?
+<strong>With neuro emergencies, minutes matter — how do you rule in or out patterns, and what’s your first safest intervention?</strong></p>
+
+<hr />
+
+<h2 id="warm-up-questions-2">Warm-Up Questions</h2>
+
+<ol>
+  <li>What are the “big three” neurologic emergencies where seconds save brain?</li>
+  <li>What pattern flags a stroke versus a seizure?</li>
+  <li>What’s the quickest way to rule out common stroke mimics?</li>
+  <li>How can airway and breathing be at risk in neuro cases, even without trauma?</li>
+  <li>When do you always activate a “stroke code”?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-2">Optional Tally Embed</h2>
+
+<p><em>Insert Tally knowledge check placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-2">Explanation / Breakdown</h2>
+
+<h3 id="high-impact-neurologic-emergencies">High-Impact Neurologic Emergencies</h3>
+
+<ul>
+  <li><strong>Ischemic Stroke</strong> (most common)[^5][^1]
+    <ul>
+      <li>Sudden focal deficit: weakness, speech changes, vision loss, facial droop</li>
+      <li><em>“Last seen normal” is your clock — activate stroke code fast</em></li>
+    </ul>
+  </li>
+  <li><strong>Hemorrhagic Stroke</strong>
+    <ul>
+      <li>Sudden severe headache (“worst ever”), AMS, vomiting, rapid deterioration, often hypertension</li>
+    </ul>
+  </li>
+  <li><strong>Seizure/Status Epilepticus</strong>
+    <ul>
+      <li>Recurrent shaking, confusion, inability to respond, post-ictal</li>
+      <li>Any seizure &gt;5 min → treat as status</li>
+    </ul>
+  </li>
+  <li><strong>Metabolic/Toxic Encephalopathy</strong>
+    <ul>
+      <li>Sudden AMS, confusion, agitation, tremor, or coma — BG, Na, drug ingestion, sepsis must be ruled in/out</li>
+    </ul>
+  </li>
+  <li><strong>Infection (CNS)</strong>
+    <ul>
+      <li>Fever, AMS, nuchal rigidity, photophobia, seizure — think meningitis or encephalitis[^5]</li>
+    </ul>
+  </li>
+  <li><strong>Acute Spinal Cord Disease</strong>
+    <ul>
+      <li>Sudden paralysis, loss of sensation/power below a level</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="field-pattern-recognition">Field Pattern Recognition</h3>
+
+<ul>
+  <li>“BE-FAST” for stroke: Balance, Eyes, Face, Arm, Speech, Time</li>
+  <li>AMS, lateralizing signs, abrupt loss of function</li>
+  <li>Seizure: Unresponsive, rhythmic movement, tongue bite, incontinence, postictal confusion</li>
+  <li>Encephalopathy: fluctuating consciousness, asterixis, tremor, abnormal movements</li>
+</ul>
+
+<blockquote>
+  <p><em>Most field neuro emergencies are stroke (ischemic/hemorrhagic), seizure, toxic/metabolic, CNS infection, or acute cord.</em></p>
+</blockquote>
+
+<hr />
+
+<h2 id="common-mistakes-2">Common Mistakes</h2>
+
+<ul>
+  <li>Delaying CT or stroke activation while “waiting for labs.”</li>
+  <li>Missing hypoglycemia or drug as stroke mimic (always check BG).</li>
+  <li>Over-prioritizing headache without neuro deficit (“worst headache” is always emergency).</li>
+  <li>Forgetting to reassess airway/breathing with deteriorating GCS.</li>
+  <li>Underestimating seizure risk — postictal state isn’t “back to normal.”</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls-2">Clinical Pearls</h2>
+
+<ul>
+  <li>Get “last seen normal” time for every neuro call — it’s the clock for tPA, EVT, prognosis.</li>
+  <li>Any first seizure in an adult = field activation of rapid transport and imaging, not just benzos.</li>
+  <li>In neuro emergencies, ABCs come before focused neuro — hypoxia/hypercapnia worsen outcome.</li>
+  <li>Stroke mimics: hypoglycemia, drugs/alcohol, infection, migraine, vestibular, post-ictal.</li>
+  <li>Always reassess GCS and lateralizing signs at every time block (10–15 min).</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-2">Decision Trees</h2>
+
+<p><strong>Protocol-Agnostic Neuro Algorithm:</strong></p>
+
+<ol>
+  <li><strong>ABCs \&amp; Quick BG</strong>
+    <ul>
+      <li>If airway/breathing unstable → manage first</li>
+      <li>If BG abnormal → correct immediately</li>
+    </ul>
+  </li>
+  <li><strong>Sudden Focal Deficit or AMS?</strong>
+    <ul>
+      <li>Yes → Stroke code, rapid CT (if available), “last seen normal” tracked</li>
+      <li>No → Search for seizure activity, infection, tox/metabolic, spine signs</li>
+    </ul>
+  </li>
+  <li><strong>Seizure &gt;5 min or repeated?</strong>
+    <ul>
+      <li>Yes → Benzos IV/IM, airway management, rapid transport</li>
+      <li>No → Mark post-ictal, detailed recheck, monitor closely</li>
+    </ul>
+  </li>
+  <li><strong>Infection suspected (fever, stiff neck, AMS)?</strong>
+    <ul>
+      <li>Yes → Early antibiotics (per protocol), supportive care, seizure ready</li>
+      <li>No → Full neuro exam, timeline review</li>
+    </ul>
+  </li>
+  <li><strong>Spinal cord red flags?</strong>
+    <ul>
+      <li>Sudden paralysis/paresthesia—immobilize, neuro checks, rapid transfer</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-2">Practice Cases</h2>
+
+<h3 id="case-1-sudden-left-sided-weakness">Case 1: Sudden Left-Sided Weakness</h3>
+
+<ul>
+  <li>67F, abrupt left arm, face droop, slurred speech. BG 108.</li>
+  <li>Timeline: 0min—onset, 15min—EMS arrival, 20min—CT pending.</li>
+  <li>Vitals: HR 88, BP 142/86, RR 18, SpO₂ 97%.
+    <blockquote>
+      <p>What is most likely? What’s your checklist?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-status-epilepticus">Case 2: Status Epilepticus</h3>
+
+<ul>
+  <li>43M, multiple GM seizures, not regaining consciousness.</li>
+  <li>Timeline: 0min—first seizure, 5min—second, 8min—GCS 4, still seizing.</li>
+  <li>Vitals: HR 120, BP 136/78, RR agonal, SpO₂ 92%.
+    <blockquote>
+      <p>What’s your intervention priority? What adverse patterns to monitor?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-ams--fever">Case 3: AMS + Fever</h3>
+
+<ul>
+  <li>31M, confusion, fever, neck stiffness, recent travel.</li>
+  <li>Timeline: 0min—ED, 6min—mental status drops, 10min—HR climbs.</li>
+  <li>Vitals: HR 118, BP 114/76, RR 22, SpO₂ 95%, Temp 39.8°C
+    <blockquote>
+      <p>What’s your leading diagnosis? Immediate treatments?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-post-ictal-confusion">Case 4: Post-Ictal Confusion</h3>
+
+<ul>
+  <li>24F, witnessed convulsion, now confused, not following commands.</li>
+  <li>Timeline: 0min—call, 8min—arrival, 16min—no return to baseline.</li>
+  <li>Vitals: HR 104, BP 128/80, RR 20, SpO₂ 98%.
+    <blockquote>
+      <p>Any danger signs? Monitoring plan?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-hyperacute-headache">Case 5: Hyperacute Headache</h3>
+
+<ul>
+  <li>55M, “worst headache,” vomiting, photophobia, BP 180/102.</li>
+  <li>Timeline: 0min—onset, 12min—rapid AMS.</li>
+  <li>Vitals: HR 92, BP 180/102, RR 16, SpO₂ 98%.
+    <blockquote>
+      <p>Why is fast imaging critical? What must you avoid at scene?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-sudden-spine-syndrome">Case 6: Sudden Spine Syndrome</h3>
+
+<ul>
+  <li>52F, abrupt leg paralysis after minor fall.</li>
+  <li>Timeline: 0min—fall, 6min—can’t move legs, 9min—urinary retention.</li>
+  <li>Vitals: HR 100, BP 124/82, RR 14, SpO₂ 99%.
+    <blockquote>
+      <p>Spinal code: what’s required, and what “worsens” management?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-placeholder-1">Reflection Placeholder</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which neuro findings do you struggle with diagnosing under pressure—how will you drill them?</li>
+  <li>Recall a case where your neuro exam changed the entire transport outcome. What tipped you off?</li>
+  <li>How do you rapidly rule in/out stroke mimics when a CT isn’t available?</li>
+  <li>What is your stepwise approach for neuro emergencies if the scene rapidly evolves?</li>
+</ul>
+
+<p>endocrine: |
+  ## Endocrine &amp; Metabolic Emergencies
+  # Endocrine \&amp; Metabolic Emergencies</p>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Endocrinology · Metabolic · Critical Care · Flight/EMS
+<strong>Duration:</strong> Deep Dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario-3">Arrival Scenario</h2>
+
+<p>You’re called for an unconscious 19F: “History of diabetes. Warm, rapid pulse. Fruity breath. Kussmaul breathing. BP drooping. Friend says she’s ‘run out of insulin’.”
+Before the labs even result, your field brain should light up: Is this DKA, HHS, adrenal crisis, sepsis, thyroid storm, or something less obvious?
+What do you treat now—and what will kill her in the next fifteen minutes?</p>
+
+<hr />
+
+<h2 id="warm-up-questions-3">Warm-Up Questions</h2>
+
+<ol>
+  <li>What’s the single most dangerous metabolic derangement in DKA/HHS?</li>
+  <li>How do you distinguish myxedema coma from hypoglycemic coma in the field?</li>
+  <li>Which “low” lab has the highest risk of cardiac arrest in the next hour?</li>
+  <li>When should you always consider adrenal crisis as the primary emergency?</li>
+  <li>Which emergency is the hardest to reverse without immediate field intervention?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-3">Optional Tally Embed</h2>
+
+<p><em>Insert Tally quiz placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-3">Explanation / Breakdown</h2>
+
+<h3 id="high-risk-endocrine--metabolic-emergencies">High-Risk Endocrine \&amp; Metabolic Emergencies</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Condition</th>
+      <th style="text-align: left">Pattern \&amp; Red Flags</th>
+      <th style="text-align: left">Rapid Field Priorities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>DKA/HHS</strong></td>
+      <td style="text-align: left">Vomiting, dehydration, AMS, Kussmaul respiration, fruity breath, hypotension, tachycardia, often sepsis trigger[^4][^9]</td>
+      <td style="text-align: left">ABCs, IV fluids, monitor K+, rapid insulin only in-hospital, identify infection trigger</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Thyroid Storm</strong></td>
+      <td style="text-align: left">Tachycardia, fever, AMS, agitated, sweating, wide pulse pressure[^6]</td>
+      <td style="text-align: left">ABCs, cooling, beta-blocker (ED), supportive, glucose check</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Myxedema Coma</strong></td>
+      <td style="text-align: left">Hypothermia, bradycardia, AMS/coma, hypotension, dry skin, slow reflexes[^5]</td>
+      <td style="text-align: left">ABCs, high-flow O₂, passive rewarming, avoid sedatives/narcotics, rapid transport</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Adrenal Crisis</strong></td>
+      <td style="text-align: left">Hypotension/shock, vomiting, abdominal/flank pain, severe weakness, hyperkalemia, hypoglycemia, history of steroids[^7]</td>
+      <td style="text-align: left">Immediate fluids (20 mL/kg NS), glucose, early steroids if Rx kit present</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Hypoglycemia</strong></td>
+      <td style="text-align: left">AMS, diaphoresis, seizure, focal neuro signs, “not acting right”</td>
+      <td style="text-align: left">Check glucose! Dextrose/Glucagon as needed, re-check every 10–15 min</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Metabolic Acidosis/Electrolyte</strong></td>
+      <td style="text-align: left">Rapid breathing, arrhythmia, EKG changes, syncope, seizure</td>
+      <td style="text-align: left">Identify/treat underlying cause, correct key derangements in hospital</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Inborn Errors (esp. peds)</strong></td>
+      <td style="text-align: left">Failure to thrive, vomiting, lethargy, seizures, acidosis, hypoglycemia[^3]</td>
+      <td style="text-align: left">Glucose admin, ABCs, rapid transport, avoid protein feeds in crisis</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Rapid Recognition:</strong></p>
+  <ul>
+    <li>Always check glucose in any “altered” or “seizure” pt, regardless of history.</li>
+    <li>DKA/HHS often present as “sepsis” in the field—look for dehydration, rapid or slow breathing, and known diabetes.</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h2 id="common-mistakes-3">Common Mistakes</h2>
+
+<ul>
+  <li>Missing hypokalemia/hyperkalemia risks during DKA resuscitation—watch the EKG.</li>
+  <li>Forgetting hypoglycemia as a stroke/AMS/seizure mimic.</li>
+  <li>Waiting for the hospital before volume replacement in adrenal crisis, DKA, or severe dehydration.</li>
+  <li>Overusing sedatives or warming in myxedema coma—risking respiratory/cardiac collapse.</li>
+  <li>Missing inborn metabolic errors in sick infants: consider if unresponsive to usual treatment.</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls-3">Clinical Pearls</h2>
+
+<ul>
+  <li><strong>Fluids before insulin in DKA/HHS:</strong> Initial large-volume bolus improves perfusion and reduces acidosis.[^4]</li>
+  <li><strong>Passive warming only</strong> for myxedema coma—active warming can worsen shock.[^5]</li>
+  <li><strong>Adult with unexplained shock, GI Sx, or history of steroids = adrenal crisis until proven otherwise; give fluids and seek steroids rapidly.</strong>[^7]</li>
+  <li><strong>Always recheck glucose after correction.</strong> Hypoglycemia recurs frequently if underlying problem persists.</li>
+  <li><strong>Child with weak pulse, lethargy, and vomiting may have metabolic/inborn error—glucose and supportive care first, then transport.</strong>[^3]</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-3">Decision Trees</h2>
+
+<p><strong>Protocol-Agnostic, Field-First Algorithm:</strong></p>
+
+<ol>
+  <li><strong>Altered mental status or seizure?</strong>
+    <ul>
+      <li>Check glucose
+        <ul>
+          <li>Low (&lt;60 mg/dL): Dextrose/Glucagon now; recheck in 10 min</li>
+          <li>Normal/high: Continue down algorithm</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Shock (BP low, tachycardia, poor perfusion)?</strong>
+    <ul>
+      <li>Rapid IV fluids (20 mL/kg NS up to 2 L adult)</li>
+      <li>Monitor for signs of adrenal crisis (hx steroids, severe GI Sx, known Addison’s): If “crisis kit” (hydrocortisone), use.</li>
+      <li>EKG for arrhythmia, K+ check if possible</li>
+    </ul>
+  </li>
+  <li><strong>Hyperglycemia with dehydration/AMS?</strong>
+    <ul>
+      <li>Start IV fluids rapidly (no insulin in field)</li>
+      <li>Watch for K+ derangement (avoid giving insulin without labs)</li>
+    </ul>
+  </li>
+  <li><strong>Suspect thyroid storm or myxedema coma?</strong>
+    <ul>
+      <li>Storm: Cooling, supportive airway, monitor for arrhythmia (hospital beta-blockade)</li>
+      <li>Myxedema: Passive rewarming, O₂, rapid transport, no narcotics</li>
+    </ul>
+  </li>
+  <li><strong>Pediatric/infant metabolic error suspected?</strong>
+    <ul>
+      <li>Check for hypoglycemia/metabolic acidosis/seizure</li>
+      <li>Glucose bolus, fluids, avoid protein feeds if inborn error</li>
+      <li>Early EMS consult/transport to specialty center</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-3">Practice Cases</h2>
+
+<h3 id="case-1-dka-crash">Case 1: DKA Crash</h3>
+
+<ul>
+  <li>19F, Type 1 DM, vomiting, Kussmaul breath, AMS, BP 80/52, HR 134.</li>
+  <li>Timeline: 0min—call, 6min—labs glucose 620, 10min—fluid resusc started.
+    <blockquote>
+      <p>What are your immediate dangers? Interventions needed before ED arrival?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-adrenal-crisis">Case 2: Adrenal Crisis</h3>
+
+<ul>
+  <li>45M, hx Addison’s, found confused, vomiting, BP 64/p, HR 148, glucose 40.</li>
+  <li>Timeline: 0min—scene, 5min—glucose correction, 8min—IV 800 mL NS, still hypotensive.
+    <blockquote>
+      <p>What do you ask about? Next best steps if no hydrocortisone on hand?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-thyroid-storm">Case 3: Thyroid Storm</h3>
+
+<ul>
+  <li>37F, palpitations, fever, AMS, atrial fib, SBP 140s, history “thyroid.”</li>
+  <li>Timeline: 0min—found agitated, 8min—temp 40°C, HR 180.
+    <blockquote>
+      <p>Stabilization priorities? What Rx to avoid in field?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-myxedema-coma">Case 4: Myxedema Coma</h3>
+
+<ul>
+  <li>63F, cold, puffy face, slow, bradycardic, BP 74/48, RR 10, SpO₂ 91%.</li>
+  <li>Timeline: 0min—family call, 9min—now obtunded, GCS 8.
+    <blockquote>
+      <p>Airway/vent priorities? Warming risks?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-pediatric-hypoglycemia">Case 5: Pediatric Hypoglycemia</h3>
+
+<ul>
+  <li>3M, lethargy, “not waking up,” vomiting, history “weird labs.”</li>
+  <li>Timeline: 0min—scene, 3min—glucose 29, 5min—IV D10 given.
+    <blockquote>
+      <p>What else to monitor? What metabolic errors to suspect?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-metabolic-acidosisunknown">Case 6: Metabolic Acidosis/Unknown</h3>
+
+<ul>
+  <li>50M, ESRD, found unresponsive, RR 28, K+ 7.5, wide QRS.</li>
+  <li>Timeline: 0min—family report, 10min—BVM/airway support, 12min—ECG widened.
+    <blockquote>
+      <p>Next priorities? Treatments possible in the field?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-placeholder-2">Reflection Placeholder</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which endocrine/metabolic pattern is most challenging for you in the field—what will you drill next?</li>
+  <li>Share a case (real or simulation) where “routine” AMS or shock turned out to be an endocrine/metabolic crisis—what made you catch it (or miss it)?</li>
+  <li>If you had only 2 minutes to teach a new medic core field actions for DKA, adrenal crisis, and hypoglycemia, how would you structure it?</li>
+  <li>What’s your stepwise protocol if a patient’s vital signs aren’t improving after correcting their “number” (glucose, fluid, K+, etc.)?</li>
+</ul>
+
+<p>infectious: |
+  ## Infectious &amp; Sepsis Emergencies
+  # Infectious \&amp; Sepsis Emergencies</p>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Infectious Diseases · Sepsis · EMS/Critical Care
+<strong>Duration:</strong> Deep Dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario-4">Arrival Scenario</h2>
+
+<p>Dispatch: “68F, febrile, altered, low BP, ‘looks septic.’” On scene: flushed, tachycardic, RR 28, SpO₂ 93%, temp 39.1°C, MAP 62. Family reports “flu-like” symptoms for 3 days and confusion overnight.
+<strong>Pattern drill:</strong> Are you facing simple infection, full-blown sepsis, or something exotic/contagious? Which actions, patterns, and timeline actually save lives in the next 20 minutes?</p>
+
+<hr />
+
+<h2 id="warm-up-questions-4">Warm-Up Questions</h2>
+
+<ol>
+  <li>What vital sign pattern distinguishes “routine infection” from sepsis?</li>
+  <li>Name three “red flag” findings that trigger sepsis treatment—even without a positive culture.</li>
+  <li>Which populations are at highest risk of silent sepsis or bad outcomes?</li>
+  <li>How does proteinuria or coagulopathy change your approach in suspected infection?</li>
+  <li>Why is time “to antibiotics and fluids” truly critical in sepsis, more than nearly any other condition?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-4">Optional Tally Embed</h2>
+
+<p><em>Insert Tally knowledge check placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-4">Explanation / Breakdown</h2>
+
+<h3 id="recognizing-sepsis--infectious-emergencies">Recognizing Sepsis \&amp; Infectious Emergencies</h3>
+
+<h4 id="what-is-sepsis">What is Sepsis?</h4>
+
+<p>A <strong>life-threatening organ dysfunction</strong> from a dysregulated host response to infection. It’s not about “just” fever—it’s <em>infection</em> plus unstable vital signs, perfusion failure, or confusion.[^7]</p>
+
+<h4 id="high-risk-patterns">High-Risk Patterns</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Pattern (qSOFA)</th>
+      <th style="text-align: left">What You See</th>
+      <th style="text-align: left">Action Signal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Altered mental status</td>
+      <td style="text-align: left">New confusion, inattentiveness</td>
+      <td style="text-align: left">Always act</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">RR ≥22</td>
+      <td style="text-align: left">Fast or distressed breathing</td>
+      <td style="text-align: left">Red flag</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SBP ≤100 mmHg</td>
+      <td style="text-align: left">Low BP, MAP &lt; 65</td>
+      <td style="text-align: left">“Shock protocol”</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Other red flags:</strong> Oliguria, mottled/cool skin, lactate &gt;2, thrombocytopenia, DIC, hypoxemia, hypothermia in elderly, or rapid decompensation.</li>
+</ul>
+
+<h4 id="most-lethal-infectious-emergencies">Most Lethal Infectious Emergencies</h4>
+
+<ul>
+  <li><strong>Septic shock:</strong> Infection + hypotension requiring vasopressors, elevated lactate.</li>
+  <li><strong>Meningitis/Encephalitis:</strong> Fever, headache, nuchal rigidity, seizure, purpura, abrupt LOC change.</li>
+  <li><strong>Necrotizing fasciitis/Toxic shock:</strong> Rapid swelling/pain, tissue necrosis, sudden collapse.</li>
+  <li><strong>Emerging infections</strong> (e.g. COVID-19, SARS, Ebola): Rapid cluster cases, unusual presentations, recent travel, immunocompromised host.[^6]</li>
+</ul>
+
+<h4 id="field-priorities">Field Priorities</h4>
+
+<ul>
+  <li>Early broad-spectrum <strong>antibiotics</strong></li>
+  <li>Immediate, aggressive <strong>IV fluids</strong> (30 mL/kg crystalloid)</li>
+  <li>Rapid ID of source (pneumonia, UTI, abdominal, line-related, skin, device)</li>
+  <li>Check for <strong>organ dysfunction:</strong> confusion, hypoxemia, low U/O, high lactate</li>
+  <li>Assess <strong>immunocompromised risk:</strong> elderly, cancer, transplant, HIV, steroids, pregnancy</li>
+</ul>
+
+<h4 id="infection-surveillanceemerging-threats-field-awareness">Infection Surveillance/Emerging Threats (Field Awareness)</h4>
+
+<ul>
+  <li>Clusters with similar presentation, rapid decompensation, rare pathogens, or travel history—early reporting for public health triggers.[^1][^2][^6]</li>
+</ul>
+
+<hr />
+
+<h2 id="common-mistakes-4">Common Mistakes</h2>
+
+<ul>
+  <li>Underestimating silent sepsis in elderly or immunosuppressed (may present afebrile or only with confusion).</li>
+  <li>Waiting for hypotension before acting—shock is late; treat trends.</li>
+  <li>Missing “sepsis mimics” (DKA, PE, withdrawal, intracranial hemorrhage).</li>
+  <li>Anchoring on “UTI” or “pneumonia” and missing other sources (abdominal, device, skin).</li>
+  <li>Delaying antibiotics/fluids for imaging, IV lines, or “waiting for labs.”</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls-4">Clinical Pearls</h2>
+
+<ul>
+  <li><strong>A patient who looks sicker than their numbers—act, don’t doubt.</strong></li>
+  <li>Elderly and neutropenic patients can be septic with normal temperature (or even hypothermic).</li>
+  <li>Meningitis suspicion = rapid field isolation, supportive care, and alert receiving facility.</li>
+  <li>Time to fluids + antibiotics = biggest difference in survival—initiate ASAP, document times.</li>
+  <li>Track those on steroids or chemo—signs can be blunted, but risk is doubled.</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-4">Decision Trees</h2>
+
+<p><strong>Protocol-Agnostic Infectious/Sepsis Algorithm</strong></p>
+
+<ol>
+  <li><strong>Suspect infection + unstable vital signs or AMS?</strong>
+    <ul>
+      <li>Yes → Activate “sepsis pathway”: fluids, O₂, rapid antibiotics/notify</li>
+      <li>No → Monitor, reassess pattern every 10–15 minutes</li>
+    </ul>
+  </li>
+  <li><strong>Shock or organ dysfunction (confusion, low U/O, O₂ sat &lt;90, lactate &gt;2)?</strong>
+    <ul>
+      <li>Yes → Aggressive fluids (30 mL/kg), second IV, titrate O₂, prep vasopressors</li>
+      <li>No → Ongoing monitoring, communicate findings, initiate basic labs/cultures</li>
+    </ul>
+  </li>
+  <li><strong>Source known?</strong>
+    <ul>
+      <li>Yes → Treat and communicate (line, urine, chest, wound, device, etc.)</li>
+      <li>No → Treat empirically, escalate search (imaging, consult, facility notification)</li>
+    </ul>
+  </li>
+  <li><strong>Immunocompromised or public health risk?</strong>
+    <ul>
+      <li>Yes → Report cluster/suspicious findings, use PPE/isolation, notify health authorities per local protocol</li>
+      <li>No → Continue general practice</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-4">Practice Cases</h2>
+
+<h3 id="case-1-classic-septic-shock">Case 1: Classic Septic Shock</h3>
+
+<ul>
+  <li>72M, hx DM, altered, tachy, BP 84/50, temp 38.9°C, U/O low.</li>
+  <li>Timeline: 0min—on scene, 6min—VBG: lactate 5.1, 12min—1L fluid, AMS persists.
+    <blockquote>
+      <p>What next? What makes this different than “uncomplicated infection”?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-meningitis-red-flag">Case 2: Meningitis Red Flag</h3>
+
+<ul>
+  <li>19F, fever, rapid AMS, nuchal rigidity, petechiae.</li>
+  <li>Timeline: 0min—scene, 4min—GCS 10, 10min—vomiting.
+    <blockquote>
+      <p>Why is this time-critical? Infection control priorities?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-elderly-urosepsis">Case 3: Elderly “Urosepsis”</h3>
+
+<ul>
+  <li>81F, baseline dementia, “just more confused,” temp 36.0°C, U/A positive nitrates, BP 108/62.</li>
+  <li>Timeline: 0min—discovered at home, 20min—mental status worse, O₂ sat stable.
+    <blockquote>
+      <p>Why is early action still necessary? Which values matter?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-rapidly-spreading-rash">Case 4: Rapidly Spreading Rash</h3>
+
+<ul>
+  <li>36M, diabetic, rapidly spreading cellulitis, shock, “bullae” appearing.</li>
+  <li>Timeline: 0min—arrival, 8min—BP falling, HR 136, RR 30, O₂ 91%.
+    <blockquote>
+      <p>What’s highest concern? Field protocol?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-cluster-pneumonia">Case 5: Cluster Pneumonia</h3>
+
+<ul>
+  <li>Multiple patients in group home: fever, cough, hypoxia.</li>
+  <li>Timeline: 0min—first call, 30min—five calls from same location.
+    <blockquote>
+      <p>How does pattern shift your approach? What do you report?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-neutropenic-sepsis">Case 6: Neutropenic Sepsis</h3>
+
+<ul>
+  <li>58F, chemo, low-grade fever, chills, “not feeling well.”</li>
+  <li>Timeline: 0min—scene, 10min—BP 92/58, HR 110, RR 26, O₂ 91%.
+    <blockquote>
+      <p>Why is this automatically time-critical? Immediate steps?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-placeholder-3">Reflection Placeholder</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which sepsis/immunocompromised pattern is hardest for you to spot in the field—how will you practice it?</li>
+  <li>Tell a call (real or simulated) where time to intervention made the biggest survival difference—what would you do differently now?</li>
+  <li>How do you balance early empirical treatment with the risk of missing a rare or atypical infectious problem?</li>
+  <li>What system do you use to ensure timely handoff, reporting, and documentation for infectious exposures?</li>
+</ul>
+
+<p>renal: |
+  ## Renal Emergencies
+  # Renal Emergencies</p>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Renal · AKI · ESRD · EMS/Critical Care
+<strong>Duration:</strong> Deep Dive</p>
+
+<hr />
+
+<h2 id="arrival-scenario-5">Arrival Scenario</h2>
+
+<p>Your patient: 66M, known ESRD, missed dialysis, now presenting with confusion, vomiting, pitting edema, BP 188/112, HR 108, RR 26, SpO₂ 95%. Foley drained only 20ml in the last hours. Family says he “just seemed more tired, then started acting weird.”
+<strong>As the medic:</strong> Are you treating acute kidney injury (AKI), acute on chronic, fluid overload, hypertensive emergency, uremic encephalopathy, or a life-threatening electrolyte crisis? What patterns demand your immediate intervention, and what buys time until dialysis arrives?</p>
+
+<hr />
+
+<h2 id="warm-up-questions-5">Warm-Up Questions</h2>
+
+<ol>
+  <li>What are the top two immediate life threats to rule out with acute renal failure?</li>
+  <li>Which physical exam findings flag urgent dialysis need—even before labs are back?</li>
+  <li>How do you differentiate “prerenal,” “intrarenal,” and “postrenal” causes in the field?</li>
+  <li>What is the most dangerous cardiac trigger from missed dialysis?</li>
+  <li>Which patients are most likely to have oliguric or anuric AKI?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-5">Optional Tally Embed</h2>
+
+<p><em>Insert Tally quiz placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-5">Explanation / Breakdown</h2>
+
+<h3 id="rapid-field-patterns">Rapid Field Patterns</h3>
+
+<p><strong>Acute Kidney Injury (AKI):</strong></p>
+
+<ul>
+  <li>Sudden ↓ urine output (oliguria/anuria: &lt;0.3 mL/kg/hr), ↑ creatinine/BUN</li>
+  <li>Risk factors: volume loss, sepsis, nephrotoxin, hypertension, diabetes, trauma</li>
+</ul>
+
+<p><strong>Acute on Chronic Renal Failure:</strong></p>
+
+<ul>
+  <li>ESRD patient (known dialysis) with infection, missed treatment, or new “sick day” triggers</li>
+  <li>Uremic symptoms: confusion, pericarditis (friction rub), easy bruising/bleeding, asterixis, muscle twitch, breath “smells like urine”</li>
+</ul>
+
+<p><strong>ESRD Emergencies/Complications:</strong></p>
+
+<ul>
+  <li>Fluid overload (pulmonary edema, CHF, hypertension crisis)</li>
+  <li>Electrolyte crisis (see: hyperkalemia, next module)</li>
+  <li>Uremic encephalopathy (AMS, seizure, asterixis)</li>
+  <li>Severe acidosis (Kussmaul breathing, shock)</li>
+  <li>Bleeding (platelet dysfunction)</li>
+  <li>Pericarditis/pericardial tamponade</li>
+  <li>Infection/sepsis (from dialysis access, UTI, pneumonia, skin)</li>
+</ul>
+
+<p><strong>Postrenal/Obstructive:</strong></p>
+
+<ul>
+  <li>Lower abdominal pain/distension, complete lack of urine, “bladder scan full” in hospital</li>
+</ul>
+
+<h3 id="field-approach-rule-out-life-threats-first134567">Field Approach: Rule Out Life-Threats First[^1][^3][^4][^5][^6][^7]</h3>
+
+<ol>
+  <li><strong>Arrhythmia/Cardiac Arrest?</strong>
+    <ul>
+      <li>Hyperkalemia risk: Peaked T waves, wide QRS, sine wave EKG, brady/asystole (see electrolyte module)</li>
+    </ul>
+  </li>
+  <li><strong>Pulmonary Edema/Resp Failure?</strong>
+    <ul>
+      <li>Severe dyspnea/rales, hypoxemia, chest pressure, pink frothy sputum—consider immediate CPAP/BiPAP and rapid dialysis consult</li>
+    </ul>
+  </li>
+  <li><strong>Hypertensive Emergency?</strong>
+    <ul>
+      <li>Severe BP elevation (diastolic &gt;130 or crisis readings) with symptoms (chest pain, CNS, visual changes, flash pulm edema)</li>
+    </ul>
+  </li>
+  <li><strong>Uremic Encephalopathy:</strong>
+    <ul>
+      <li>AMS, tremor, confusion, seizures—dialysis indicated if severe/not explained by other causes</li>
+    </ul>
+  </li>
+  <li><strong>Fluid Overload Not Responsive to Diuretics:</strong>
+    <ul>
+      <li>Diuretics not reliably effective in ESRD—do not delay definitive dialysis if refractory symptoms</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="urgent-field-interventions">Urgent Field Interventions</h3>
+
+<ul>
+  <li>Airway/ventilatory support for overload/encephalopathy</li>
+  <li>Gentle fluid bolus if hypovolemia is suspected (but usually fluid restriction)</li>
+  <li>Ringers Lactate preferred for initial resuscitation in AKI[^1]</li>
+  <li>Initiate urgent dialysis consult if: Severe hyperkalemia, volume overload with respiratory compromise, refractory acidosis, severe uremic symptoms, or pericarditis[^6][^7]</li>
+  <li>Symptomatic bleeding at dialysis/shunt site: Direct pressure, vascular/nephrology consult, avoid AVF/AVG sticks</li>
+</ul>
+
+<hr />
+<p><strong>Common Medical Triggers for Renal Emergencies</strong></p>
+
+<ul>
+  <li>Sepsis (25% all renal failure in ED)[^2]</li>
+  <li>DKA/hyperglycemia (20% in-ED)[^2]</li>
+  <li>Hypertensive emergencies (≈10% of cases)[^2]</li>
+  <li>Toxic/drug-induced nephropathy—think contrast, NSAIDs, ACE-I/ARB combos</li>
+</ul>
+
+<h4 id="special-rhabdomyolysis">Special: Rhabdomyolysis</h4>
+
+<ul>
+  <li>Trauma, immobilization, statin, exertion</li>
+  <li>Tea/cola urine, muscle pain, comp breakdown.</li>
+  <li>Fluids goal: As high as 200 mL/hr if rhabdo confirmed.
+***</li>
+</ul>
+
+<h2 id="common-mistakes-5">Common Mistakes</h2>
+
+<ul>
+  <li>Missing hyperkalemia or acidosis as urgent life threats (see Electrolyte module).</li>
+  <li>Treating ESRD/AKI solely with diuretics—often ineffective or unsafe.</li>
+  <li>Over-resuscitating with fluids without clear hypovolemia (risk: pulmonary edema).</li>
+  <li>Ignoring access bleeding (AVF/AVG) until the patient is shocked.</li>
+  <li>Relying on BP or GCS alone—look for “uremic” features and trends.
+***</li>
+</ul>
+
+<h2 id="clinical-pearls-5">Clinical Pearls</h2>
+
+<ul>
+  <li>Oliguria and hypertension are major field predictors of AKI—do not wait for labs if the patient is sick with those signs.[^2]</li>
+  <li>Pulmonary edema in ESRD = rapid, high-risk, call for urgent dialysis.</li>
+  <li>Uremic pericarditis: Friction rub, chest pain—risk tamponade, low threshold to consult cardiac/nephrology.</li>
+  <li>Uremic encephalopathy: Twitch, tremor, asterixis, “metal mouth” = suspect and report.</li>
+  <li>Missed dialysis + arrhythmia + AMS = treat as hyperkalemia until ruled out.</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-5">Decision Trees</h2>
+
+<p><strong>Renal Emergency Algorithm—Field/Prehospital Focused</strong>:</p>
+
+<ol>
+  <li><strong>Is this an ESRD/dialysis patient or acute kidney/injury pattern?</strong>
+    <ul>
+      <li>Yes → Check for pulmonary edema, arrhythmia, AMS, severe hypertension or bleeding</li>
+      <li>No → Work up for alternative causes of shock, AMS, oliguria</li>
+    </ul>
+  </li>
+  <li><strong>Airway or resp failure?</strong>
+    <ul>
+      <li>Yes → Secure airway as needed, non-invasive ventilation preferred if practical, call for urgent dialysis</li>
+    </ul>
+  </li>
+  <li><strong>Arrhythmia (hyperkalemia pattern, wide QRS, Sine wave)?</strong>
+    <ul>
+      <li>Yes → Immediate hyperkalemia management (see electrolyte module), prep for dialysis/defib</li>
+    </ul>
+  </li>
+  <li><strong>AMS or seizure unexplained?</strong>
+    <ul>
+      <li>Yes → ABCs, dextrose check, suspect uremic encephalopathy, rapid transport</li>
+    </ul>
+  </li>
+  <li><strong>Major bleeding (GI or at access)?</strong>
+    <ul>
+      <li>Yes → Pressure, shock protocol, vascular/nephro consult, consider reversal agents</li>
+    </ul>
+  </li>
+  <li><strong>Volume status:</strong>
+    <ul>
+      <li>Overloaded? → O₂, NIV, restrict fluids, urgent dialysis</li>
+      <li>Dry/hypovolemic? → Gentle bolus (e.g., 1L RL), reassess, aim U/O &gt;50ml/hr or &gt;200ml/hr if rhabdo[^1]</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-5">Practice Cases</h2>
+
+<h3 id="case-1-missed-dialysis-pulmonary-edema">Case 1: Missed Dialysis, Pulmonary Edema</h3>
+
+<ul>
+  <li>54F, ESRD missed two sessions, dyspnea, rales, SpO₂ 84%, on O₂.</li>
+  <li>Timeline: 0min—arrival, 4min—CPAP, 12min—BP 186/110, ongoing distress.
+    <blockquote>
+      <p>What interventions to stabilize? Dialysis timing?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-sudden-cardiac-collapse">Case 2: Sudden Cardiac Collapse</h3>
+
+<ul>
+  <li>67M, ESRD, missed dialysis, wide QRS, BP 80/60.</li>
+  <li>Timeline: 0min—scene, 2min—found pulseless.
+    <blockquote>
+      <p>Hyperkalemia pattern? What to do while awaiting dialysis?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-oliguric-aki-in-sepsis">Case 3: Oliguric AKI in Sepsis</h3>
+
+<ul>
+  <li>79F, fever, hypotension, U/O &lt;10 ml/hr, creatinine rises from 0.9 → 3.8 in 24hr.</li>
+  <li>Timeline: 0min—ICU admission, 18min—anuria.
+    <blockquote>
+      <p>How do you manage fluids? What do you track?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-gross-access-bleed">Case 4: Gross Access Bleed</h3>
+
+<ul>
+  <li>62M, AVF hemorrhaging post-dialysis, hypotensive.</li>
+  <li>Timeline: 0min—911 call, 3min—manual pressure, 7min—BP falling.
+    <blockquote>
+      <p>When to escalate/suture/pressure? What mistakes to avoid?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-rhabdomyolysis-aki-mix">Case 5: Rhabdomyolysis-AKI Mix</h3>
+
+<ul>
+  <li>32M, found after seizure, dark urine, tender thighs, lower U/O.</li>
+  <li>Timeline: 0min—EMS finds obtunded, 25min—muscle breakdown signs.
+    <blockquote>
+      <p>What fluids/protocol? What renal dangers to anticipate?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-uremic-encephalopathy">Case 6: Uremic Encephalopathy</h3>
+
+<ul>
+  <li>80F, confusion, twitch, “weird asterixis,” increased BUN/Cr on chart.</li>
+  <li>Timeline: 0min—NH call, 8min—GCS 9, O₂ sat 95%, BP 140/62.
+    <blockquote>
+      <p>What clinical clue made the call? Next steps on scene/transport?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-placeholder-4">Reflection Placeholder</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which presenting pattern makes you most likely to “miss” severe renal failure? How can you catch it earlier?</li>
+  <li>Recall a call where missed dialysis or oliguric AKI led to rapid changes. What warning signs did you notice only in hindsight?</li>
+  <li>How would you teach a junior medic to differentiate hypervolemia, hypovolemia, and euvolemia in a sick renal patient?</li>
+  <li>What’s your protocol for access site management—bleeding, infection, or sudden collapse—during transport?</li>
+</ul>
+
+<p>electrolytes: |
+  ## Electrolyte Emergencies
+  # Electrolyte Emergencies</p>
+
+<p>Here is the complete <strong>Electrolyte Emergencies</strong> module, designed for Medic 138 and seamlessly building off Renal Emergencies. You’ll find field-driven pattern drills, common pitfalls, critical actions (especially for hyperkalemia), and real-world scenario cases. Clinical priorities and actionable decision-trees are mapped directly to what the streetwise medic and flight crew need—no overload, all utility.</p>
+
+<hr />
+
+<h1 id="electrolyte-emergencies">Electrolyte Emergencies</h1>
+
+<p><strong>Level:</strong> Advanced
+<strong>Topic:</strong> Electrolytes · Cardiac Risk · EMS/Critical Care
+<strong>Duration:</strong> Deep Dive
+<em>Builds on: Renal Emergencies module</em></p>
+
+<hr />
+
+<h2 id="arrival-scenario-6">Arrival Scenario</h2>
+
+<p>You’re intercepting an ESRD patient “not acting right.” On monitor: wide QRS, HR 48, BP 92/59. Patient had muscle cramps, some weakness, and a missed dialysis. You see the dreaded <em>peaked T waves</em>.
+This is not “routine dialysis delay.” This is <strong>hyperkalemia</strong>—and in 10 minutes, your window to save them may close.
+Which immediate steps will buy time—and what are the true “danger patterns” for every life-threatening electrolyte crisis in EMS?</p>
+
+<hr />
+
+<h2 id="warm-up-questions-6">Warm-Up Questions</h2>
+
+<ol>
+  <li>Which three EKG changes signal severe hyperkalemia?</li>
+  <li>Why doesn’t every high potassium need calcium right away?</li>
+  <li>How does acidosis worsen certain electrolyte emergencies?</li>
+  <li>What is your treatment priority: stabilizing the heart or shifting electrolytes?</li>
+  <li>Which meds or toxins can mimic hyper/hypokalemia on the EKG?</li>
+</ol>
+
+<hr />
+
+<h2 id="optional-tally-embed-6">Optional Tally Embed</h2>
+
+<p><em>Insert Tally quiz placeholder here.</em></p>
+
+<hr />
+
+<h2 id="explanation--breakdown-6">Explanation / Breakdown</h2>
+
+<h3 id="key-patterns-life-threatening-electrolyte-emergencies"><strong>Key Patterns: Life-Threatening Electrolyte Emergencies</strong></h3>
+
+<h4 id="hyperkalemia-k--657-mmoll-or-any-k-with-ekg-changes"><strong>Hyperkalemia (K⁺ &gt; 6.5–7 mmol/L, or any K⁺ with EKG changes)</strong></h4>
+
+<ul>
+  <li>Etiology: Renal failure, missed dialysis, crush injury, DKA, ACE-I/ARB, potassium supplements</li>
+  <li>Field Danger Patterns:
+    <ul>
+      <li>Muscle weakness → flaccid paralysis</li>
+      <li>EKG progression: Peaked T, PR prolongation, loss of P, QRS widening, sine wave, VF/VT/asystole</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="hypokalemia"><strong>Hypokalemia</strong></h4>
+
+<ul>
+  <li>Etiology: GI loss, diuretics, DKA correction, poor intake</li>
+  <li>Field Dangers: Arrhythmias (U waves, torsades), muscle cramps, ileus</li>
+</ul>
+
+<h4 id="hypercalcemia"><strong>Hypercalcemia</strong></h4>
+
+<ul>
+  <li>Etiology: Cancer, parathyroid, chronic renal, vitamin D intoxication</li>
+  <li>Risks: Shortened QT, AMS, bradycardia, polyuria</li>
+</ul>
+
+<h4 id="hypocalcemia"><strong>Hypocalcemia</strong></h4>
+
+<ul>
+  <li>Etiology: Renal failure, massive transfusion, hypoparathyroid</li>
+  <li>Risks: Tetany, seizure, Chvostek/Trousseau signs, QT prolongation, torsades, stridor</li>
+</ul>
+
+<h4 id="hypermagnesemia"><strong>Hypermagnesemia</strong></h4>
+
+<ul>
+  <li>Etiology: Renal failure, eclampsia treatment</li>
+  <li>Risks: Bradycardia, hypotension, respiratory depression, flaccid paralysis</li>
+</ul>
+
+<h4 id="hypomagnesemia"><strong>Hypomagnesemia</strong></h4>
+
+<ul>
+  <li>Etiology: Alcoholism, GI loss, DKA, poor intake</li>
+  <li>Risks: Torsades, seizures, refractory ventricular arrhythmias</li>
+</ul>
+
+<hr />
+
+<h3 id="field-first-priorities-and-treatments-especially-hyperkalemia"><strong>Field-First Priorities and Treatments (Especially Hyperkalemia)</strong></h3>
+
+<p><strong>Recognize “imminent arrest” patterns:</strong></p>
+
+<ul>
+  <li>EKG: Peaked T, QRS &gt; 120 ms, sine wave, slow irreg HR</li>
+  <li>Severe muscular weakness, brady/asystole, unstable BP</li>
+</ul>
+
+<p><strong>Key Actions for Hyperkalemia:</strong></p>
+
+<ol>
+  <li><strong>Stabilize cardiac membrane:</strong>
+    <ul>
+      <li><strong>IV calcium chloride</strong> (preferred for arrest; gluconate if not accessible)
+        <ul>
+          <li>Dose: 1g slow IV/IO push; repeat once if persistent EKG changes</li>
+          <li>Caution: Use large bore IV, avoid extravasation, monitor for improvement.[^1][^7]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Shift potassium intracellularly:</strong>
+    <ul>
+      <li><strong>Albuterol neb</strong> (10–20 mg continuous),</li>
+      <li><strong>Sodium bicarb</strong> (1 mEq/kg IV/IO for acidosis/DKA),</li>
+      <li><strong>Insulin/D50</strong> (if protocol/medical control allows; field use limited unless ALS/critical care)</li>
+    </ul>
+  </li>
+  <li><strong>Remove potassium:</strong>
+    <ul>
+      <li>Not truly field-possible except through dialysis or rare use of resins</li>
+      <li>Initiate urgent transport for definitive care[^3][^5][^6]</li>
+    </ul>
+  </li>
+  <li><strong>Monitor/Repeat:</strong>
+    <ul>
+      <li>Repeat EKG and re-dose calcium if EKG or status does not improve in 5–10 min.[^2][^3]</li>
+      <li>Continuous cardiac/vitals monitoring.[^2]</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Other Electrolytes:</strong></p>
+
+<ul>
+  <li><strong>Hypokalemia:</strong> Replace potassium IV/PO only if monitored, unless unstable arrhythmia (hospital-level action)</li>
+  <li><strong>Hypocalcemia:</strong> IV calcium for tetany, seizure, stridor, or severe arrhythmia</li>
+  <li><strong>Hypermagnesemia:</strong> Calcium IV is antidote for severe toxicity; support airway as priority</li>
+  <li><strong>Hypomagnesemia:</strong> For torsades/seizure, IV mag sulfate (2g over 2–3 min)</li>
+</ul>
+
+<hr />
+
+<h2 id="common-mistakes-6">Common Mistakes</h2>
+
+<ul>
+  <li>Treating “suspected hyperkalemia” without EKG/monitor; always confirm if possible.</li>
+  <li>Missing drugs/toxins as reversible causes (ACE/ARB, digoxin, diuretics, lithium).</li>
+  <li>Over-relying on fluids for hyperkalemia in ESRD (often does not help).</li>
+  <li>Failing to recheck EKG after calcium or not repeating dose for persistent changes.</li>
+  <li>Missing hypomagnesemia as “cause of cause”—especially in refractory arrhythmias.</li>
+</ul>
+
+<hr />
+
+<h2 id="clinical-pearls-6">Clinical Pearls</h2>
+
+<ul>
+  <li><strong>Any ESRD patient with bradycardia or widened QRS—treat as hyperkalemia until proven otherwise.</strong></li>
+  <li><strong>Peak T waves and “disappearing P waves” beat serum potassium for real-time danger.</strong></li>
+  <li><strong>Albuterol, bicarb, and insulin shift K+ into cells but do NOT remove it; always plan transport for dialysis.</strong></li>
+  <li><strong>Hypocalcemia after transfusion = citrate binding calcium—treat rapidly if symptomatic (seizure/laryngeal spasm/QT).</strong></li>
+  <li>Severe hypomagnesemia can cause <strong>torsades/V-fib</strong> that won’t convert without magnesium.</li>
+</ul>
+
+<hr />
+
+<h2 id="decision-trees-6">Decision Trees</h2>
+
+<p><strong>Electrolyte Emergency Field Algorithm</strong></p>
+
+<ol>
+  <li><strong>Does patient have DKD/ESRD, missed dialysis, or drug exposure?</strong>
+    <ul>
+      <li>Yes → Monitor cardiac, draw labs (if available), prep for K+ danger</li>
+    </ul>
+  </li>
+  <li><strong>Any EKG signs of instability (brady, widened QRS, sine wave, VT/VF)?</strong>
+    <ul>
+      <li>Yes →
+        <ul>
+          <li>Calcium chloride 1g IV/IO (repeat if needed)</li>
+          <li>Albuterol neb (10–20mg)</li>
+          <li>Sodium bicarb if acidotic or per protocol</li>
+          <li>Insulin/D50 if available/ordered</li>
+          <li>Prep for defib/pacing/CPR</li>
+        </ul>
+      </li>
+      <li>No → Monitor closely, prep for deterioration, early hospital warning</li>
+    </ul>
+  </li>
+  <li><strong>Hypokalemia, hypocalcemia, or hypomagnesemia on labs/monitor?</strong>
+    <ul>
+      <li>Hypokalemia: Monitor for arrhythmia, replace if protocol</li>
+      <li>Hypocalcemia: Treat for tetany, seizures, laryngospasm, prolonged QT</li>
+      <li>Hypomagnesemia: Give IV Mg for torsades, seizure, severe arrhythmia</li>
+    </ul>
+  </li>
+  <li><strong>Still unstable?</strong>
+    <ul>
+      <li>Repeat above interventions, escalate airway/cardiac support, rapid transport</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-cases-6">Practice Cases</h2>
+
+<h3 id="case-1-hyperkalemic-arrest">Case 1: Hyperkalemic Arrest</h3>
+
+<ul>
+  <li>65M, ESRD, pulseless, EKG—sine wave, last dialyzed 3 days ago.</li>
+  <li>Timeline: 0min—found down, 2min—IV calcium, 4min—ROSC, wide QRS persists.
+    <blockquote>
+      <p>What’s your redose/next move?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-2-worsening-hyperkalemia">Case 2: Worsening Hyperkalemia</h3>
+
+<ul>
+  <li>71F, missed dialysis, lethargic, EKG—peaked T’s, PR 180 ms, wide QRS.</li>
+  <li>Timeline: 0min—scene, 4min—CaCl, 10min—albuterol neb, 20min—QRS narrows.
+    <blockquote>
+      <p>Why continue hospital transport and monitor continuously?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-3-hypokalemia-torsades">Case 3: Hypokalemia Torsades</h3>
+
+<ul>
+  <li>40M, chronic ETOH, vomiting, runs of VT, U waves, low K+, low Mg.</li>
+  <li>Timeline: 0min—arrest, 3min—defib, 7min—no ROSC until Mg given.
+    <blockquote>
+      <p>What did you correct? Why did antiarrhythmics fail initially?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-4-calcium-danger">Case 4: Calcium Danger</h3>
+
+<ul>
+  <li>32F, post massive transfusion, tingling, facial spasm, QT 520 ms.</li>
+  <li>Timeline: 0min—OR, 15min—numbness, 30min—spasm, EKG changes.
+    <blockquote>
+      <p>Cause? Life-saving intervention?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-5-hypermagnesemia-crisis">Case 5: Hypermagnesemia Crisis</h3>
+
+<ul>
+  <li>23F, eclampsia protocol, missing DTRs, bradycardia, flaccid.</li>
+  <li>Timeline: 0min—prehospital Mg, 12min—resp depression, BP 80/54.
+    <blockquote>
+      <p>Antidote? Supportive priorities?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="case-6-electrolyte-mix-in-rhabdo">Case 6: Electrolyte Mix in Rhabdo</h3>
+
+<ul>
+  <li>58M, found down, muscle pain, dark urine, rising K+, low Ca2+, low Mg2+.</li>
+  <li>Timeline: 0min—found, 10min—K+ rising, 20min—ECG restricts.
+    <blockquote>
+      <p>How do you prioritize the triad? What buys time?</p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="reflection-1">Reflection</h2>
+
+<p><strong>Structured Reflection Questions:</strong></p>
+
+<ul>
+  <li>Which EKG changes do you need more practice identifying for immediate calcium intervention?</li>
+  <li>How do you avoid tunnel vision on potassium—what clinical cross-checks warn you of calcium or magnesium trouble?</li>
+  <li>When do you choose to repeat calcium versus initiate transport in field instability?</li>
+  <li>Share a real or simulated case where your first intervention “didn’t work”—what did you do next and why?</li>
+</ul>
+
+
+      </div>
+    
+</main>
+
+    <div class="course-footer page-card" style="margin-top: 2rem; text-align: center;">
+      <h3>Ready for the next challenge?</h3>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn--secondary" onclick="window.scrollTo(0,0)">Review Topic</button>
+        <a href="/games/" class="btn btn--primary">Test Skills</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .course-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Make the footer align with the main content column only */
+  .course-footer {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .course-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: relative; top: 0; margin-bottom: 2rem; }
+    .course-footer { grid-column: 1 / -1; } /* Full width on mobile */
+  }
+</style>
+
+</style>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+  <script src="/assets/js/course-tabs.js"></script>
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

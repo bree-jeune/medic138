@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gas Laws for Flight and Critical Care | Medic 138</title>
+  <meta name="description" content="How Boyle, Dalton, Henry, and Charles team up to mess with your patients at altitude.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+  <link rel="stylesheet" href="/assets/css/course-tabs.css">
+  
+
+  
+  <link rel="stylesheet" href="/assets/css/gaslaws.css">
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/courses/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="course-layout">
+  
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <span class="badge badge--advanced">Advanced</span>
+      <h1 class="course-title-small">Gas Laws for Flight and Critical Care</h1>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="icon">⏱</span> 40–60 minutes
+        </div>
+        <div class="meta-item">
+          <span class="icon">📚</span> Flight / Critical Care
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="/courses/gas-laws/:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </aside>
+
+      <main class="content-container">
+  <div class="course-content">
+    
+    
+      <div class="course-tabs-wrapper">
+        <div class="course-tabs" data-default="overview" data-course-key="/courses/gas-laws/">
+
+  <div class="course-tabs__nav">
+    <button class="course-tabs__tab" data-target="overview">Overview</button>
+    <button class="course-tabs__tab" data-target="boyle">Boyle's Law</button>
+    <button class="course-tabs__tab" data-target="dalton">Dalton's Law</button>
+    <button class="course-tabs__tab" data-target="henry">Henry's Law</button>
+    <button class="course-tabs__tab" data-target="charles">Charles' Law</button>
+    <button class="course-tabs__tab" data-target="practice">Practice + Cases</button>
+  </div>
+
+  <div class="course-tabs__panels">
+
+    <section id="overview" class="course-tabs__panel">
+      <h2>Why Gas Laws Matter in Transport</h2>
+      <p>Gas laws explain why patients who were fine on the ground fall apart in the air. Any time volume, pressure, temperature, or dissolved gases change, your patients are paying the bill.</p>
+
+      <ul>
+        <li><strong>Boyle</strong>: pressure ↔ volume (barotrauma, balloon cuffs, pneumo expansion).</li>
+        <li><strong>Dalton</strong>: partial pressures (hypoxia with altitude, FiO₂ games).</li>
+        <li><strong>Henry</strong>: gases dissolving out of liquid (DCS, gas bubbles, bends).</li>
+        <li><strong>Charles</strong>: temperature ↔ volume (O₂ tanks, cold environments).</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Clinical Pearl</strong>
+        If a cavity is full of trapped gas, assume it will expand as pressure drops. Think pneumo, bowel gas, air in cuffs, and trapped air in dressings.
+      </div>
+    </section>
+
+    <section id="boyle" class="course-tabs__panel">
+      <h2>Boyle's Law: Pressure vs Volume</h2>
+      <p><strong>Formula</strong>: P₁V₁ = P₂V₂</p>
+      <p>If pressure drops, volume increases. If pressure rises, volume shrinks.</p>
+
+      <h3>Prehospital hits</h3>
+      <ul>
+        <li>Pneumothorax expansion with ascent.</li>
+        <li>ETT cuffs over-inflating as ambient pressure falls.</li>
+        <li>Mask seals changing as cabin pressure shifts.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Remember</strong>
+        Boyle is your pneumo law. Any air-filled space is a problem child when you change altitude.
+      </div>
+    </section>
+
+    <section id="dalton" class="course-tabs__panel">
+      <h2>Dalton's Law: Partial Pressures</h2>
+      <p>Total pressure is the sum of each gas’s partial pressure. When ambient pressure changes, each gas’s partial pressure shifts too.</p>
+
+      <h3>Why you care</h3>
+      <ul>
+        <li>Lower ambient pressure at altitude = lower PaO₂, even if FiO₂ stays the same.</li>
+        <li>High-risk patients: COPD, ARDS, right-heart strain, anemia.</li>
+      </ul>
+    </section>
+
+    <section id="henry" class="course-tabs__panel">
+      <h2>Henry's Law: Gases in Liquid</h2>
+      <p>The amount of gas dissolved in liquid is proportional to its partial pressure. Drop the pressure, gas comes back out.</p>
+
+      <h3>Clinical tie-ins</h3>
+      <ul>
+        <li>Decompression sickness and gas bubbles.</li>
+        <li>Long transports after dives or high-pressure exposures.</li>
+        <li>Transport decisions for patients with recent dive history.</li>
+      </ul>
+    </section>
+
+    <section id="charles" class="course-tabs__panel">
+      <h2>Charles' Law: Temperature vs Volume</h2>
+      <p>When gas temperature changes, volume shifts with it (at constant pressure).</p>
+
+      <h3>Flight applications</h3>
+      <ul>
+        <li>O₂ tank pressure changes with temp.</li>
+        <li>Cold environments affecting tank readings and gas delivery.</li>
+      </ul>
+    </section>
+
+    <section id="practice" class="course-tabs__panel">
+      <h2>Practice Scenarios</h2>
+
+      <details class="reveal-card">
+        <summary>🚁 Case 1: Worsening pneumo in flight</summary>
+        <p>Ground CXR shows small right pneumo. Patient is comfortable on 2 L NC. Twenty minutes into flight they develop pleuritic pain and increased work of breathing. Which gas law explains this change, and what should you do?</p>
+        <p class="reveal-card__answer">
+          <strong>Answer:</strong> Boyle’s Law. As cabin pressure drops, trapped intrapleural gas expands. Treat as tension pneumo risk: reassess, prepare for needle or finger thoracostomy per protocol, adjust altitude if possible.
+        </p>
+      </details>
+
+      <details class="reveal-card">
+        <summary>🫁 Case 2: Hypoxia at altitude</summary>
+        <p>Patient satting 96% on 4 L NC on the ground drops to 86% at flight level with the same FiO₂. Which gas law explains the drop in oxygenation?</p>
+        <p class="reveal-card__answer">
+          <strong>Answer:</strong> Dalton’s Law. Total barometric pressure drops, so partial pressure of oxygen falls even though FiO₂ is unchanged.
+        </p>
+      </details>
+
+      <p style="margin-top: 1.5rem;">Mark this tab complete when you can match real-world changes to the correct gas law without thinking about it.</p>
+    </section>
+
+  </div>
+</div>
+
+      </div>
+    
+</main>
+
+    <div class="course-footer page-card" style="margin-top: 2rem; text-align: center;">
+      <h3>Ready for the next challenge?</h3>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn--secondary" onclick="window.scrollTo(0,0)">Review Topic</button>
+        <a href="/games/" class="btn btn--primary">Test Skills</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .course-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Make the footer align with the main content column only */
+  .course-footer {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .course-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: relative; top: 0; margin-bottom: 2rem; }
+    .course-footer { grid-column: 1 / -1; } /* Full width on mobile */
+  }
+</style>
+
+</style>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+  <script src="/assets/js/gaslaws.js"></script>
+  
+
+
+  
+
+  
+  <script src="/assets/js/course-tabs.js"></script>
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

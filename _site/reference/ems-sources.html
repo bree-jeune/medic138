@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EMS Sources | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/reference/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <main class="reference-page">
+  <h1>EMS Sources</h1>
+
+  
+
+  
+
+</main>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

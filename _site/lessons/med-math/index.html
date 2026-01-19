@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Med Math Practice | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/lessons/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="course-layout">
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <h1 class="course-title-small">Med Math Practice</h1>
+
+        <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="/lessons/med-math/:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  
+    </div>
+  </aside>
+
+  <main class="content-container">
+    <div class="course-content">
+      <hr />
+<p>title: “Medical Math Practice”
+level: “All Levels”
+topic: “Med Math”
+duration: “20 minutes”
+summary: “Practice IV drip and medication calculations with auto-randomization.”
+—</p>
+
+<h2 id="live-math-generator">Live Math Generator</h2>
+
+<p>Try solving the problems and submit answers.</p>
+
+<div id="medmath-app"></div>
+
+<script src="/assets/js/medmath.js"></script>
+
+<hr />
+
+<h2 id="reflection">Reflection</h2>
+
+<p>What type of problem slows you down most?<br />
+Volume? Dose? Drip rate?</p>
+
+
+      <div class="lesson-footer" style="margin-top: 3rem; display: flex; justify-content: space-between; gap: 1rem;">
+        <a href="/lessons/" class="btn btn--secondary">← Back to Lessons</a>
+        <a href="/games/" class="btn btn--primary">Take Quiz →</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

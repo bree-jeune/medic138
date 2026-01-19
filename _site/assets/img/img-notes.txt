@@ -1,0 +1,55 @@
+Optimization Rule: Never upload raw images from your phone. They are 5MB+ and will kill your app's performance.
+
+Resize: Max width 800px.
+
+Format: Use JPG (for photos) or PNG (for diagrams), compressed.
+
+Reference in Data: In games/data.js, reference them as /assets/img/ecg/stemi_inferior.jpg.
+
+Twitter Embed
+
+
+<blockquote class="twitter-tweet">
+  <p lang="en">Tweet text here…</p>
+  &mdash; Your Name (@yourhandle)
+  <a href="https://twitter.com/yourhandle/status/1234567890">Date</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+TikTok Embed
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@user/video/1234567890" data-video-id="1234567890">
+  <section>...</section>
+</blockquote>
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+
+Youtube Embed
+
+<div class="embed embed--youtube">
+  <div class="embed-inner">
+    <iframe
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+
+embed audio 
+
+<p class="audio-label">Listen while you drive</p>
+<audio controls class="lesson-audio">
+  <source src="/assets/audio/shock-basics-intro.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+
+<div class="hero-newsletter hero-newsletter--pill">
+<div class="hero-newsletter hero-newsletter--underline">
+<div class="hero-newsletter hero-newsletter--icon">
+<div class="hero-newsletter hero-newsletter--substack">
+<div class="hero-newsletter hero-newsletter--neon">

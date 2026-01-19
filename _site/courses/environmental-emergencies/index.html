@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Environmental Emergencies | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/courses/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="course-layout">
+  
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <span class="badge badge--"></span>
+      <h1 class="course-title-small">Environmental Emergencies</h1>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="icon">⏱</span> 
+        </div>
+        <div class="meta-item">
+          <span class="icon">📚</span> 
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="/courses/environmental-emergencies/:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </aside>
+
+      <main class="content-container">
+  <div class="course-content">
+    
+    
+      <div class="page-card content-body">
+        <h2 id="warm-up-questions">Warm-Up Questions</h2>
+
+<p>Before we break down environmental emergencies, answer these:</p>
+
+<ol>
+  <li><strong>What’s the difference between heat exhaustion and heat stroke?</strong></li>
+  <li><strong>What are the stages of hypothermia?</strong></li>
+  <li><strong>What is “rewarming shock”?</strong></li>
+  <li><strong>How do you treat frostbite in the field?</strong></li>
+  <li><strong>What’s the J wave (Osborn wave) and when do you see it?</strong></li>
+</ol>
+
+<p>These aren’t academic. They’re survival medicine.</p>
+
+<hr />
+
+<h2 id="explanation--breakdown">Explanation / Breakdown</h2>
+
+<h3 id="heat-related-emergencies">Heat-Related Emergencies</h3>
+
+<h4 id="heat-cramps">Heat Cramps</h4>
+<p><strong>What it is:</strong> Painful muscle spasms from electrolyte loss (Na+, K+)</p>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Cramping in legs, arms, abdomen</li>
+  <li>Heavy sweating</li>
+  <li>Normal mental status</li>
+  <li>Normal core temperature</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li>Rest in cool environment</li>
+  <li>Oral rehydration (water + electrolytes)</li>
+  <li>Gentle stretching</li>
+</ul>
+
+<h4 id="heat-exhaustion">Heat Exhaustion</h4>
+<p><strong>What it is:</strong> Volume depletion + electrolyte loss from heat exposure</p>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Heavy sweating (key finding)</li>
+  <li>Weakness, fatigue</li>
+  <li>Headache, nausea, dizziness</li>
+  <li>Core temp: 100-104°F</li>
+  <li><strong>Normal mental status</strong> (if altered → heat stroke)</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li>Remove from heat</li>
+  <li>Cool environment</li>
+  <li>IV fluids (1-2L NS)</li>
+  <li>Cooling measures (wet towels, fan)</li>
+  <li>Monitor for progression to heat stroke</li>
+</ul>
+
+<h4 id="heat-stroke">Heat Stroke</h4>
+<p><strong>What it is:</strong> Life-threatening failure of thermoregulation</p>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li><strong>Altered mental status</strong> (hallmark)</li>
+  <li>Core temp &gt; 104°F (often &gt; 106°F)</li>
+  <li>Hot, DRY skin (classic) OR sweating (exertional)</li>
+  <li>Seizures, coma</li>
+  <li>Tachycardia, hypotension</li>
+  <li>Multi-organ failure</li>
+</ul>
+
+<p><strong>Two Types:</strong></p>
+<ul>
+  <li><strong>Classic (non-exertional):</strong> Elderly, chronic illness, medications, hot environment, DRY skin</li>
+  <li><strong>Exertional:</strong> Young, athletic, physical activity, may still be SWEATING</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li><strong>COOL IMMEDIATELY</strong> (every minute counts)
+    <ul>
+      <li>Remove clothing</li>
+      <li>Cold water immersion (if available—most effective)</li>
+      <li>Ice packs to groin, axillae, neck</li>
+      <li>Wet sheets + fan</li>
+      <li><strong>Goal:</strong> Reduce temp to 102°F within 30 minutes</li>
+    </ul>
+  </li>
+  <li>Airway management (often need intubation)</li>
+  <li>Large-bore IV access</li>
+  <li>Aggressive IV fluids (NS or LR)</li>
+  <li>Treat seizures (benzodiazepines)</li>
+  <li>Monitor for rhabdomyolysis, DIC, renal failure</li>
+  <li><strong>Rapid transport</strong> to ICU-capable facility</li>
+</ul>
+
+<p><strong>Critical Pearl:</strong> Heat stroke = altered mental status + elevated temp. If they’re confused and hot, it’s heat stroke until proven otherwise.</p>
+
+<hr />
+
+<h3 id="cold-related-emergencies">Cold-Related Emergencies</h3>
+
+<h4 id="hypothermia-stages">Hypothermia Stages</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Core Temp</th>
+      <th>Signs/Symptoms</th>
+      <th>Treatment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Mild</strong></td>
+      <td>32-35°C (90-95°F)</td>
+      <td>Shivering, tachycardia, tachypnea, ataxia, impaired judgment</td>
+      <td>Passive rewarming, warm environment, blankets, warm fluids PO</td>
+    </tr>
+    <tr>
+      <td><strong>Moderate</strong></td>
+      <td>28-32°C (82-90°F)</td>
+      <td>Shivering stops, bradycardia, bradypnea, confusion, decreased LOC, arrhythmias</td>
+      <td>Active external rewarming (heat packs, Bair Hugger), warm IV fluids</td>
+    </tr>
+    <tr>
+      <td><strong>Severe</strong></td>
+      <td>&lt; 28°C (&lt; 82°F)</td>
+      <td>Coma, absent reflexes, rigid muscles, VF/asystole, appears dead</td>
+      <td>Active internal rewarming (warm IV fluids, heated O2, ECMO, bypass)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>J Wave (Osborn Wave):</strong></p>
+<ul>
+  <li>ECG finding in hypothermia</li>
+  <li>Positive deflection at J point (QRS-ST junction)</li>
+  <li>Looks like a “hump” after QRS</li>
+  <li>Seen in moderate-severe hypothermia</li>
+</ul>
+
+<p><strong>Management Principles:</strong></p>
+<ul>
+  <li><strong>Handle gently</strong> - rough handling can trigger VF</li>
+  <li><strong>No CPR if pulse present</strong> (even if very slow)</li>
+  <li><strong>CPR if no pulse</strong> - continue until rewarmed</li>
+  <li><strong>“Not dead until warm and dead”</strong> - continue resuscitation efforts</li>
+  <li>Warm fluids (38-42°C)</li>
+  <li>Cardiac monitoring (expect arrhythmias)</li>
+  <li><strong>No pronouncement until core temp &gt; 32°C</strong></li>
+</ul>
+
+<p><strong>Rewarming Shock:</strong></p>
+<ul>
+  <li>Hypotension during rewarming</li>
+  <li>Caused by:
+    <ul>
+      <li>Peripheral vasodilation → decreased SVR</li>
+      <li>Cold, acidotic blood from periphery returning to core</li>
+      <li>Relative hypovolemia</li>
+    </ul>
+  </li>
+  <li><strong>Prevention:</strong> Rewarm core before extremities, IV fluids</li>
+</ul>
+
+<h4 id="frostbite">Frostbite</h4>
+
+<p><strong>Classification:</strong></p>
+
+<p><strong>Superficial (Frostnip):</strong></p>
+<ul>
+  <li>Skin pale, numb</li>
+  <li>No tissue loss</li>
+  <li>Rewarms pink</li>
+</ul>
+
+<p><strong>Superficial Frostbite:</strong></p>
+<ul>
+  <li>Clear blisters</li>
+  <li>Skin red/purple after rewarming</li>
+  <li>Minimal tissue loss</li>
+</ul>
+
+<p><strong>Deep Frostbite:</strong></p>
+<ul>
+  <li>Hemorrhagic blisters</li>
+  <li>Skin purple/black after rewarming</li>
+  <li>Significant tissue loss</li>
+  <li>May require amputation</li>
+</ul>
+
+<p><strong>Field Management:</strong></p>
+<ul>
+  <li><strong>Do NOT rewarm if risk of refreezing</strong> (causes more damage)</li>
+  <li>Remove wet clothing, jewelry</li>
+  <li>Protect affected area (sterile dressings, padding)</li>
+  <li><strong>Do NOT rub or massage</strong></li>
+  <li><strong>Do NOT break blisters</strong></li>
+  <li>Pain management (rewarming is extremely painful)</li>
+  <li>If rewarming in field:
+    <ul>
+      <li>Use warm water (37-39°C / 98-102°F)</li>
+      <li>Immerse affected part for 15-30 minutes</li>
+      <li>Until tissue is soft and red</li>
+      <li>Expect severe pain</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="high-altitude-illness">High-Altitude Illness</h3>
+
+<h4 id="acute-mountain-sickness-ams">Acute Mountain Sickness (AMS)</h4>
+<p><strong>What it is:</strong> Mild altitude illness from rapid ascent</p>
+
+<p><strong>Presentation (above 8,000 ft):</strong></p>
+<ul>
+  <li>Headache (required for diagnosis)</li>
+  <li>Nausea, vomiting</li>
+  <li>Fatigue, dizziness</li>
+  <li>Insomnia</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li>Stop ascent</li>
+  <li>Rest, hydrate</li>
+  <li>Acetazolamide (Diamox)</li>
+  <li>Descend if worsening</li>
+  <li>Oxygen if available</li>
+</ul>
+
+<h4 id="high-altitude-cerebral-edema-hace">High-Altitude Cerebral Edema (HACE)</h4>
+<p><strong>What it is:</strong> Severe, life-threatening brain swelling from altitude</p>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Severe headache</li>
+  <li><strong>Ataxia</strong> (can’t walk heel-to-toe—diagnostic sign)</li>
+  <li>Confusion, altered mental status</li>
+  <li>Coma</li>
+  <li>Death if untreated</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li><strong>IMMEDIATE DESCENT</strong> (only definitive treatment)</li>
+  <li>Oxygen (high-flow)</li>
+  <li>Dexamethasone 8 mg IV/IM</li>
+  <li>Hyperbaric chamber (portable Gamow bag)</li>
+  <li>Airway management if obtunded</li>
+</ul>
+
+<h4 id="high-altitude-pulmonary-edema-hape">High-Altitude Pulmonary Edema (HAPE)</h4>
+<p><strong>What it is:</strong> Fluid accumulation in lungs from altitude</p>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Dyspnea at rest</li>
+  <li>Cough (dry → productive, frothy)</li>
+  <li>Crackles, wheezing</li>
+  <li>Cyanosis</li>
+  <li>Tachycardia, tachypnea</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li><strong>IMMEDIATE DESCENT</strong></li>
+  <li>Oxygen (high-flow, keep SpO2 &gt; 90%)</li>
+  <li>Nifedipine 30 mg extended-release PO</li>
+  <li>Hyperbaric chamber</li>
+  <li>Keep warm (cold worsens)</li>
+  <li>CPAP if available</li>
+</ul>
+
+<p><strong>Critical Pearl:</strong> HACE and HAPE are FATAL without descent. Medications buy time, but getting down saves lives.</p>
+
+<hr />
+
+<h3 id="submersion-injuries-drowning">Submersion Injuries (Drowning)</h3>
+
+<p><strong>Drowning = respiratory impairment from submersion in liquid</strong></p>
+
+<p><strong>Classification:</strong></p>
+<ul>
+  <li><strong>Non-fatal drowning:</strong> Survived (with or without injuries)</li>
+  <li><strong>Fatal drowning:</strong> Death from drowning</li>
+</ul>
+
+<p><strong>Pathophysiology:</strong></p>
+<ul>
+  <li>Breath-holding → hypoxia</li>
+  <li>Aspiration (or laryngospasm)</li>
+  <li>Hypoxic brain injury</li>
+  <li>Hypothermia (if cold water)</li>
+</ul>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Coughing, dyspnea</li>
+  <li>Hypoxia, cyanosis</li>
+  <li>Altered mental status</li>
+  <li>Pulmonary edema</li>
+  <li>Cardiac arrest</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li><strong>C-spine precautions if diving/trauma suspected</strong></li>
+  <li>Airway management
+    <ul>
+      <li>Suction</li>
+      <li>High-flow O2</li>
+      <li>CPAP/BiPAP if conscious</li>
+      <li>Intubation if severe</li>
+    </ul>
+  </li>
+  <li>Cardiac monitoring</li>
+  <li>Rewarm if hypothermic</li>
+  <li><strong>All drowning victims need hospital evaluation</strong> (delayed pulmonary edema)</li>
+</ul>
+
+<p><strong>Cold Water Drowning:</strong></p>
+<ul>
+  <li>Hypothermia protective (slows metabolism)</li>
+  <li>Prolonged submersion with survival possible</li>
+  <li>Continue resuscitation until rewarmed</li>
+</ul>
+
+<p><strong>Do NOT attempt abdominal thrusts or “drain water”</strong> - it doesn’t work and delays CPR.</p>
+
+<hr />
+
+<h3 id="lightning-and-electrical-injuries">Lightning and Electrical Injuries</h3>
+
+<p><strong>Lightning Strike Pathophysiology:</strong></p>
+<ul>
+  <li>Massive DC current (30,000-50,000 amps)</li>
+  <li>Duration: milliseconds</li>
+  <li>Can cause:
+    <ul>
+      <li>Cardiac arrest (asystole more common than VF)</li>
+      <li>Respiratory arrest (prolonged apnea)</li>
+      <li>Neurological injury</li>
+      <li>Burns (superficial and deep)</li>
+      <li>Trauma (blast effect)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Presentation:</strong></p>
+<ul>
+  <li>Cardiac arrest</li>
+  <li>Confusion, amnesia, paralysis</li>
+  <li>Tympanic membrane rupture</li>
+  <li>Burns (Lichtenberg figures—fernlike patterns)</li>
+  <li>Blunt trauma from being thrown</li>
+</ul>
+
+<p><strong>Management:</strong></p>
+<ul>
+  <li><strong>Reverse triage</strong> (treat “dead” first—they may recover with CPR)</li>
+  <li>CPR if arrested</li>
+  <li>Cardiac monitoring (arrhythmias common)</li>
+  <li>Cervical spine precautions</li>
+  <li>Treat burns</li>
+  <li>Monitor for rhabdomyolysis, compartment syndrome</li>
+</ul>
+
+<hr />
+
+<h2 id="common-mistakes">Common Mistakes</h2>
+
+<h3 id="mistake-1-waiting-to-cool-heat-stroke">Mistake #1: Waiting to Cool Heat Stroke</h3>
+<p>Every minute of hyperthermia = more brain damage. Cool first, transport second.</p>
+
+<h3 id="mistake-2-aggressive-rewarming-in-severe-hypothermia">Mistake #2: Aggressive Rewarming in Severe Hypothermia</h3>
+<p>Rewarming too fast causes rewarming shock. Core before periphery.</p>
+
+<h3 id="mistake-3-rewarming-frostbite-when-refreezing-is-possible">Mistake #3: Rewarming Frostbite When Refreezing Is Possible</h3>
+<p>Thaw-refreeze-thaw causes worse tissue damage. Protect and transport.</p>
+
+<h3 id="mistake-4-assuming-all-victims-at-a-lightning-strike-are-dead">Mistake #4: Assuming All Victims at a Lightning Strike Are Dead</h3>
+<p>“Reverse triage” - those who appear dead may recover. Prioritize them.</p>
+
+<h3 id="mistake-5-missing-delayed-pulmonary-edema-after-drowning">Mistake #5: Missing Delayed Pulmonary Edema After Drowning</h3>
+<p>All drowning victims need hospital evaluation, even if they seem fine.</p>
+
+<h3 id="mistake-6-giving-up-cpr-too-soon-in-cold-water-drowning">Mistake #6: Giving Up CPR Too Soon in Cold Water Drowning</h3>
+<p>Hypothermia is protective. “Not dead until warm and dead.”</p>
+
+<hr />
+
+<h2 id="clinical-pearls">Clinical Pearls</h2>
+
+<p>💎 <strong>Heat stroke = hot + altered.</strong> If they’re confused and febrile, assume heat stroke.</p>
+
+<p>💎 <strong>Cool heat stroke patients aggressively.</strong> Cold water immersion is best. Ice packs to neck, groin, axillae work too.</p>
+
+<p>💎 <strong>Hypothermia causes “metabolic iceberg.”</strong> Bradycardia, hypotension, hypoglycemia, hypokalemia are expected.</p>
+
+<p>💎 <strong>J waves (Osborn waves) = hypothermia.</strong> Seen at core temp &lt; 32°C.</p>
+
+<p>💎 <strong>HACE = can’t walk straight.</strong> Ataxia is the key diagnostic sign.</p>
+
+<p>💎 <strong>HAPE and HACE need descent.</strong> Medications are temporizing. Get them down.</p>
+
+<p>💎 <strong>All frostbite patients get pain meds before rewarming.</strong> It’s excruciating.</p>
+
+<p>💎 <strong>Lightning victims in asystole can be saved.</strong> Don’t give up early.</p>
+
+<p>💎 <strong>Cold water drowning = prolonged resuscitation.</strong> Continue until core temp &gt; 32°C.</p>
+
+<p>💎 <strong>Never break frostbite blisters.</strong> Sterile dressings, leave them intact.</p>
+
+<hr />
+
+<h2 id="decision-trees">Decision Trees</h2>
+
+<h3 id="heat-emergency-management">Heat Emergency Management</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Patient in Hot Environment
+    ↓
+Assess Mental Status
+    ↓
+ALTERED (confused, combative, lethargic)?
+    YES → HEAT STROKE
+        ↓
+        1. COOL IMMEDIATELY
+           - Remove clothing
+           - Cold water immersion (best)
+           - Ice packs (neck, groin, axillae)
+           - Wet sheets + fan
+        2. Airway management
+        3. IV access + fluids
+        4. Cardiac monitoring
+        5. Treat seizures (benzos)
+        6. Check temp every 5 min
+        7. Stop cooling at 102°F
+        8. Rapid transport
+    NO → NORMAL MENTAL STATUS
+        ↓
+        Assess for:
+        - Heavy sweating? (yes = heat exhaustion)
+        - Muscle cramps? (yes = heat cramps)
+        ↓
+        HEAT EXHAUSTION
+        - Move to cool environment
+        - Remove excess clothing
+        - IV fluids 1-2L NS
+        - Cool with wet towels, fan
+        - Monitor for progression to heat stroke
+</code></pre></div></div>
+
+<h3 id="hypothermia-management">Hypothermia Management</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Patient with Low Core Temperature
+    ↓
+Check for Pulse (30-60 seconds)
+    ↓
+PULSE PRESENT
+    ↓
+    Assess severity:
+    ↓
+    MILD (32-35°C / 90-95°F)
+        - Shivering, conscious
+        ↓
+        - Passive rewarming
+        - Warm blankets
+        - Warm environment
+        - Warm PO fluids (if alert)
+        - Remove wet clothing
+    ↓
+    MODERATE (28-32°C / 82-90°F)
+        - Shivering stopped, altered
+        ↓
+        - Active external rewarming
+        - Heat packs (trunk, not extremities)
+        - Warm IV fluids (38-42°C)
+        - Heated oxygen
+        - Cardiac monitoring
+        - Gentle handling
+    ↓
+    SEVERE (&lt; 28°C / &lt; 82°F)
+        - Coma, rigid, appears dead
+        ↓
+        - Active internal rewarming
+        - Warm IV fluids
+        - Heated oxygen
+        - Prepare for ECMO/bypass at hospital
+        - Gentle handling (VF risk)
+        - Cardiac monitoring
+
+NO PULSE
+    ↓
+    Begin CPR
+    - Continue until rewarmed
+    - Do NOT withhold due to cold
+    - AED/Defib (may not work until warm)
+    - Medications (half doses or hold)
+    - Rewarm during CPR
+    - Transport to facility with ECMO capability
+    - "Not dead until warm and dead"
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="practice-cases">Practice Cases</h2>
+
+<h3 id="case-1-the-marathon-runner">Case 1: The Marathon Runner</h3>
+
+<p><strong>Patient:</strong> 32-year-old male, collapsed at mile 24 of marathon<br />
+<strong>Exam:</strong> Confused, agitated, hot/dry skin, tachycardia 142<br />
+<strong>Temp:</strong> 105.8°F rectal<br />
+<strong>Bystander:</strong> “He was fine, then he started stumbling and fell.”</p>
+
+<p><strong>What’s your management?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Exertional Heat Stroke - immediate aggressive cooling required
+
+**Why:**
+- Altered mental status (confused, agitated) = heat stroke
+- Core temp &gt; 104°F
+- Hot skin (may be dry OR sweating in exertional heat stroke)
+- This is LIFE-THREATENING
+
+**Action:**
+1. **COOL IMMEDIATELY**
+   - Remove all clothing
+   - If cold water immersion available (ice bath, tub) → USE IT (most effective)
+   - If not: ice packs to neck, groin, axillae + wet sheets + fan
+2. Airway management (may need sedation + intubation if combative)
+3. Large-bore IV access x2
+4. NS bolus 1-2L
+5. Cardiac monitoring (arrhythmias common)
+6. Check glucose (hypoglycemia common)
+7. Treat seizures if occur (lorazepam 2-4 mg IV)
+8. Recheck temp every 5 minutes
+9. **Stop cooling at 102°F** (prevent overcooling)
+10. Rapid transport
+11. Labs at hospital: CK (rhabdo), renal function, coags (DIC), LFTs
+
+**Every minute counts. Cooling is the priority over everything else.**
+
+</details>
+
+<hr />
+
+<h3 id="case-2-the-homeless-patient">Case 2: The Homeless Patient</h3>
+
+<p><strong>Patient:</strong> 68-year-old male, found unresponsive in park, outside temp 28°F<br />
+<strong>Exam:</strong> Cold to touch, rigid, no obvious breathing, weak carotid pulse (30 bpm)<br />
+<strong>Temp:</strong> 26°C (78.8°F) rectal<br />
+<strong>ECG:</strong> Sinus bradycardia with J waves</p>
+
+<p><strong>What do you do?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Severe hypothermia with pulse - gentle handling, active rewarming, no CPR
+
+**Why:**
+- Core temp &lt; 28°C = severe hypothermia
+- Pulse present (even if very slow)
+- J waves on ECG confirm hypothermia
+- Rigid, appears dead (but isn't)
+
+**Action:**
+1. **Handle VERY gently** (rough movement → VF)
+2. **Do NOT start CPR** (pulse is present)
+3. Remove wet clothing
+4. Dry patient
+5. Insulate with blankets
+6. **Active rewarming:**
+   - Heat packs to trunk (NOT extremities)
+   - Warm IV fluids (38-42°C)
+   - Heated oxygen if available
+7. Cardiac monitoring
+8. IV access
+9. Check glucose (hypoglycemia common in hypothermia)
+10. **Transport to facility with ECMO/bypass capability**
+11. Continue rewarming during transport
+
+**Do NOT:**
+- Rewarm extremities first (causes rewarming shock)
+- Give cold IV fluids
+- Handle roughly
+- Assume patient is dead
+
+**Prognosis depends on rewarming success. Many survive with aggressive rewarming.**
+
+</details>
+
+<hr />
+
+<h3 id="case-3-the-mountain-climber">Case 3: The Mountain Climber</h3>
+
+<p><strong>Patient:</strong> 35-year-old male, climbing at 14,000 ft, severe headache, vomiting, can’t walk straight<br />
+<strong>Exam:</strong> Ataxic gait (can’t do heel-to-toe), confused, SpO2 82%<br />
+<strong>Friend:</strong> “We came up too fast. He’s been sick for 12 hours.”</p>
+
+<p><strong>What’s the diagnosis and treatment?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** High-Altitude Cerebral Edema (HACE) - immediate descent required
+
+**Why:**
+- Altitude &gt; 8,000 ft
+- Severe headache + ataxia = HACE (diagnostic)
+- Confusion (worsening)
+- This is LIFE-THREATENING
+
+**Action:**
+1. **IMMEDIATE DESCENT** (only definitive treatment - DO NOT DELAY)
+2. High-flow oxygen (keep SpO2 &gt; 90%)
+3. Dexamethasone 8 mg IV/IM (or 4 mg PO if no IV)
+4. Hyperbaric chamber (Gamow bag) if available (temporizing, not definitive)
+5. Airway management if worsening LOC
+6. Keep warm
+7. Descend as low as possible (even 1,000-2,000 ft helps)
+
+**Do NOT:**
+- Continue ascent or stay at altitude
+- Assume it will resolve on its own
+- Delay descent to "see if meds work"
+
+**HACE is fatal without descent. Every hour at altitude = more brain damage.**
+
+</details>
+
+<hr />
+
+<h3 id="case-4-the-drowning-victim">Case 4: The Drowning Victim</h3>
+
+<p><strong>Patient:</strong> 6-year-old boy, pulled from pool after ~3 minutes, bystander CPR started<br />
+<strong>Exam:</strong> Unconscious, agonal respirations, weak pulse 50 bpm, cold to touch<br />
+<strong>Temp:</strong> 32°C (89.6°F)</p>
+
+<p><strong>What’s your management?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Cold water drowning with pulse - aggressive airway management + rewarming
+
+**Why:**
+- Submersion injury
+- Hypothermia (cold water protective)
+- Pulse present (even if weak)
+- Agonal breathing (inadequate ventilation)
+
+**Action:**
+1. **C-spine precautions** (diving/trauma can't be ruled out)
+2. **Aggressive airway management:**
+   - Suction (if needed)
+   - BVM with 100% O2
+   - Likely needs intubation (agonal respirations)
+3. Cardiac monitoring
+4. IV/IO access
+5. **Rewarming:**
+   - Remove wet clothing
+   - Dry patient
+   - Warm blankets
+   - Warm IV fluids (if giving)
+   - Heated oxygen
+6. Transport to pediatric ICU
+7. Monitor for:
+   - Pulmonary edema (delayed)
+   - Arrhythmias
+   - Neurological injury
+
+**Do NOT:**
+- Attempt abdominal thrusts to "drain water"
+- Give up resuscitation early (hypothermia is protective)
+- Skip hospital transport even if patient improves
+
+**All drowning victims need hospital evaluation (delayed pulmonary edema can occur hours later).**
+
+</details>
+
+<hr />
+
+<h3 id="case-5-the-lightning-strike">Case 5: The Lightning Strike</h3>
+
+<p><strong>Scene:</strong> Multiple people struck by lightning during storm<br />
+<strong>Victim 1:</strong> Conscious, confused, burns to leg<br />
+<strong>Victim 2:</strong> Unconscious, no pulse, no respirations<br />
+<strong>Victim 3:</strong> Conscious, complaining of ear pain and vision changes</p>
+
+<p><strong>Who do you treat first?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Victim 2 (the "dead" one) - REVERSE TRIAGE in lightning strikes
+
+**Why:**
+- Lightning causes asystole/prolonged apnea
+- Victim 2 may recover with CPR (respiratory arrest likely)
+- Victims 1 and 3 are conscious → stable for now
+- **Reverse triage:** Treat the dead first (opposite of mass casualty triage)
+
+**Action for Victim 2:**
+1. **Begin CPR immediately**
+2. AED/cardiac monitor
+3. Airway management
+4. IV access
+5. C-spine precautions (blast effect)
+6. Continue resuscitation (better prognosis than typical cardiac arrest)
+
+**Action for Victim 1:**
+- C-spine precautions
+- Cardiac monitoring (arrhythmias common)
+- Treat burns
+- Neurological assessment
+- Monitor for rhabdomyolysis
+
+**Action for Victim 3:**
+- Assess for TM rupture (ear pain)
+- Visual assessment (corneal injury, cataracts)
+- Neurological exam
+- Cardiac monitoring
+
+**All lightning victims need transport and monitoring (delayed complications common).**
+
+</details>
+
+<hr />
+
+<h2 id="reflection">Reflection</h2>
+
+<p>Environmental emergencies are high-stakes, time-sensitive calls.</p>
+
+<p>Here’s what you should know:</p>
+
+<p>✅ Heat stroke = altered mental status + elevated temp (cool immediately)<br />
+✅ Hypothermia stages + rewarming strategies (core before periphery)<br />
+✅ Frostbite management (do NOT rewarm if refreezing possible)<br />
+✅ HACE/HAPE = immediate descent (only definitive treatment)<br />
+✅ Drowning = all need hospital evaluation (delayed pulmonary edema)<br />
+✅ Lightning = reverse triage (treat dead first)</p>
+
+<p><strong>Next-level thinking:</strong></p>
+<ul>
+  <li>How does humidity affect heat illness?</li>
+  <li>What’s the pathophysiology of rewarming shock?</li>
+  <li>When do you use hyperbaric oxygen for environmental emergencies?</li>
+  <li>How do environmental extremes affect medication pharmacokinetics?</li>
+</ul>
+
+<p><strong>Your assignment:</strong><br />
+Know your local environment. Desert? Prepare for heat. Mountains? Know altitude illness. Coast? Understand drowning. Winter? Master hypothermia.</p>
+
+<p>Because when environmental emergencies hit, you’re the only thing standing between your patient and nature.</p>
+
+<hr />
+
+<h2 id="optional-interactive-practice">Optional: Interactive Practice</h2>
+
+<p><strong>[Tally Embed Placeholder]</strong></p>
+
+<p><em>Interactive quiz: Environmental emergency identification and management scenarios</em></p>
+
+<hr />
+
+<p><strong>Medic 138</strong> | Street-smart EMS education<br />
+<em>Learn it like you’ll use it.</em></p>
+
+      </div>
+    
+</main>
+
+    <div class="course-footer page-card" style="margin-top: 2rem; text-align: center;">
+      <h3>Ready for the next challenge?</h3>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn--secondary" onclick="window.scrollTo(0,0)">Review Topic</button>
+        <a href="/games/" class="btn btn--primary">Test Skills</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .course-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Make the footer align with the main content column only */
+  .course-footer {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .course-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: relative; top: 0; margin-bottom: 2rem; }
+    .course-footer { grid-column: 1 / -1; } /* Full width on mobile */
+  }
+</style>
+
+</style>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

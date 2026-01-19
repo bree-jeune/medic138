@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Courses | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/courses/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-header">
+  <div class="section-label">Courses</div>
+  <div class="section-header-body">
+    <h2>Deep-dive training modules</h2>
+    <p>Comprehensive courses that build real competency.</p>
+  </div>
+</section>
+
+
+<div class="search-control">
+  <div class="search-field-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="lesson-search" class="search-input"
+      placeholder="Search courses by title, topic, or clinical keywords...">
+  </div>
+
+  <div class="filter-pills">
+    <span class="filter-label">Filter by Scope:</span>
+    <button class="filter-pill is-active" data-filter="level" data-value="all">All</button>
+    <button class="filter-pill" data-filter="level" data-value="EMT">EMT</button>
+    <button class="filter-pill" data-filter="level" data-value="Advanced">Advanced</button>
+    <button class="filter-pill" data-filter="level" data-value="Intermediate">Intermediate</button>
+  </div>
+</div>
+
+<div id="search-empty" class="search-empty-state" style="display: none;">
+  <h3>No matches found</h3>
+  <p>Try different keywords or clear your filters.</p>
+</div>
+
+<section class="page-card" style="background: transparent; border: none; padding: 0;">
+  <div class="course-list" id="lesson-grid">
+    
+    <article class="course-card" data-title="understanding arterial blood gases" data-level="Advanced"
+      data-topic="critical">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">60 min · Critical</span>
+      </div>
+
+      <h2><a href="/courses/abg-interpretation/">Understanding Arterial Blood Gases</a></h2>
+
+      
+      <p class="card-text">ABG Interpretation Overview
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/abg-interpretation/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="axis deviation" data-level="Intermediate"
+      data-topic="cardiology">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Intermediate</span>
+        <span class="lesson-tag lesson-tag--muted">45 min · Cardiology</span>
+      </div>
+
+      <h2><a href="/courses/axis-deviation/">Axis Deviation</a></h2>
+
+      
+      <p class="card-text">Axis Deviation
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/axis-deviation/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="blood administration" data-level="Advanced"
+      data-topic="critical">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">75 min · Critical</span>
+      </div>
+
+      <h2><a href="/courses/blood-admin/">Blood Administration</a></h2>
+
+      
+      <p class="card-text">Blood Administration
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/blood-admin/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="burns" data-level="Intermediate"
+      data-topic="trauma">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Intermediate</span>
+        <span class="lesson-tag lesson-tag--muted">60 min · Trauma</span>
+      </div>
+
+      <h2><a href="/courses/burns/">Burns</a></h2>
+
+      
+      <p class="card-text">Burns
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/burns/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="congenital heart" data-level="Advanced"
+      data-topic="pediatric">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">90 min · Pediatric</span>
+      </div>
+
+      <h2><a href="/courses/congenital-heart/">Congenital Heart</a></h2>
+
+      
+      <p class="card-text">Congenital Heart Disease
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/congenital-heart/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="ecg basics" data-level="Beginner"
+      data-topic="cardiology">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Beginner</span>
+        <span class="lesson-tag lesson-tag--muted">75 min · Cardiology</span>
+      </div>
+
+      <h2><a href="/courses/ecg-basics/">Ecg Basics</a></h2>
+
+      
+      <p class="card-text">ECG Basics
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/ecg-basics/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="environmental emergencies" data-level=""
+      data-topic="">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · </span>
+      </div>
+
+      <h2><a href="/courses/environmental-emergencies/">Environmental Emergencies</a></h2>
+
+      
+      <p class="card-text">Warm-Up Questions
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/environmental-emergencies/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="fetal monitoring" data-level="Advanced"
+      data-topic="obstetrics">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">60 min · Obstetrics</span>
+      </div>
+
+      <h2><a href="/courses/fetal-monitoring/">Fetal Monitoring</a></h2>
+
+      
+      <p class="card-text">Fetal Monitoring
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/fetal-monitoring/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="flight physiology" data-level="Advanced"
+      data-topic="flight">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">50 min · Flight</span>
+      </div>
+
+      <h2><a href="/courses/flight-physiology/">Flight Physiology</a></h2>
+
+      
+      <p class="card-text">Flight Physiology
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/flight-physiology/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="gas laws for flight and critical care" data-level="Advanced"
+      data-topic="flight / critical care">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">40–60 minutes min · Flight / Critical Care</span>
+      </div>
+
+      <h2><a href="/courses/gas-laws/">Gas Laws for Flight and Critical Care</a></h2>
+
+      
+      <p class="card-text"><div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">...</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/gas-laws/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="impella" data-level=""
+      data-topic="cardiac">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Comprehensive min · Cardiac</span>
+      </div>
+
+      <h2><a href="/courses/impella/">Impella</a></h2>
+
+      
+      <p class="card-text">Impella: Real-World Mastery for the EMS Clinician
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/impella/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="lab values for flight and critical care" data-level="Advanced"
+      data-topic="critical care">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">90 minutes min · Critical Care</span>
+      </div>
+
+      <h2><a href="/courses/lab-values/">Lab Values for Flight and Critical Care</a></h2>
+
+      
+      <p class="card-text">Deep-dive review of lab interpretation for FP-C/CCP-C exam prep.</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/lab-values/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="medical emergencies" data-level="Advanced"
+      data-topic="medical · critical care">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">4–6 hours min · Medical · Critical Care</span>
+      </div>
+
+      <h2><a href="/courses/medical-emergencies/">Medical Emergencies</a></h2>
+
+      
+      <p class="card-text"><div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">...</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/medical-emergencies/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="neonatal" data-level=""
+      data-topic="neonatology">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Neonatology</span>
+      </div>
+
+      <h2><a href="/courses/neonatal/">Neonatal</a></h2>
+
+      
+      <p class="card-text">Neonatal Emergencies
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/neonatal/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="neuro emergencies" data-level=""
+      data-topic="">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · </span>
+      </div>
+
+      <h2><a href="/courses/neuro-emergencies/">Neuro Emergencies</a></h2>
+
+      
+      <p class="card-text">
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/neuro-emergencies/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="obstetrics" data-level=""
+      data-topic="">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · </span>
+      </div>
+
+      <h2><a href="/courses/obstetrics/">Obstetrics</a></h2>
+
+      
+      <p class="card-text">layout: course title: "Obstetrics Emergencies"  level: "Advanced" topic: "OB · Critical Care"  duration: "90 minutes"...</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/obstetrics/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="pediatrics" data-level=""
+      data-topic="">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · </span>
+      </div>
+
+      <h2><a href="/courses/pediatrics/">Pediatrics</a></h2>
+
+      
+      <p class="card-text">
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/pediatrics/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="radiographic interpretation" data-level=""
+      data-topic="imaging">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Imaging</span>
+      </div>
+
+      <h2><a href="/courses/radiographic-interpretation/">Radiographic Interpretation</a></h2>
+
+      
+      <p class="card-text">Radiographic Interpretation
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/radiographic-interpretation/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="respiratory emergencies" data-level=""
+      data-topic="">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · </span>
+      </div>
+
+      <h2><a href="/courses/respiratory-emergencies/">Respiratory Emergencies</a></h2>
+
+      
+      <p class="card-text">
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/respiratory-emergencies/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="rsi vs dsi" data-level=""
+      data-topic="airway">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Airway</span>
+      </div>
+
+      <h2><a href="/courses/rsi-vs-dsi/">RSI vs DSI</a></h2>
+
+      
+      <p class="card-text">RSI vs DSI
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/rsi-vs-dsi/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="sepsis to mods" data-level=""
+      data-topic="sepsis,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Sepsis,</span>
+      </div>
+
+      <h2><a href="/courses/sepsis-mods/">Sepsis to MODS</a></h2>
+
+      
+      <p class="card-text">Sepsis Mods
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/sepsis-mods/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="sgarbossa" data-level=""
+      data-topic="ecg">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · ECG</span>
+      </div>
+
+      <h2><a href="/courses/sgarbossa/">Sgarbossa</a></h2>
+
+      
+      <p class="card-text">Sgarbossa Criteria
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/sgarbossa/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="stemi mimics" data-level=""
+      data-topic="ecg,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · ECG,</span>
+      </div>
+
+      <h2><a href="/courses/stemi-mimics/">Stemi Mimics</a></h2>
+
+      
+      <p class="card-text">STEMI Mimics
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/stemi-mimics/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="svt with aberrancy" data-level=""
+      data-topic="cardiology,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Cardiology,</span>
+      </div>
+
+      <h2><a href="/courses/svt-with-aberrancy/">SVT with Aberrancy</a></h2>
+
+      
+      <p class="card-text">SVT with Aberrancy
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/svt-with-aberrancy/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="toxicology" data-level=""
+      data-topic="poisoning,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Poisoning,</span>
+      </div>
+
+      <h2><a href="/courses/toxicology/">Toxicology</a></h2>
+
+      
+      <p class="card-text">Toxicology
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/toxicology/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="trauma emergencies" data-level="Advanced"
+      data-topic="trauma / critical care">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge">Advanced</span>
+        <span class="lesson-tag lesson-tag--muted">Deep Dive min · Trauma / Critical Care</span>
+      </div>
+
+      <h2><a href="/courses/trauma-emergencies/">Trauma Emergencies</a></h2>
+
+      
+      <p class="card-text"><div class="course-tabs" data-default="overview" data-course-key="{{ page.url }}">...</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/trauma-emergencies/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="twelve lead" data-level=""
+      data-topic="ecg,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted"> min · ECG,</span>
+      </div>
+
+      <h2><a href="/courses/twelve-lead/">Twelve Lead</a></h2>
+
+      
+      <p class="card-text">Complete Guide to Twelve Lead Interpretation
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/twelve-lead/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="vats vads iabp" data-level=""
+      data-topic="mechanical">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Mechanical</span>
+      </div>
+
+      <h2><a href="/courses/vats-vads-iabp/">Vats Vads IABP</a></h2>
+
+      
+      <p class="card-text">VATS, VADs, IABP: Mechanical Circulatory Support
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/vats-vads-iabp/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+    <article class="course-card" data-title="ventilator management" data-level=""
+      data-topic="ventilator,">
+
+      <div class="lesson-meta" style="margin-bottom: 1rem;">
+        <span class="lesson-status-badge"></span>
+        <span class="lesson-tag lesson-tag--muted">Deep min · Ventilator,</span>
+      </div>
+
+      <h2><a href="/courses/vent-management/">Ventilator Management</a></h2>
+
+      
+      <p class="card-text">Ventilator Management
+</p>
+      
+
+      <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
+        <a href="/courses/vent-management/" class="link-arrow">Start Course</a>
+      </div>
+    </article>
+    
+  </div>
+</section>
+
+<script src="/assets/js/search.js"></script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

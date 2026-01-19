@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Administration | Medic 138</title>
+  <meta name="description" content=""Street-smart medical education for front line responders"">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/interactive.css">
+  <link rel="stylesheet" href="/terminology/medterms.css">
+  <link rel="stylesheet" href="/assets/css/progress.css">
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-header">
+        
+        
+        <a href="/courses/" class="nav-item back-arrow"
+          style="margin-right: 0.5rem; font-size: 1.2rem;">←</a>
+        
+
+        <a href="/" class="brand">
+          <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138 logo" height="42" width="42">
+        </a>
+
+        <button class="nav-toggle" id="js-nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="js-nav-links">
+        <a href="/courses/" class="nav-item">Courses</a>
+        <a href="/lessons/" class="nav-item">Lessons</a>
+        <a href="/lab/" class="nav-item">Lab</a>
+        <a href="/dispatch-notes/" class="nav-item">Dispatch Notes</a>
+        <a href="/resources/" class="nav-item">Resources</a>
+
+        <div class="auth-container">
+          <a href="/dashboard/" id="nav-dashboard-link" class="hidden nav-item"
+            style="font-weight: 700; color: var(--primary);">
+            Dashboard
+          </a>
+          <button id="loginBtn" class="btn btn--sm btn--primary" onclick="window.authService.login()">Login</button>
+          <button id="logoutBtn" class="btn btn--sm btn--secondary hidden"
+            onclick="window.authService.logout()">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="course-layout">
+  
+  <aside class="course-sidebar">
+    <div class="sidebar-card">
+      <span class="badge badge--advanced">Advanced</span>
+      <h1 class="course-title-small">Blood Administration</h1>
+      
+      <div class="course-meta">
+        <div class="meta-item">
+          <span class="icon">⏱</span> 75
+        </div>
+        <div class="meta-item">
+          <span class="icon">📚</span> Critical
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <section class="m138-checklist" data-storage-key="/courses/blood-admin/:course">
+        <p class="checklist-title">Your Progress</p>
+        
+        <div class="m138-progress-bar">
+          <div class="m138-progress-bar__fill"></div>
+        </div>
+        <p class="m138-progress-bar__text" style="text-align: left; margin-top: 5px; font-size: 0.8rem;">0% complete</p>
+
+        <ul class="m138-checklist__items">
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="overview">
+              Overview
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="modules">
+              Core Modules
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="cases">
+              Practice Cases
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" class="m138-checklist__box" data-step="review">
+              Final Review
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </aside>
+
+      <main class="content-container">
+  <div class="course-content">
+    
+    
+      <div class="page-card content-body">
+        <h1 id="blood-administration">Blood Administration</h1>
+
+<p><strong>Level:</strong> Advanced<br />
+<strong>Topic:</strong> Critical Care / Trauma<br />
+<strong>Duration:</strong> 75 minutes</p>
+
+<hr />
+
+<h2 id="arrival-scenario">Arrival Scenario</h2>
+
+<p>You’re transporting a 42-year-old male from a rural ED to a trauma center. GSW to abdomen, emergent ex-lap, lost 2 liters in the OR. He’s hypotensive (BP 82/50), tachy (HR 135), pale, and cold.</p>
+
+<p>The surgeon hands you 4 units of PRBCs and 2 units of FFP. “He needs these on the way. Massive transfusion protocol. You good?”</p>
+
+<p>You better be.</p>
+
+<p><strong>Because when you’re moving blood, mistakes kill fast.</strong></p>
+
+<hr />
+
+<h2 id="warm-up-questions">Warm-Up Questions</h2>
+
+<p>Before we get into protocols, answer these:</p>
+
+<ol>
+  <li><strong>What’s the maximum hang time for a unit of blood?</strong></li>
+  <li><strong>Can you run blood through the same line as normal saline?</strong></li>
+  <li>**What happens if you give</li>
+</ol>
+
+<p>ABO-incompatible blood?**</p>
+<ol>
+  <li><strong>What’s the difference between PRBCs, FFP, and platelets?</strong></li>
+  <li><strong>What are the signs of a transfusion reaction?</strong></li>
+</ol>
+
+<p>Think through it. These aren’t theoretical—they’re life-or-death.</p>
+
+<hr />
+
+<h2 id="explanation--breakdown">Explanation / Breakdown</h2>
+
+<h3 id="blood-product-basics">Blood Product Basics</h3>
+
+<h4 id="packed-red-blood-cells-prbcs">Packed Red Blood Cells (PRBCs)</h4>
+<ul>
+  <li><strong>What it is:</strong> RBCs with most plasma removed</li>
+  <li><strong>What it does:</strong> Carries oxygen, increases Hgb</li>
+  <li><strong>Volume:</strong> ~300 mL per unit</li>
+  <li><strong>Raises Hgb by:</strong> ~1 g/dL per unit</li>
+  <li><strong>When to use:</strong> Hemorrhage, severe anemia (Hgb &lt; 7), symptomatic anemia</li>
+</ul>
+
+<h4 id="fresh-frozen-plasma-ffp">Fresh Frozen Plasma (FFP)</h4>
+<ul>
+  <li><strong>What it is:</strong> Liquid portion of blood with clotting factors</li>
+  <li><strong>What it does:</strong> Replaces clotting factors, corrects coagulopathy</li>
+  <li><strong>Volume:</strong> ~250 mL per unit</li>
+  <li><strong>When to use:</strong> Massive transfusion, warfarin reversal, coagulopathy, DIC</li>
+</ul>
+
+<h4 id="platelets">Platelets</h4>
+<ul>
+  <li><strong>What it is:</strong> Concentrated platelets from multiple donors</li>
+  <li><strong>What it does:</strong> Stops bleeding, helps clotting</li>
+  <li><strong>Volume:</strong> ~300 mL per unit</li>
+  <li><strong>When to use:</strong> Thrombocytopenia (&lt; 50K in bleeding patient), platelet dysfunction</li>
+</ul>
+
+<h4 id="cryoprecipitate-cryo">Cryoprecipitate (“Cryo”)</h4>
+<ul>
+  <li><strong>What it is:</strong> Concentrated fibrinogen, factor VIII, vWF</li>
+  <li><strong>What it does:</strong> Provides fibrinogen for clot formation</li>
+  <li><strong>When to use:</strong> Hypofibrinogenemia, massive transfusion, DIC</li>
+</ul>
+
+<h3 id="massive-transfusion-protocol-mtp">Massive Transfusion Protocol (MTP)</h3>
+
+<p>In massive hemorrhage, you don’t transfuse one product at a time. You give <strong>balanced resuscitation</strong>:</p>
+
+<p><strong>1:1:1 Ratio</strong></p>
+<ul>
+  <li>1 unit PRBCs : 1 unit FFP : 1 unit Platelets (per 6-pack)</li>
+</ul>
+
+<p><strong>Why?</strong> Giving only PRBCs dilutes clotting factors and causes coagulopathy. Balanced resuscitation prevents this.</p>
+
+<p><strong>Activation criteria:</strong></p>
+<ul>
+  <li>Loss of 1 blood volume in 24 hours</li>
+  <li>50% blood volume in 3 hours</li>
+  <li>
+    <blockquote>
+      <p>4 units PRBCs in 1 hour</p>
+    </blockquote>
+  </li>
+  <li>Shock + ongoing bleeding</li>
+</ul>
+
+<h3 id="blood-compatibility">Blood Compatibility</h3>
+
+<h4 id="abo-compatibility-chart">ABO Compatibility Chart</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipient</th>
+      <th>Can Receive</th>
+      <th>Universal?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>O-</td>
+      <td>O- only</td>
+      <td>Universal Donor</td>
+    </tr>
+    <tr>
+      <td>O+</td>
+      <td>O-, O+</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>A-</td>
+      <td>O-, A-</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>A+</td>
+      <td>O-, O+, A-, A+</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>B-</td>
+      <td>O-, B-</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>B+</td>
+      <td>O-, O+, B-, B+</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>AB-</td>
+      <td>O-, A-, B-, AB-</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>AB+</td>
+      <td>All types</td>
+      <td>Universal Recipient</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In emergencies:</strong></p>
+<ul>
+  <li>Use O- PRBCs (universal donor)</li>
+  <li>Use AB plasma (universal donor for plasma)</li>
+</ul>
+
+<p><strong>Type-specific is better than O- when available.</strong> O- is precious—save it for true unknowns.</p>
+
+<h3 id="administration-rules">Administration Rules</h3>
+
+<p><strong>1. Verify blood product TWICE</strong></p>
+<ul>
+  <li>Check patient name, DOB, blood type</li>
+  <li>Check unit number, expiration, integrity</li>
+  <li>Two providers confirm (you + nurse/medic)</li>
+</ul>
+
+<p><strong>2. Use proper tubing</strong></p>
+<ul>
+  <li>Blood administration set with 170-micron filter</li>
+  <li><strong>NEVER</strong> use a standard IV set</li>
+</ul>
+
+<p><strong>3. Compatible fluids</strong></p>
+<ul>
+  <li>Normal saline ONLY</li>
+  <li>No LR (calcium binds citrate in blood)</li>
+  <li>No D5W (causes hemolysis)</li>
+</ul>
+
+<p><strong>4. Warming</strong></p>
+<ul>
+  <li>Use a blood warmer for rapid transfusion</li>
+  <li>Prevents hypothermia-induced coagulopathy</li>
+  <li><strong>NEVER</strong> microwave or use hot water</li>
+</ul>
+
+<p><strong>5. Hang time</strong></p>
+<ul>
+  <li>Maximum 4 hours per unit</li>
+  <li>After 4 hours, blood must be discarded</li>
+  <li>Start a new unit if not infused</li>
+</ul>
+
+<p><strong>6. Rate</strong></p>
+<ul>
+  <li>Trauma/hemorrhage: <strong>wide open</strong> (pressure bag, rapid infuser)</li>
+  <li>Stable patient: 2-4 hours per unit</li>
+  <li>Watch for volume overload in cardiac/renal patients</li>
+</ul>
+
+<h3 id="transfusion-reactions">Transfusion Reactions</h3>
+
+<h4 id="acute-hemolytic-reaction-abo-incompatibility">Acute Hemolytic Reaction (ABO incompatibility)</h4>
+<p><strong>Timing:</strong> Immediate (within minutes)<br />
+<strong>Signs:</strong> Fever, chills, back/chest pain, hypotension, dark urine, shock<br />
+<strong>Action:</strong> STOP transfusion immediately, maintain IV with NS, treat shock, notify blood bank</p>
+
+<h4 id="febrile-non-hemolytic-reaction">Febrile Non-Hemolytic Reaction</h4>
+<p><strong>Timing:</strong> Within hours<br />
+<strong>Signs:</strong> Fever (&gt; 1°C rise), chills, mild discomfort<br />
+<strong>Action:</strong> Slow/stop transfusion, give acetaminophen, monitor closely</p>
+
+<h4 id="allergic-reaction">Allergic Reaction</h4>
+<p><strong>Timing:</strong> Minutes to hours<br />
+<strong>Signs:</strong> Urticaria (hives), itching, flushing, mild respiratory symptoms<br />
+<strong>Action:</strong> Stop transfusion, give Benadryl (diphenhydramine), may resume if mild</p>
+
+<h4 id="anaphylaxis">Anaphylaxis</h4>
+<p><strong>Timing:</strong> Immediate<br />
+<strong>Signs:</strong> Severe respiratory distress, angioedema, hypotension, shock<br />
+<strong>Action:</strong> Stop transfusion, epi 0.3-0.5 mg IM, aggressive airway management, IV fluids</p>
+
+<h4 id="trali-transfusion-related-acute-lung-injury">TRALI (Transfusion-Related Acute Lung Injury)</h4>
+<p><strong>Timing:</strong> Within 6 hours<br />
+<strong>Signs:</strong> Acute respiratory distress, hypoxia, bilateral infiltrates, no fluid overload<br />
+<strong>Action:</strong> Stop transfusion, supportive care (O2, CPAP, intubation if needed)</p>
+
+<h4 id="taco-transfusion-associated-circulatory-overload">TACO (Transfusion-Associated Circulatory Overload)</h4>
+<p><strong>Timing:</strong> During or shortly after<br />
+<strong>Signs:</strong> Dyspnea, hypertension, JVD, crackles, pulmonary edema<br />
+<strong>Action:</strong> Stop/slow transfusion, sit patient upright, diuretics, O2, CPAP</p>
+
+<hr />
+
+<h2 id="common-mistakes">Common Mistakes</h2>
+
+<h3 id="mistake-1-using-the-wrong-iv-line">Mistake #1: Using the Wrong IV Line</h3>
+<p>Blood + D5W = hemolysis. Blood + calcium-containing fluids = clotting. Use NS only.</p>
+
+<h3 id="mistake-2-skipping-the-double-check">Mistake #2: Skipping the Double-Check</h3>
+<p>Giving incompatible blood is catastrophic. Always verify twice with two people.</p>
+
+<h3 id="mistake-3-running-blood-too-slow-in-hemorrhage">Mistake #3: Running Blood Too Slow in Hemorrhage</h3>
+<p>In massive bleeding, RUN IT WIDE OPEN. Use a pressure bag. Seconds matter.</p>
+
+<h3 id="mistake-4-ignoring-early-transfusion-reactions">Mistake #4: Ignoring Early Transfusion Reactions</h3>
+<p>Fever, chills, back pain in the first 15 minutes? STOP THE BLOOD. Don’t wait.</p>
+
+<h3 id="mistake-5-forgetting-to-warm">Mistake #5: Forgetting to Warm</h3>
+<p>Cold blood causes hypothermia → coagulopathy → more bleeding. Always use a warmer.</p>
+
+<h3 id="mistake-6-over-transfusing-stable-patients">Mistake #6: Over-Transfusing Stable Patients</h3>
+<p>Not everyone needs a Hgb of 10. Restrictive strategy (Hgb 7-8) is often better.</p>
+
+<hr />
+
+<h2 id="clinical-pearls">Clinical Pearls</h2>
+
+<p>💎 <strong>O- PRBCs are liquid gold.</strong> Use type-specific when possible. Save O- for unknowns.</p>
+
+<p>💎 <strong>1:1:1 saves lives.</strong> In massive transfusion, balanced resuscitation prevents coagulopathy.</p>
+
+<p>💎 <strong>Check within 15 minutes.</strong> Most acute reactions happen early. Stay at bedside.</p>
+
+<p>💎 <strong>Hypothermia kills.</strong> Warm the blood, warm the patient. The lethal triad (hypothermia, acidosis, coagulopathy) is real.</p>
+
+<p>💎 <strong>Back pain during transfusion = hemolytic reaction until proven otherwise.</strong> Stop immediately.</p>
+
+<p>💎 <strong>Platelets don’t work if patient is cold.</strong> Warm first, then transfuse.</p>
+
+<p>💎 <strong>AB plasma is universal donor plasma.</strong> In emergency MTP, use AB plasma if type-specific unavailable.</p>
+
+<p>💎 <strong>Document everything.</strong> Unit numbers, times, vitals, reactions. Medicolegal and quality control.</p>
+
+<p>💎 <strong>When in doubt, STOP.</strong> You can always restart. You can’t undo a fatal reaction.</p>
+
+<hr />
+
+<h2 id="decision-trees">Decision Trees</h2>
+
+<h3 id="blood-administration-checklist">Blood Administration Checklist</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pre-Transfusion
+    ↓
+1. Verify order/indication
+2. Obtain consent (if possible)
+3. Check patient ID band
+4. Two-person verification of blood product
+5. Check expiration date
+6. Inspect product (no clots, discoloration, leaks)
+7. Baseline vitals
+8. Establish IV access (18G or larger preferred)
+9. Prime blood tubing with NS
+10. Set up blood warmer (if available)
+    ↓
+Start Transfusion
+    ↓
+During Transfusion
+    ↓
+1. Vitals at 15 minutes, then q30 minutes
+2. Monitor for reactions continuously
+3. Adjust rate based on clinical status
+4. Document unit number, start time
+    ↓
+Post-Transfusion
+    ↓
+1. Final vitals
+2. Document completion time
+3. Monitor for delayed reactions
+4. Dispose of tubing/empty unit per protocol
+</code></pre></div></div>
+
+<h3 id="transfusion-reaction-response">Transfusion Reaction Response</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Reaction Suspected
+    ↓
+STOP TRANSFUSION IMMEDIATELY
+    ↓
+Maintain IV access with NS (new line if possible)
+    ↓
+Check vitals
+    ↓
+Assess type of reaction:
+
+Fever + back pain + hypotension?
+    → HEMOLYTIC REACTION
+    → Aggressive fluid resuscitation
+    → Treat shock
+    → Send blood sample + urine sample
+    → Notify blood bank STAT
+
+Respiratory distress + hypoxia?
+    → TRALI or TACO?
+    → TRALI: bilateral infiltrates, no JVD → Supportive care, O2
+    → TACO: hypertension, JVD, crackles → Diuretics, CPAP
+
+Hives + itching?
+    → ALLERGIC REACTION
+    → Benadryl 25-50 mg IV/IM
+    → Monitor airway
+    → Mild? May resume transfusion slowly
+
+Severe respiratory distress + angioedema?
+    → ANAPHYLAXIS
+    → Epi 0.3-0.5 mg IM
+    → Airway management
+    → Aggressive treatment
+
+Fever only, no other symptoms?
+    → FEBRILE NON-HEMOLYTIC
+    → Acetaminophen
+    → Monitor closely
+    → May resume if mild
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="practice-cases">Practice Cases</h2>
+
+<h3 id="case-1-the-trauma-patient">Case 1: The Trauma Patient</h3>
+
+<p><strong>Patient:</strong> 28-year-old male, MVC, ruptured spleen, in OR for 2 hours<br />
+<strong>Status:</strong> BP 78/40, HR 142, cold/clammy, 6 units PRBCs given so far<br />
+<strong>Lab:</strong> Hgb 5.2, INR 2.1, platelets 45K</p>
+
+<p><strong>What blood products do you anticipate needing?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Continued balanced MTP: PRBCs, FFP, Platelets (1:1:1 ratio)
+
+**Why:**  
+- Ongoing hemorrhage with shock
+- Coagulopathy developing (INR elevated, platelets dropping)
+- Needs balanced resuscitation to prevent "dilutional coagulopathy"
+
+**Action:**  
+- Activate MTP if not already done
+- Prepare 4 more units PRBCs, 4 FFP, 1 platelet pack
+- Consider TXA if &lt; 3 hours from injury
+- Keep patient warm (blood warmer, Bair Hugger)
+- Massive transfuser if available
+
+</details>
+
+<hr />
+
+<h3 id="case-2-the-reaction">Case 2: The Reaction</h3>
+
+<p><strong>Patient:</strong> 65-year-old female, GI bleed, receiving 2nd unit of PRBCs<br />
+<strong>Event:</strong> 20 minutes into transfusion, patient reports severe back pain, fever 101.8°F, BP dropping to 88/52</p>
+
+<p><strong>What’s happening and what do you do?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Acute Hemolytic Transfusion Reaction
+
+**Why:**  
+- Back pain + fever + hypotension during transfusion = classic triad
+- Suggests ABO incompatibility (wrong blood type given)
+
+**Action:**  
+- STOP transfusion IMMEDIATELY
+- Disconnect blood tubing (do NOT flush line)
+- Start new IV with NS, run wide open
+- Treat hypotension (fluids, pressors if needed)
+- Save the blood unit and tubing (send back to blood bank)
+- Draw blood sample (hemolysis labs: bili, haptoglobin, LDH)
+- Catch urine sample (check for hemoglobinuria)
+- Notify blood bank and physician STAT
+- Prepare for DIC, renal failure
+
+</details>
+
+<hr />
+
+<h3 id="case-3-the-chf-patient">Case 3: The CHF Patient</h3>
+
+<p><strong>Patient:</strong> 80-year-old female, CHF (EF 25%), symptomatic anemia<br />
+<strong>Lab:</strong> Hgb 6.8<br />
+<strong>Orders:</strong> Transfuse 2 units PRBCs</p>
+
+<p><strong>What’s your concern?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Risk of TACO (volume overload)
+
+**Why:**  
+- CHF patients have poor cardiac reserve
+- Each unit = 300 mL of volume
+- High risk of pulmonary edema
+
+**Action:**  
+- Transfuse slowly (2-4 hours per unit minimum)
+- Pre-medicate with diuretic (Lasix 20-40 mg IV) if ordered
+- Monitor closely: vitals q15 min, lung sounds
+- Watch for: increased work of breathing, crackles, hypoxia, hypertension
+- Keep head of bed elevated
+- Stop immediately if signs of overload
+
+</details>
+
+<hr />
+
+<h3 id="case-4-the-unstable-type">Case 4: The Unstable Type</h3>
+
+<p><strong>Patient:</strong> 34-year-old male, stab wound to chest, hypotensive, type unknown<br />
+<strong>Surgeon:</strong> “He needs blood NOW. We don’t have time to type him.”</p>
+
+<p><strong>What do you give?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** O- PRBCs and AB plasma (universal donors)
+
+**Why:**  
+- O- blood has no A or B antigens (won't react with any antibodies)
+- AB plasma has no anti-A or anti-B antibodies (won't attack patient cells)
+- This is the safest emergency combination
+
+**Action:**  
+- Give O- PRBCs immediately (pressure bag, wide open)
+- Give AB plasma (or type-specific if known soon)
+- Send type and cross NOW (results in 30-45 min)
+- Switch to type-specific as soon as available
+- Document "emergency release" protocol used
+
+</details>
+
+<hr />
+
+<h3 id="case-5-the-delayed-reaction">Case 5: The Delayed Reaction</h3>
+
+<p><strong>Patient:</strong> 52-year-old male, received 2 units PRBCs yesterday for GI bleed<br />
+<strong>Now:</strong> Fever 100.9°F, mild SOB, urticaria on trunk</p>
+
+<p><strong>What is this?</strong></p>
+
+<details>
+<summary>Click for answer</summary>
+
+**Answer:** Delayed allergic/febrile transfusion reaction
+
+**Why:**  
+- Occurred hours after transfusion (not immediate)
+- Fever + urticaria suggests immune response
+- Could be febrile non-hemolytic or delayed allergic reaction
+
+**Action:**  
+- Benadryl 25-50 mg PO/IV
+- Acetaminophen 650 mg PO
+- Monitor respiratory status (TRALI can occur up to 6 hours post-transfusion)
+- If worsens: O2, consider steroids
+- Document and report to blood bank
+- Patient may need pre-meds (Benadryl, Tylenol) before future transfusions
+
+</details>
+
+<hr />
+
+<h2 id="reflection">Reflection</h2>
+
+<p>You just learned how to safely administer blood products in high-stakes situations.</p>
+
+<p>Here’s what you should know cold:</p>
+
+<p>✅ Blood product types and indications<br />
+✅ Massive transfusion protocol (1:1:1 ratio)<br />
+✅ ABO compatibility and universal donors<br />
+✅ Administration rules (verification, tubing, fluids, warming)<br />
+✅ Transfusion reactions (recognition and response)<br />
+✅ When to STOP and how to intervene</p>
+
+<p><strong>Next-level thinking:</strong></p>
+<ul>
+  <li>How do you manage Jehovah’s Witness patients who refuse blood?</li>
+  <li>What’s the role of whole blood in trauma resuscitation?</li>
+  <li>How does hypothermia affect transfusion efficacy?</li>
+  <li>When should you consider factor concentrates vs FFP?</li>
+</ul>
+
+<p><strong>Your assignment:</strong><br />
+Shadow a blood transfusion from start to finish. Observe the checks, the monitoring, the documentation. Ask questions. This is high-risk, high-reward medicine—learn it right.</p>
+
+<p>Because when you’re the only thing between your patient and exsanguination, you better know what you’re doing.</p>
+
+<hr />
+
+<h2 id="optional-interactive-practice">Optional: Interactive Practice</h2>
+
+<p><strong>[Tally Embed Placeholder]</strong></p>
+
+<p><em>Interactive quiz: Transfusion scenarios, product selection, and reaction identification</em></p>
+
+<hr />
+
+<p><strong>Medic 138</strong> | Street-smart EMS education<br />
+<em>Learn it like you’ll use it.</em></p>
+
+      </div>
+    
+</main>
+
+    <div class="course-footer page-card" style="margin-top: 2rem; text-align: center;">
+      <h3>Ready for the next challenge?</h3>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button class="btn btn--secondary" onclick="window.scrollTo(0,0)">Review Topic</button>
+        <a href="/games/" class="btn btn--primary">Test Skills</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .course-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  /* Make the footer align with the main content column only */
+  .course-footer {
+    grid-column: 2 / 3;
+  }
+
+  @media (max-width: 768px) {
+    .course-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: relative; top: 0; margin-bottom: 2rem; }
+    .course-footer { grid-column: 1 / -1; } /* Full width on mobile */
+  }
+</style>
+
+</style>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="/assets/img/branding/medic-138-logo.svg" alt="Medic 138" height="40"
+          style="margin-bottom: 1.5rem; filter: grayscale(1) brightness(1.5);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.6;">Street-smart EMS education for the modern medic. Built to
+          help you pass your NREMT and gain real clinical competency.</p>
+        <div class="social-links">
+          <!-- Social icons could go here -->
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Training</h4>
+        <ul class="footer-links">
+          <li><a href="/courses/">Full Courses</a></li>
+          <li><a href="/lessons/">Mini-Lessons</a></li>
+          <li><a href="/lab/">Simulation Lab</a></li>
+          <li><a href="/games/">Interactive Drills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="/dispatch-notes/">Dispatch Notes</a></li>
+          <li><a href="/resources/">Resource Library</a></li>
+          <li><a href="/about/">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:connect@medic138.com">Contact Support</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Medic 138. All rights reserved.</p>
+      <p>Educating the next generation of prehospital providers.</p>
+    </div>
+  </footer>
+
+  <!-- Global JS -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/terminology/medterms.js"></script>
+  <script src="/assets/js/progress.js"></script>
+  <script type="module" src="/assets/js/firebase-auth.js"></script>
+
+  
+
+
+  
+
+  
+
+  
+
+  <script src="/assets/js/course-tabs.js"></script>
+
+  <div class="playbook-banner" id="playbook-banner">
+    <div class="playbook-banner__inner">
+      <p class="playbook-banner__text">
+        NREMT coming up? Grab the free Playbook and stop guessing on test day.
+      </p>
+      <div class="playbook-banner__actions">
+        <a href="https://medic138.gumroad.com/l/dpnnbd" class="btn btn--primary btn--sm">
+          Get the Playbook
+        </a>
+        <button type="button" class="playbook-banner__close" aria-label="Dismiss Playbook banner">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      (function () {
+        var banner = document.getElementById('playbook-banner');
+        if (!banner) return;
+
+        if (localStorage.getItem('medic138_playbook_banner_hidden') === '1') {
+          banner.classList.add('is-hidden');
+          return;
+        }
+
+        var closeBtn = banner.querySelector('.playbook-banner__close');
+        if (!closeBtn) return;
+
+        closeBtn.addEventListener('click', function () {
+          banner.classList.add('is-hidden');
+          localStorage.setItem('medic138_playbook_banner_hidden', '1');
+        });
+      })();
+  </script>
+
+</body>
+
+</html>

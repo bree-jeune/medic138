@@ -1,0 +1,172 @@
+
+
+/* --- Header & Nav --- */
+/* (Assuming the main nav is handled by the Jekyll layout, we style the Game Header) */
+.header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* --- Game Cards (Grid) --- */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.game-card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: rgba(33, 128, 141, 0.1); /* Primary color with opacity */
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* --- Config & Game UI --- */
+.config-card, .game-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.option-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.option-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.8rem;
+  background: var(--bg-body);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.option-btn:hover {
+  border-color: var(--primary);
+}
+
+.option-btn.selected {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* --- In-Game Elements --- */
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.answer-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.answer-btn:hover:not(.disabled) {
+  border-color: var(--primary);
+  background: var(--bg-body);
+}
+
+.answer-btn.correct {
+  background: rgba(33, 128, 141, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.answer-btn.incorrect {
+  background: rgba(192, 21, 47, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Feedback Box --- */
+.feedback {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border-left: 4px solid;
+}
+
+.feedback.success {
+  background: rgba(33, 128, 141, 0.1);
+  border-color: var(--primary);
+}
+
+.feedback.error {
+  background: rgba(192, 21, 47, 0.1);
+  border-color: var(--accent);
+}
+
+/* --- Action Buttons --- */
+.btn-full {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-full:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+}

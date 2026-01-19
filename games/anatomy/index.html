@@ -1,0 +1,237 @@
+---
+layout: default
+title: "Anatomy Explorer"
+custom_css: false
+---
+
+<link rel="stylesheet" href="anatomy.css">
+
+<div class="anatomy-explorer" data-level="basic">
+    <!-- Header -->
+    <header class="anatomy-header">
+        <div class="anatomy-title-block">
+            <h1>Anatomy Explorer</h1>
+            <p>Interactive human anatomy with clinical correlations for EMS providers</p>
+        </div>
+
+        <div class="anatomy-controls">
+            <!-- Level Selector -->
+            <div class="level-selector">
+                <button class="level-btn active" data-level="basic">Basic</button>
+                <button class="level-btn" data-level="aemt">AEMT</button>
+                <button class="level-btn" data-level="paramedic">Paramedic</button>
+                <button class="level-btn" data-level="advanced">Advanced</button>
+            </div>
+
+            <!-- Mode Toggle -->
+            <div class="mode-toggle">
+                <button class="mode-toggle-btn active" data-mode="explore">Explore</button>
+                <button class="mode-toggle-btn" data-mode="quiz">Quiz</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="anatomy-main">
+        <!-- SVG Viewer -->
+        <section class="anatomy-viewer">
+            <div class="anatomy-view-tabs">
+                <button class="view-tab active" data-view="body">Full Body</button>
+                <button class="view-tab" data-view="brain">Brain Detail</button>
+                <button class="view-tab" data-view="heart">Cardiovascular</button>
+                <button class="view-tab" data-view="respiratory">Respiratory</button>
+            </div>
+
+            <!-- Body SVG Container -->
+            <div class="svg-container" data-view="body" id="body-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading anatomy diagram...</p>
+                </div>
+            </div>
+
+            <!-- Brain SVG Container -->
+            <div class="svg-container hidden" data-view="brain" id="brain-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading brain diagram...</p>
+                </div>
+            </div>
+
+            <!-- Cardiovascular SVG Container (uses body.svg with CV filter) -->
+            <div class="svg-container hidden" data-view="heart" id="heart-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading cardiovascular diagram...</p>
+                </div>
+            </div>
+
+            <!-- Respiratory SVG Container (uses body.svg with RS filter) -->
+            <div class="svg-container hidden" data-view="respiratory" id="respiratory-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading respiratory diagram...</p>
+                </div>
+            </div>
+
+            <!-- Quiz Container (overlays when in quiz mode) -->
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-header">
+                    <span class="quiz-progress">Question 1 of 10</span>
+                    <span class="quiz-score">Score: 0/0</span>
+                </div>
+                <div class="quiz-question">
+                    Select "Quiz" mode to begin testing your anatomy knowledge.
+                </div>
+                <div class="quiz-instruction">
+                    Click on the correct structure in the diagram
+                </div>
+                <div class="quiz-feedback hidden"></div>
+            </div>
+        </section>
+
+        <!-- Info Panel -->
+        <aside class="anatomy-info">
+            <div class="info-header">
+                <div class="info-empty">
+                    <div class="info-empty-icon">+</div>
+                    <p>Select an anatomical structure to explore</p>
+                </div>
+            </div>
+            <div class="info-content">
+                <!-- Content populated by JavaScript -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Export Section -->
+    <section class="export-panel">
+        <h2 class="export-title">Study Materials</h2>
+        <p class="export-description">
+            Generate study resources filtered by your selected certification level.
+        </p>
+        <div class="export-actions">
+            <button class="anatomy-btn" id="export-pdf">
+                Download PDF Study Guide
+            </button>
+            <button class="anatomy-btn" id="export-anki">
+                Export Anki Flashcards
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- Scripts -->
+<script src="anatomy-data.js"></script>
+<script src="anatomy.js"></script>
+<script src="quiz.js"></script>
+<script src="export.js"></script>
+
+<script>
+    // Current state
+    let currentLevel = 'basic';
+
+    // Level selector handling
+    document.querySelectorAll('.level-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLevel = btn.dataset.level;
+
+            // Update button states
+            document.querySelectorAll('.level-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.level === currentLevel);
+            });
+
+            // Update explorer data-level attribute
+            document.querySelector('.anatomy-explorer').dataset.level = currentLevel;
+
+            // Re-filter visible content
+            if (window.anatomyExplorer) {
+                window.anatomyExplorer.setLevel(currentLevel);
+            }
+        });
+    });
+
+    // Load SVGs inline
+    document.addEventListener('DOMContentLoaded', async function () {
+        async function loadSVG(containerId, svgPath, systemFilter = null) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            try {
+                const response = await fetch(svgPath);
+                if (!response.ok) throw new Error('Failed to load SVG');
+
+                let svgText = await response.text();
+
+                // Parse and process the SVG
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+                const svgElement = svgDoc.querySelector('svg');
+
+                if (svgElement) {
+                    // Set viewBox if not present
+                    if (!svgElement.getAttribute('viewBox')) {
+                        const width = svgElement.getAttribute('width') || '400';
+                        const height = svgElement.getAttribute('height') || '600';
+                        svgElement.setAttribute('viewBox', `0 0 ${parseFloat(width)} ${parseFloat(height)}`);
+                    }
+
+                    // Make responsive
+                    svgElement.removeAttribute('width');
+                    svgElement.removeAttribute('height');
+                    svgElement.style.maxWidth = '100%';
+                    svgElement.style.height = 'auto';
+
+                    // Process all UBERON elements
+                    const uberonElements = svgElement.querySelectorAll('[id^="UBERON"], [id^="CL_"]');
+                    uberonElements.forEach(el => {
+                        // Remove visibility hidden
+                        el.removeAttribute('visibility');
+                        el.style.visibility = 'visible';
+
+                        // Apply base styling using site colors (cyan primary)
+                        const elements = el.tagName.toLowerCase() === 'g'
+                            ? el.querySelectorAll('path, polygon, ellipse, circle, rect')
+                            : [el];
+
+                        elements.forEach(pathEl => {
+                            const currentStyle = pathEl.getAttribute('style') || '';
+
+                            if (currentStyle.includes('fill:none') || currentStyle.includes('fill: none') || !pathEl.style.fill) {
+                                pathEl.style.fill = 'rgba(6, 182, 212, 0.06)';
+                            }
+                            if (currentStyle.includes('stroke:none') || currentStyle.includes('stroke: none') || !pathEl.style.stroke) {
+                                pathEl.style.stroke = 'rgba(6, 182, 212, 0.25)';
+                                pathEl.style.strokeWidth = '0.5';
+                            }
+                        });
+
+                        // Handle filter for system-specific views
+                        if (systemFilter) {
+                            const anatomyData = ANATOMY_DATA[el.id];
+                            if (anatomyData && anatomyData.system !== systemFilter) {
+                                el.style.opacity = '0.1';
+                                el.style.pointerEvents = 'none';
+                            }
+                        }
+                    });
+
+                    container.innerHTML = '';
+                    container.appendChild(svgElement);
+
+                    // Re-initialize event handlers
+                    if (window.anatomyExplorer) {
+                        window.anatomyExplorer.initializeSVG(svgElement);
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading SVG:', error);
+                container.innerHTML = '<p style="color: var(--accent); text-align: center; padding: 2rem;">Failed to load diagram. Please refresh the page.</p>';
+            }
+        }
+
+        // Load SVGs
+        await Promise.all([
+            loadSVG('body-svg-container', '/games/anatomy/body.svg'),
+            loadSVG('brain-svg-container', '/games/anatomy/brain.svg'),
+            loadSVG('heart-svg-container', '/games/anatomy/body.svg', 'Cardiovascular'),
+            loadSVG('respiratory-svg-container', '/games/anatomy/body.svg', 'Respiratory')
+        ]);
+    });
+</script>

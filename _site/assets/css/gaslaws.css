@@ -1,0 +1,16 @@
+:root {
+
+  --primary-color: var(--primary);
+  --primary-hover: var(--primary-hover);
+  --secondary-color: var(--secondary);
+  --bg-color: var(--bg-body);
+  --surface-color: var(--bg-surface);
+  --text-color: var(--text-main);
+  --text-secondary: var(--text-muted);
+  --border-color: var(--border);
+
+
+  --error-color: var(--accent);
+  --success-color: var(--primary);
+  --warning-color: #a84b2f;
+}
