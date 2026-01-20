@@ -1,8 +1,0 @@
-{
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ],
-  "name": "EMT Skills Lab AI",
-  "description": ""
-}
