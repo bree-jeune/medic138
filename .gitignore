@@ -1,48 +1,42 @@
-# Ruby/Sinatra
-*.gem
-*.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/spec/egit xamples.txt
-/test/tmp/
-/test/version_tmp/
-/tmp/
-
-# Bundler
-/.bundle/
-/vendor/bundle
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
 # macOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 
-# IDE
-.vscode/
-
-# Mobile builds (Capacitor)
-android/
-ios/
+# Ruby/Bundler
+Gemfile.lock
+vendor/
+.bundle/
 
 # Logs
 logs/
 *.log
-.DS_Store
-assets/.DS_Store
+
+# Local scripts
+commit_fix.sh
+diag_git.sh
+serve.sh
+
+# AI/Editor configs
+.agent/
+.cursor/
+.vscode/
+
+# Capacitor/Mobile (if not actively building mobile)
+# node_modules/
+# ios/
+# android/
+
+# Environment
+.env
+.env.local
+*.pem
 node_modules
-_site/
-.DS_Store
-.DS_Store
-_site/
-.DS_Store
-On branch main
-Your branch is up to date with 'medic138/main'.
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   .gitignore
-
-no changes added to commit (use "git add" and/or "git commit -a")
-.DS_Store
