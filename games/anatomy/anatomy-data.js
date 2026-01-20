@@ -811,6 +811,429 @@ const ANATOMY_DATA = {
         quiz: [
             { q: "Paired C-shaped CSF-filled cavities within the cerebral hemispheres.", type: "description" }
         ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════════
+    // ADDITIONAL CARDIOVASCULAR STRUCTURES
+    // ═══════════════════════════════════════════════════════════════════
+    "UBERON_0001585": {
+        name: "Superior Vena Cava",
+        latin: "Vena cava superior",
+        system: "Cardiovascular",
+        description: "Large vein carrying deoxygenated blood from the upper body to the right atrium. Formed by the junction of the left and right brachiocephalic veins. Approximately 7 cm long.",
+        clinical: "SVC syndrome from external compression (tumor, thrombus) causes facial swelling, distended neck veins, and dyspnea. Central line placement targets SVC/RA junction.",
+        conditions: ["SVC Syndrome", "Catheter-Related Thrombosis"],
+        quiz: [
+            { q: "Large vein draining upper body to right atrium, ~7 cm long.", type: "description" }
+        ]
+    },
+    "UBERON_0001584": {
+        name: "Inferior Vena Cava",
+        latin: "Vena cava inferior",
+        system: "Cardiovascular",
+        description: "The largest vein in the body, carrying deoxygenated blood from the lower body to the right atrium. Formed by the common iliac veins at L5 level. Passes through the diaphragm at T8.",
+        clinical: "IVC compression in late pregnancy causes supine hypotension—position pregnant patients on left side. IVC filters prevent pulmonary embolism from lower extremity DVTs.",
+        conditions: ["IVC Thrombosis", "Supine Hypotensive Syndrome"],
+        quiz: [
+            { q: "Largest vein carrying blood from lower body to right atrium.", type: "description" }
+        ]
+    },
+    "UBERON_0002012": {
+        name: "Pulmonary Artery",
+        latin: "Arteria pulmonalis",
+        system: "Cardiovascular",
+        description: "The only artery carrying deoxygenated blood—from the right ventricle to the lungs for oxygenation. Divides into left and right branches at the carina level.",
+        clinical: "Pulmonary embolism blocks pulmonary arterial flow causing hypoxia, hypotension, and sudden death in massive PE. Saddle embolus straddles the bifurcation.",
+        conditions: ["Pulmonary Embolism", "Pulmonary Hypertension"],
+        quiz: [
+            { q: "Only artery carrying deoxygenated blood, from right ventricle to lungs.", type: "description" }
+        ]
+    },
+    "UBERON_0002016": {
+        name: "Pulmonary Vein",
+        latin: "Vena pulmonalis",
+        system: "Cardiovascular",
+        description: "Four veins (two from each lung) carrying oxygenated blood from the lungs to the left atrium. The only veins carrying oxygenated blood.",
+        clinical: "Pulmonary vein thrombosis is rare but can cause stroke via paradoxical embolism. Pulmonary vein isolation is a treatment for atrial fibrillation.",
+        conditions: ["Pulmonary Vein Thrombosis", "Atrial Fibrillation"],
+        quiz: [
+            { q: "Four veins carrying oxygenated blood from lungs to left atrium.", type: "description" }
+        ]
+    },
+    "UBERON_0001513": {
+        name: "Right Atrium",
+        latin: "Atrium dextrum",
+        system: "Cardiovascular",
+        description: "Upper right chamber of the heart receiving deoxygenated blood from the SVC and IVC. Contains the sinoatrial (SA) node, the heart's natural pacemaker.",
+        clinical: "Right atrial enlargement from tricuspid valve disease or right heart failure. Atrial flutter/fibrillation often originate near the SA node. Central line tips positioned here.",
+        conditions: ["Right Heart Failure", "Atrial Arrhythmias"],
+        quiz: [
+            { q: "Upper right heart chamber containing the SA node pacemaker.", type: "description" }
+        ]
+    },
+    "UBERON_0002078": {
+        name: "Right Ventricle",
+        latin: "Ventriculus dexter",
+        system: "Cardiovascular",
+        description: "Lower right chamber pumping deoxygenated blood to the pulmonary circulation. Has thinner walls than the left ventricle as it pumps against lower pulmonary resistance.",
+        clinical: "Right ventricular infarction presents with hypotension and clear lungs—requires fluid resuscitation, not diuretics. Avoid nitroglycerin which reduces preload.",
+        conditions: ["Right Ventricular MI", "Right Heart Failure", "Pulmonary Hypertension"],
+        quiz: [
+            { q: "Lower right heart chamber with thinner walls pumping to pulmonary circulation.", type: "description" }
+        ]
+    },
+    "UBERON_0002080": {
+        name: "Left Atrium",
+        latin: "Atrium sinistrum",
+        system: "Cardiovascular",
+        description: "Upper left chamber receiving oxygenated blood from the four pulmonary veins. Contains the left atrial appendage, a common site for thrombus formation in atrial fibrillation.",
+        clinical: "Left atrial thrombi in AFib can embolize causing stroke. Left atrial enlargement from mitral valve disease. Atrial fibrillation increases stroke risk 5-fold.",
+        conditions: ["Atrial Fibrillation", "Mitral Stenosis", "Left Atrial Thrombus"],
+        quiz: [
+            { q: "Upper left heart chamber receiving oxygenated blood from pulmonary veins.", type: "description" }
+        ]
+    },
+    "UBERON_0002081": {
+        name: "Left Ventricle",
+        latin: "Ventriculus sinister",
+        system: "Cardiovascular",
+        description: "Lower left chamber with thick muscular walls (10-16mm) pumping oxygenated blood to systemic circulation via the aorta. Generates the highest pressures in the cardiovascular system.",
+        clinical: "Left ventricular hypertrophy from chronic hypertension increases oxygen demand. STEMI affects LV segments based on coronary artery occlusion location. Ejection fraction measures LV function.",
+        conditions: ["Myocardial Infarction", "Left Ventricular Hypertrophy", "Heart Failure"],
+        quiz: [
+            { q: "Thick-walled lower left chamber pumping to systemic circulation at highest pressures.", type: "description" }
+        ]
+    },
+    "UBERON_0001621": {
+        name: "Coronary Artery",
+        latin: "Arteria coronaria",
+        system: "Cardiovascular",
+        description: "Arteries supplying the heart muscle itself. Right coronary artery (RCA) supplies the right heart and inferior LV. Left main divides into LAD (anterior LV) and circumflex (lateral LV).",
+        clinical: "Coronary artery occlusion causes myocardial infarction. LAD occlusion = 'widow maker' with high mortality. STEMI treatment: PCI within 90 minutes or thrombolytics within 30 minutes.",
+        conditions: ["Acute Coronary Syndrome", "STEMI", "NSTEMI", "Unstable Angina"],
+        quiz: [
+            { q: "Arteries supplying heart muscle: RCA, LAD, and circumflex.", type: "description" }
+        ]
+    },
+    "UBERON_0001020": {
+        name: "Jugular Vein",
+        latin: "Vena jugularis",
+        system: "Cardiovascular",
+        description: "Major veins draining blood from the head. External jugular visible superficially; internal jugular deeper, alongside the carotid artery. Internal jugular is a central line access site.",
+        clinical: "JVD (jugular venous distension) indicates right heart failure, cardiac tamponade, or tension pneumothorax. Normal JVP is 6-8 cm H2O. Measured at 45-degree angle.",
+        conditions: ["Right Heart Failure", "Cardiac Tamponade", "Volume Overload"],
+        quiz: [
+            { q: "Neck veins draining the head; distension indicates right heart problems.", type: "description" }
+        ]
+    },
+    "UBERON_0001015": {
+        name: "Femoral Artery",
+        latin: "Arteria femoralis",
+        system: "Cardiovascular",
+        description: "Major artery of the thigh, continuation of the external iliac artery. Palpable at the midpoint between ASIS and pubic symphysis in the femoral triangle.",
+        clinical: "Common site for arterial access in cardiac catheterization. Femoral pulse is a central pulse—absence indicates severe hypotension. Femoral hemorrhage can be rapidly fatal.",
+        conditions: ["Peripheral Artery Disease", "Femoral Artery Aneurysm", "Hemorrhage"],
+        quiz: [
+            { q: "Major thigh artery palpable at femoral triangle, used for cardiac cath access.", type: "description" }
+        ]
+    },
+    "UBERON_0000419": {
+        name: "Carotid Artery",
+        latin: "Arteria carotis",
+        system: "Cardiovascular",
+        description: "The common carotid bifurcates into internal (brain supply) and external (face supply) at the carotid bifurcation around C3-C4. Carotid body and sinus are located here.",
+        clinical: "Carotid pulse is a central pulse for cardiac arrest assessment. Carotid stenosis causes TIA/stroke. Carotid sinus massage can terminate SVT but risks stroke in elderly.",
+        conditions: ["Carotid Stenosis", "Carotid Dissection", "TIA", "Stroke"],
+        quiz: [
+            { q: "Neck artery bifurcating to supply brain (internal) and face (external).", type: "description" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════════
+    // ADDITIONAL RESPIRATORY STRUCTURES
+    // ═══════════════════════════════════════════════════════════════════
+    "UBERON_0001737": {
+        name: "Larynx",
+        latin: "Larynx",
+        system: "Respiratory",
+        description: "The voice box, containing the vocal cords and epiglottis. Located at C3-C6 in adults, higher in children. Cartilaginous framework includes thyroid cartilage (Adam's apple) and cricoid.",
+        clinical: "Airway structures for intubation. Cricothyrotomy performed through cricothyroid membrane below thyroid cartilage. Laryngospasm can completely obstruct airway.",
+        conditions: ["Laryngospasm", "Croup", "Epiglottitis", "Laryngeal Fracture"],
+        quiz: [
+            { q: "Voice box at C3-C6 containing vocal cords and epiglottis.", type: "description" }
+        ]
+    },
+    "UBERON_0000388": {
+        name: "Epiglottis",
+        latin: "Epiglottis",
+        system: "Respiratory",
+        description: "Leaf-shaped elastic cartilage that covers the glottis during swallowing to prevent aspiration. Attaches to the thyroid cartilage and hyoid bone.",
+        clinical: "Epiglottitis is a life-threatening emergency—do not examine throat as spasm may cause complete obstruction. Classic presentation: drooling, stridor, tripod positioning.",
+        conditions: ["Epiglottitis", "Aspiration"],
+        quiz: [
+            { q: "Leaf-shaped cartilage covering glottis during swallowing to prevent aspiration.", type: "description" }
+        ]
+    },
+    "UBERON_0002185": {
+        name: "Bronchiole",
+        latin: "Bronchiolus",
+        system: "Respiratory",
+        description: "Small airways less than 1mm diameter, lacking cartilage. Terminal bronchioles lead to respiratory bronchioles which contain alveoli. Smooth muscle controls airway diameter.",
+        clinical: "Bronchiolitis (RSV) affects infants causing wheezing and respiratory distress. Bronchospasm in asthma occurs at bronchiolar level—beta-2 agonists relax smooth muscle.",
+        conditions: ["Bronchiolitis", "Asthma", "Bronchospasm"],
+        quiz: [
+            { q: "Small airways <1mm lacking cartilage, with smooth muscle control.", type: "description" }
+        ]
+    },
+    "UBERON_0002299": {
+        name: "Alveolus",
+        latin: "Alveolus pulmonis",
+        system: "Respiratory",
+        description: "Microscopic air sacs (~300 million in lungs) where gas exchange occurs. Surrounded by capillaries. Type I cells for gas exchange, Type II produce surfactant. Wall thickness ~0.5 micrometers.",
+        clinical: "Pulmonary edema fills alveoli with fluid impairing gas exchange. ARDS damages alveolar-capillary membrane. Surfactant deficiency in premature infants causes respiratory distress syndrome.",
+        conditions: ["Pulmonary Edema", "ARDS", "Pneumonia", "Respiratory Distress Syndrome"],
+        quiz: [
+            { q: "~300 million microscopic air sacs where gas exchange occurs.", type: "description" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════════
+    // MUSCULOSKELETAL - BONES
+    // ═══════════════════════════════════════════════════════════════════
+    "UBERON_0000979": {
+        name: "Femur",
+        latin: "Os femoris",
+        system: "Musculoskeletal",
+        description: "The thigh bone—longest, heaviest, and strongest bone in the body. Articulates with pelvis (hip joint) and tibia/patella (knee joint). Contains red marrow for hematopoiesis.",
+        clinical: "Femur fractures cause significant blood loss (1-2 liters) and require traction splinting. Hip fractures in elderly are high mortality. Femoral head AVN from disrupted blood supply.",
+        conditions: ["Femur Fracture", "Hip Fracture", "Avascular Necrosis"],
+        quiz: [
+            { q: "Longest, strongest bone in the body, fractures cause 1-2L blood loss.", type: "description" }
+        ]
+    },
+    "UBERON_0001423": {
+        name: "Humerus",
+        latin: "Humerus",
+        system: "Musculoskeletal",
+        description: "The upper arm bone, articulating with scapula (shoulder) and radius/ulna (elbow). The surgical neck is a common fracture site. Radial nerve spirals around the shaft.",
+        clinical: "Mid-shaft humerus fractures risk radial nerve injury—assess wrist drop and sensation to dorsal hand. Supracondylar fractures in children risk brachial artery injury.",
+        conditions: ["Humerus Fracture", "Radial Nerve Palsy", "Shoulder Dislocation"],
+        quiz: [
+            { q: "Upper arm bone with radial nerve spiraling around shaft.", type: "description" }
+        ]
+    },
+    "UBERON_0002412": {
+        name: "Vertebra",
+        latin: "Vertebra",
+        system: "Musculoskeletal",
+        description: "33 vertebrae form the spine: 7 cervical, 12 thoracic, 5 lumbar, 5 sacral (fused), 4 coccygeal (fused). Protect spinal cord and provide structural support.",
+        clinical: "Suspect spinal injury in trauma—immobilize. Cervical injuries most dangerous. C3-5 controls diaphragm. Compression fractures common in osteoporosis. Disc herniation causes radiculopathy.",
+        conditions: ["Spinal Fracture", "Disc Herniation", "Compression Fracture", "Spinal Stenosis"],
+        quiz: [
+            { q: "33 bones of the spine: 7 cervical, 12 thoracic, 5 lumbar, fused sacral/coccygeal.", type: "description" }
+        ]
+    },
+    "UBERON_0002228": {
+        name: "Rib",
+        latin: "Costa",
+        system: "Musculoskeletal",
+        description: "12 pairs of curved bones forming the thoracic cage. True ribs (1-7) attach directly to sternum; false ribs (8-10) attach via costal cartilage; floating ribs (11-12) don't attach anteriorly.",
+        clinical: "Rib fractures are extremely painful and impair ventilation. Multiple fractures risk flail chest. Lower rib fractures may indicate liver/spleen injury. First rib fracture suggests severe trauma.",
+        conditions: ["Rib Fracture", "Flail Chest", "Costochondritis"],
+        quiz: [
+            { q: "12 pairs of curved bones forming thoracic cage; true, false, and floating types.", type: "description" }
+        ]
+    },
+    "UBERON_0004537": {
+        name: "Clavicle",
+        latin: "Clavicula",
+        system: "Musculoskeletal",
+        description: "The collarbone—S-shaped bone connecting sternum to scapula. Only bony attachment of upper limb to axial skeleton. Transmits forces from arm to trunk.",
+        clinical: "Most commonly fractured bone. Usually from FOOSH or direct blow. Middle third fractures most common. Assess for brachial plexus injury and subclavian vessel damage.",
+        conditions: ["Clavicle Fracture", "AC Separation"],
+        quiz: [
+            { q: "S-shaped bone connecting sternum to scapula, most commonly fractured bone.", type: "description" }
+        ]
+    },
+    "UBERON_0001112": {
+        name: "Scapula",
+        latin: "Scapula",
+        system: "Musculoskeletal",
+        description: "The shoulder blade—triangular flat bone on posterior thorax. Glenoid fossa articulates with humerus. Protected by thick overlying muscles, making fractures uncommon.",
+        clinical: "Scapula fractures indicate high-energy trauma—look for associated injuries (rib fractures, pulmonary contusion). Winged scapula from long thoracic nerve injury.",
+        conditions: ["Scapula Fracture", "Winged Scapula"],
+        quiz: [
+            { q: "Triangular shoulder blade; fractures indicate high-energy trauma.", type: "description" }
+        ]
+    },
+    "UBERON_0000975": {
+        name: "Sternum",
+        latin: "Sternum",
+        system: "Musculoskeletal",
+        description: "The breastbone—central bone of anterior chest. Three parts: manubrium, body, and xiphoid process. Sternal angle (angle of Louis) at T4-5 level marks second rib attachment.",
+        clinical: "Sternal fractures suggest significant anterior chest trauma—evaluate for cardiac contusion. Sternal rub is a pain stimulus for unconscious patients. IO access site in children.",
+        conditions: ["Sternal Fracture", "Cardiac Contusion"],
+        quiz: [
+            { q: "Breastbone with manubrium, body, and xiphoid; sternal angle at T4-5.", type: "description" }
+        ]
+    },
+    "UBERON_0000981": {
+        name: "Tibia",
+        latin: "Tibia",
+        system: "Musculoskeletal",
+        description: "The shinbone—larger medial bone of lower leg. Weight-bearing bone of the knee. Tibial plateau, proximal tibia, and medial malleolus are common fracture sites.",
+        clinical: "Tibial plateau fractures from axial loading. Proximal tibia is an IO access site. Open tibia fractures common due to minimal soft tissue coverage. Assess for compartment syndrome.",
+        conditions: ["Tibia Fracture", "Tibial Plateau Fracture", "Compartment Syndrome"],
+        quiz: [
+            { q: "Larger lower leg bone, weight-bearing, common IO access site.", type: "description" }
+        ]
+    },
+    "UBERON_0000978": {
+        name: "Fibula",
+        latin: "Fibula",
+        system: "Musculoskeletal",
+        description: "The smaller lateral bone of lower leg. Not weight-bearing but provides lateral ankle stability via lateral malleolus. Common peroneal nerve wraps around fibular head.",
+        clinical: "Fibula neck fractures or pressure against fibular head can cause peroneal nerve injury—foot drop and sensory loss over dorsum of foot. Ankle fractures often involve fibula.",
+        conditions: ["Fibula Fracture", "Ankle Fracture", "Peroneal Nerve Injury"],
+        quiz: [
+            { q: "Smaller lateral lower leg bone; peroneal nerve wraps around its head.", type: "description" }
+        ]
+    },
+    "UBERON_0001424": {
+        name: "Radius",
+        latin: "Radius",
+        system: "Musculoskeletal",
+        description: "Lateral forearm bone (thumb side). Shorter than ulna. Articulates with humerus (elbow), ulna, and carpal bones (wrist). Bears ~80% of force across wrist joint.",
+        clinical: "Colles fracture (distal radius) from FOOSH shows 'dinner fork' deformity. Radial head fractures from fall on outstretched hand. Check for median nerve injury.",
+        conditions: ["Colles Fracture", "Radial Head Fracture", "Distal Radius Fracture"],
+        quiz: [
+            { q: "Lateral forearm bone bearing 80% of wrist force; Colles fracture site.", type: "description" }
+        ]
+    },
+    "UBERON_0001425": {
+        name: "Ulna",
+        latin: "Ulna",
+        system: "Musculoskeletal",
+        description: "Medial forearm bone (pinky side). Longer than radius. Olecranon process forms the elbow point. Articulates with humerus at trochlear notch.",
+        clinical: "Olecranon fractures from direct blow or triceps avulsion. Monteggia fracture: proximal ulna fracture with radial head dislocation. Nightstick fracture from direct blow.",
+        conditions: ["Olecranon Fracture", "Monteggia Fracture", "Nightstick Fracture"],
+        quiz: [
+            { q: "Medial forearm bone with olecranon forming elbow point.", type: "description" }
+        ]
+    },
+    "UBERON_0000976": {
+        name: "Pelvis",
+        latin: "Pelvis",
+        system: "Musculoskeletal",
+        description: "Bony ring formed by two hip bones (ilium, ischium, pubis) and sacrum. Protects pelvic organs, supports trunk, and transfers weight to lower limbs.",
+        clinical: "Pelvic fractures are high-energy injuries with massive hemorrhage (2-4 liters). Stabilize with pelvic binder. Open book fractures disrupt pelvic ring. Assess for urethral injury.",
+        conditions: ["Pelvic Fracture", "Acetabular Fracture", "Sacral Fracture"],
+        quiz: [
+            { q: "Bony ring protecting pelvic organs; fractures cause 2-4L blood loss.", type: "description" }
+        ]
+    },
+    "UBERON_0001684": {
+        name: "Mandible",
+        latin: "Mandibula",
+        system: "Musculoskeletal",
+        description: "The lower jaw bone—only moveable bone of the skull. U-shaped bone articulating with temporal bone at TMJ. Contains lower teeth and tongue muscle attachments.",
+        clinical: "Mandible fractures often bilateral due to ring structure. Risk airway compromise from tongue falling back. TMJ dislocation: patient cannot close mouth. Check for dental injuries.",
+        conditions: ["Mandible Fracture", "TMJ Dislocation", "Dental Trauma"],
+        quiz: [
+            { q: "Only moveable skull bone; fractures risk airway from tongue displacement.", type: "description" }
+        ]
+    },
+    "UBERON_0003129": {
+        name: "Skull",
+        latin: "Cranium",
+        system: "Musculoskeletal",
+        description: "Bony framework of the head, protecting the brain. Composed of 22 bones: 8 cranial (protecting brain) and 14 facial. Adult skull has fused sutures; infants have fontanelles.",
+        clinical: "Skull fractures may be linear, depressed, or basilar. Battle's sign (mastoid bruising) and raccoon eyes indicate basilar skull fracture. Palpate for step-offs and crepitus.",
+        conditions: ["Skull Fracture", "Basilar Skull Fracture", "Depressed Skull Fracture"],
+        quiz: [
+            { q: "22-bone structure protecting brain; 8 cranial and 14 facial bones.", type: "description" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════════
+    // MUSCULOSKELETAL - MUSCLES
+    // ═══════════════════════════════════════════════════════════════════
+    "UBERON_0001106": {
+        name: "Intercostal Muscles",
+        latin: "Musculi intercostales",
+        system: "Musculoskeletal",
+        description: "Three layers of muscles between ribs: external (elevate ribs for inspiration), internal (depress ribs for forced expiration), and innermost. Neurovascular bundle runs along inferior rib border.",
+        clinical: "Intercostal retractions indicate respiratory distress. Intercostal nerve block for rib fracture pain. When performing procedures, stay superior to rib to avoid neurovascular bundle.",
+        conditions: ["Intercostal Strain", "Costochondritis"],
+        quiz: [
+            { q: "Three muscle layers between ribs for breathing; neurovascular bundle at inferior border.", type: "description" }
+        ]
+    },
+    "UBERON_0001077": {
+        name: "Deltoid Muscle",
+        latin: "Musculus deltoideus",
+        system: "Musculoskeletal",
+        description: "Triangular shoulder muscle with three heads: anterior (flexion), lateral (abduction), and posterior (extension). Covers shoulder joint and gives rounded contour.",
+        clinical: "Common IM injection site—lateral aspect, two fingerbreadths below acromion. Deltoid atrophy from axillary nerve injury (shoulder dislocation). Test abduction against resistance.",
+        conditions: ["Axillary Nerve Injury", "Rotator Cuff Injury"],
+        quiz: [
+            { q: "Triangular shoulder muscle with three heads; common IM injection site.", type: "description" }
+        ]
+    },
+    "UBERON_0001381": {
+        name: "Vastus Lateralis",
+        latin: "Musculus vastus lateralis",
+        system: "Musculoskeletal",
+        description: "Largest component of the quadriceps on the lateral thigh. Extends the knee. Located in the anterolateral thigh between greater trochanter and knee.",
+        clinical: "Preferred IM injection site in infants and children (and adults when deltoid unavailable). Thick muscle mass allows larger volume injections. IO access landmark.",
+        conditions: ["Quadriceps Strain", "Compartment Syndrome"],
+        quiz: [
+            { q: "Largest quadriceps muscle on lateral thigh; preferred pediatric IM site.", type: "description" }
+        ]
+    },
+    "UBERON_0001378": {
+        name: "Gluteus Maximus",
+        latin: "Musculus gluteus maximus",
+        system: "Musculoskeletal",
+        description: "The largest muscle in the body, forming the buttock. Powerful hip extensor essential for climbing stairs, rising from sitting, and running. Covers sciatic nerve.",
+        clinical: "Avoid IM injections in gluteus maximus to prevent sciatic nerve injury—use ventrogluteal or vastus lateralis instead. Gluteal compartment syndrome can occur.",
+        conditions: ["Gluteal Strain", "Sciatic Nerve Injury"],
+        quiz: [
+            { q: "Largest body muscle forming buttock; sciatic nerve runs beneath it.", type: "description" }
+        ]
+    },
+    "UBERON_0001386": {
+        name: "Quadriceps Femoris",
+        latin: "Musculus quadriceps femoris",
+        system: "Musculoskeletal",
+        description: "Four-headed anterior thigh muscle: rectus femoris, vastus lateralis, vastus medialis, vastus intermedius. Powerful knee extensor. Inserts on patella via quadriceps tendon.",
+        clinical: "Quadriceps strength essential for ambulation. Weakness causes difficulty climbing stairs and rising from chair. Quadriceps tendon rupture causes inability to extend knee.",
+        conditions: ["Quadriceps Rupture", "Patellar Tendinitis", "Quadriceps Strain"],
+        quiz: [
+            { q: "Four-headed thigh muscle: rectus femoris and three vastus muscles.", type: "description" }
+        ]
+    },
+    "UBERON_0001376": {
+        name: "Hamstrings",
+        latin: "Musculi ischiocrurale",
+        system: "Musculoskeletal",
+        description: "Three posterior thigh muscles: biceps femoris, semimembranosus, semitendinosus. Flex the knee and extend the hip. Originate from ischial tuberosity.",
+        clinical: "Hamstring strains common in athletes—sudden pop during sprinting. Tight hamstrings contribute to low back pain. Test with straight leg raise.",
+        conditions: ["Hamstring Strain", "Avulsion Fracture"],
+        quiz: [
+            { q: "Three posterior thigh muscles flexing knee and extending hip.", type: "description" }
+        ]
+    },
+    "UBERON_0001388": {
+        name: "Gastrocnemius",
+        latin: "Musculus gastrocnemius",
+        system: "Musculoskeletal",
+        description: "Two-headed superficial calf muscle. Primary plantarflexor (pointing toes down). Along with soleus, forms the triceps surae, inserting via Achilles tendon.",
+        clinical: "Achilles tendon rupture presents with sudden pop during activity, positive Thompson test, and inability to plantarflex. DVT prophylaxis includes calf pumps during immobility.",
+        conditions: ["Achilles Tendon Rupture", "Calf Strain", "DVT"],
+        quiz: [
+            { q: "Two-headed calf muscle inserting via Achilles tendon for plantarflexion.", type: "description" }
+        ]
     }
 };
 
@@ -907,6 +1330,17 @@ function assignEMSLevels() {
         "UBERON_0001871", // Parietal Lobe
         "UBERON_0002021", // Occipital Lobe
         "UBERON_0002037", // Cerebellum
+        // New basic structures
+        "UBERON_0000979", // Femur
+        "UBERON_0002228", // Rib
+        "UBERON_0000975", // Sternum
+        "UBERON_0004537", // Clavicle
+        "UBERON_0001684", // Mandible
+        "UBERON_0003129", // Skull
+        "UBERON_0001737", // Larynx
+        "UBERON_0000388", // Epiglottis
+        "UBERON_0001077", // Deltoid
+        "UBERON_0001381", // Vastus Lateralis
     ];
 
     // AEMT structures - more detailed, intermediate level
@@ -928,6 +1362,31 @@ function assignEMSLevels() {
         "UBERON_0000341", // Pharynx
         "UBERON_0001043", // Esophagus
         "UBERON_0001905", // Temporal Lobe
+        // New AEMT structures
+        "UBERON_0001585", // Superior Vena Cava
+        "UBERON_0001584", // Inferior Vena Cava
+        "UBERON_0001513", // Right Atrium
+        "UBERON_0002078", // Right Ventricle
+        "UBERON_0002080", // Left Atrium
+        "UBERON_0002081", // Left Ventricle
+        "UBERON_0001020", // Jugular Vein
+        "UBERON_0000419", // Carotid Artery
+        "UBERON_0001015", // Femoral Artery
+        "UBERON_0002185", // Bronchiole
+        "UBERON_0002299", // Alveolus
+        "UBERON_0001423", // Humerus
+        "UBERON_0002412", // Vertebra
+        "UBERON_0001112", // Scapula
+        "UBERON_0000981", // Tibia
+        "UBERON_0000978", // Fibula
+        "UBERON_0001424", // Radius
+        "UBERON_0001425", // Ulna
+        "UBERON_0000976", // Pelvis
+        "UBERON_0001378", // Gluteus Maximus
+        "UBERON_0001386", // Quadriceps
+        "UBERON_0001376", // Hamstrings
+        "UBERON_0001388", // Gastrocnemius
+        "UBERON_0001106", // Intercostal Muscles
     ];
 
     // Paramedic structures - advanced cardiac, neuro details
@@ -947,6 +1406,10 @@ function assignEMSLevels() {
         "UBERON_0001021", // Nerve
         "UBERON_0002116", // Ileum
         "UBERON_0001981", // Blood Vessel
+        // New paramedic structures
+        "UBERON_0002012", // Pulmonary Artery
+        "UBERON_0002016", // Pulmonary Vein
+        "UBERON_0001621", // Coronary Artery
     ];
 
     // Advanced - specialized neuroanatomy, basal ganglia, etc.

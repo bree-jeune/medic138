@@ -254,49 +254,7 @@ body.nav-open .nav-header img {
   align-items: center;
 }
 
-/* --- Mobile Styles --- */
-@media (max-width: 768px) {
-  header nav {
-    padding: 0.75rem 1rem;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    background: rgba(10, 15, 25, 0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-    padding: 1rem 1.25rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-
-    display: none;
-  }
-
-  /* JS toggles .is-active — keep this */
-  .nav-links.is-active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .auth-container {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-}
+/* Mobile navigation styles are defined in "Mobile Navigation - Slide-in Drawer" section below */
 
 /* --- Homepage Hero --- */
 
@@ -879,115 +837,8 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* --- Responsive Navigation --- */
-.navbar {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.nav-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.nav-toggle {
-  display: none;
-  /* Hidden on desktop */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Hamburger Icon Styling */
-.hamburger-box {
-  width: 30px;
-  height: 24px;
-  display: inline-block;
-  position: relative;
-}
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-  width: 30px;
-  height: 4px;
-  background-color: var(--text-main);
-  border-radius: 4px;
-  position: absolute;
-  transition: transform .15s ease;
-}
-
-.hamburger-inner::before,
-.hamburger-inner::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 4px;
-  background-color: var(--text-main);
-  border-radius: 4px;
-  position: absolute;
-  transition: transform .15s ease;
-}
-
-.hamburger-inner::before {
-  top: -10px;
-}
-
-.hamburger-inner::after {
-  bottom: -10px;
-}
-
-/* Mobile Styles (Under 768px) */
+/* Content and sidebar styles that were mixed in with duplicate nav */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    /* Hidden by default on mobile */
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    margin-top: 1rem;
-  }
-
-  .nav-links.is-active {
-    display: flex;
-  }
-
-  .nav-item {
-    width: 100%;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--bg-body);
-    font-size: 1.1rem;
-  }
-
-  .auth-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
-    margin-left: 0 !important;
-    /* Override inline style */
-  }
 
   /* Sidebar logic for courses/games on mobile */
   .course-layout {
@@ -1755,79 +1606,106 @@ footer {
   transform: scale(1.05);
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.nav-item {
-  font-size: 0.95rem;
-  font-weight: 500 !important;
-  color: var(--text-muted) !important;
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.nav-item:hover,
-.nav-item.is-active {
-  color: var(--primary) !important;
-}
-
-/* Auth section within nav */
-.auth-container {
-  margin-left: 0.5rem;
-  padding-left: 1.5rem;
-  border-left: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-@media (max-width: 1024px) {
-  .nav-links {
-    gap: 1rem;
-  }
-
+/* Mobile Navigation - Slide-in Drawer */
+@media (max-width: 768px) {
   .navbar {
+    height: 60px;
     padding: 0 1rem;
   }
-}
 
-@media (max-width: 860px) {
+  .nav-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Drawer slides in from right */
   .nav-links {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg-body);
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 280px !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    z-index: 1000 !important;
+
+    display: flex !important;
     flex-direction: column !important;
-    padding: 2rem !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+
+    background: #0a101c !important;
+    background-color: #0a101c !important;
+    border-left: 2px solid #3AC1C8 !important;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+    padding: 5rem 0 2rem !important;
+
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    display: none;
-    z-index: 1000;
+    transition: transform 0.3s ease-out;
+    overflow-y: auto;
   }
 
   .nav-links.is-active {
-    display: flex !important;
     transform: translateX(0);
   }
 
+  .nav-links .nav-item {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  }
+
+  .nav-links .nav-item:hover {
+    background: rgba(58, 193, 200, 0.1);
+    color: var(--primary);
+    padding-left: 2rem;
+  }
+
   .nav-toggle {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
   }
 
   .auth-container {
-    border-left: none;
-    padding-left: 0;
-    margin-left: 0;
-    margin-top: 2rem;
+    margin-top: auto;
     width: 100%;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 0.75rem;
+    border-left: none;
+  }
+
+  .auth-container .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Backdrop overlay when drawer is open */
+  body.nav-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    backdrop-filter: blur(2px);
   }
 }
 

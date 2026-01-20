@@ -1,18 +1,17 @@
 source "https://rubygems.org"
 
-# Server
-gem "sinatra", "~> 3.1"
-gem "puma", "~> 6.4"
+# Jekyll and site generation
+gem "jekyll", "~> 4.4.1"
+gem "minima", "~> 2.5"
 
-# Rendering
-gem "liquid", "~> 5.5"
-gem "kramdown", "~> 2.4"
-gem "kramdown-parser-gfm", "~> 1.1"
-gem "ostruct"
+# Required for Ruby 4.0 compatibility
 gem "logger"
 
+# Jekyll plugins
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-paginate-v2"
+end
 
-
-# Utils
-gem "webrick" # for local dev if needed, though puma handles it
-
+# Server (optional - Jekyll has built-in server)
+gem "webrick"

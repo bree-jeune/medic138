@@ -23,6 +23,12 @@ custom_css: false
                 <button class="level-btn" data-level="advanced">Advanced</button>
             </div>
 
+            <!-- Search Input -->
+            <div class="structure-search">
+                <input type="text" id="structure-search-input" placeholder="Search structures..." autocomplete="off">
+                <div class="search-results" id="search-results"></div>
+            </div>
+
             <!-- Mode Toggle -->
             <div class="mode-toggle">
                 <button class="mode-toggle-btn active" data-mode="explore">Explore</button>
@@ -40,6 +46,9 @@ custom_css: false
                 <button class="view-tab" data-view="brain">Brain Detail</button>
                 <button class="view-tab" data-view="heart">Cardiovascular</button>
                 <button class="view-tab" data-view="respiratory">Respiratory</button>
+                <button class="view-tab" data-view="nervous">Nervous</button>
+                <button class="view-tab" data-view="digestive">Digestive</button>
+                <button class="view-tab" data-view="musculoskeletal">Musculoskeletal</button>
             </div>
 
             <!-- Body SVG Container -->
@@ -70,10 +79,32 @@ custom_css: false
                 </div>
             </div>
 
+            <!-- Nervous SVG Container (uses brain.svg with NS filter) -->
+            <div class="svg-container hidden" data-view="nervous" id="nervous-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading nervous system diagram...</p>
+                </div>
+            </div>
+
+            <!-- Digestive SVG Container (uses body.svg with GI filter) -->
+            <div class="svg-container hidden" data-view="digestive" id="digestive-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading digestive system diagram...</p>
+                </div>
+            </div>
+
+            <!-- Musculoskeletal SVG Container (uses body.svg with MS filter) -->
+            <div class="svg-container hidden" data-view="musculoskeletal" id="musculoskeletal-svg-container">
+                <div style="text-align: center; padding: 2rem;">
+                    <p style="color: var(--text-muted);">Loading musculoskeletal diagram...</p>
+                </div>
+            </div>
+
             <!-- Quiz Container (overlays when in quiz mode) -->
             <div class="quiz-container" id="quiz-container">
                 <div class="quiz-header">
                     <span class="quiz-progress">Question 1 of 10</span>
+                    <span class="quiz-difficulty" id="quiz-difficulty">Difficulty: Basic</span>
                     <span class="quiz-score">Score: 0/0</span>
                 </div>
                 <div class="quiz-question">
@@ -81,6 +112,9 @@ custom_css: false
                 </div>
                 <div class="quiz-instruction">
                     Click on the correct structure in the diagram
+                </div>
+                <div class="quiz-difficulty-note">
+                    <small>Tip: Use the level selector above to adjust quiz difficulty</small>
                 </div>
                 <div class="quiz-feedback hidden"></div>
             </div>
@@ -147,6 +181,90 @@ custom_css: false
         });
     });
 
+    // Structure search functionality
+    const searchInput = document.getElementById('structure-search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if (searchInput && searchResults) {
+        let debounceTimer;
+
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                const query = e.target.value.trim().toLowerCase();
+
+                if (query.length < 2) {
+                    searchResults.classList.remove('active');
+                    return;
+                }
+
+                // Search through ANATOMY_DATA
+                const matches = Object.entries(ANATOMY_DATA)
+                    .filter(([id, data]) => {
+                        const nameMatch = data.name.toLowerCase().includes(query);
+                        const latinMatch = data.latin && data.latin.toLowerCase().includes(query);
+                        const systemMatch = data.system && data.system.toLowerCase().includes(query);
+                        return nameMatch || latinMatch || systemMatch;
+                    })
+                    .slice(0, 8); // Limit to 8 results
+
+                if (matches.length === 0) {
+                    searchResults.innerHTML = '<div class="search-no-results">No structures found</div>';
+                    searchResults.classList.add('active');
+                    return;
+                }
+
+                // Build results HTML
+                searchResults.innerHTML = matches.map(([id, data]) => {
+                    const highlightedName = data.name.replace(
+                        new RegExp(`(${query})`, 'gi'),
+                        '<span class="result-match">$1</span>'
+                    );
+                    return `
+                        <div class="search-result-item" data-uberon-id="${id}">
+                            <div class="result-name">${highlightedName}</div>
+                            <div class="result-system">${data.system || 'Unknown'} System</div>
+                        </div>
+                    `;
+                }).join('');
+
+                searchResults.classList.add('active');
+
+                // Add click handlers to results
+                searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const uberonId = item.dataset.uberonId;
+                        selectStructureById(uberonId);
+                        searchInput.value = '';
+                        searchResults.classList.remove('active');
+                    });
+                });
+            }, 200);
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.structure-search')) {
+                searchResults.classList.remove('active');
+            }
+        });
+    }
+
+    // Helper to select and highlight a structure by ID
+    function selectStructureById(uberonId) {
+        // Find the element in the active SVG
+        const activeContainer = document.querySelector('.svg-container:not(.hidden)');
+        if (!activeContainer) return;
+
+        const element = activeContainer.querySelector(`#${uberonId}`);
+        if (element && window.anatomyExplorer) {
+            window.anatomyExplorer.selectElement(uberonId, element);
+
+            // Scroll and zoom to the element
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
     // Load SVGs inline
     document.addEventListener('DOMContentLoaded', async function () {
         async function loadSVG(containerId, svgPath, systemFilter = null) {
@@ -206,7 +324,7 @@ custom_css: false
                         if (systemFilter) {
                             const anatomyData = ANATOMY_DATA[el.id];
                             const matchesSystem = anatomyData && anatomyData.system === systemFilter;
-                            
+
                             if (matchesSystem) {
                                 // Highlight matching structures with brighter colors
                                 elements.forEach(pathEl => {
@@ -241,7 +359,10 @@ custom_css: false
             loadSVG('body-svg-container', '/games/anatomy/body.svg'),
             loadSVG('brain-svg-container', '/games/anatomy/brain.svg'),
             loadSVG('heart-svg-container', '/games/anatomy/body.svg', 'Cardiovascular'),
-            loadSVG('respiratory-svg-container', '/games/anatomy/body.svg', 'Respiratory')
+            loadSVG('respiratory-svg-container', '/games/anatomy/body.svg', 'Respiratory'),
+            loadSVG('nervous-svg-container', '/games/anatomy/brain.svg', 'Nervous'),
+            loadSVG('digestive-svg-container', '/games/anatomy/body.svg', 'Digestive'),
+            loadSVG('musculoskeletal-svg-container', '/games/anatomy/body.svg', 'Musculoskeletal')
         ]);
     });
 </script>

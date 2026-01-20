@@ -13,6 +13,14 @@ class QuizMode {
         this.currentCorrectAnswer = null;
         this.currentLevel = 'basic';
 
+        // Difficulty labels for display
+        this.difficultyLabels = {
+            'basic': 'Easy',
+            'aemt': 'Intermediate',
+            'paramedic': 'Hard',
+            'advanced': 'Expert'
+        };
+
         // Track accuracy by system
         this.systemStats = {};
         this.loadStats();
@@ -121,9 +129,24 @@ class QuizMode {
         this.score = 0;
         this.totalAnswered = 0;
 
+        // Get current level and update difficulty display
+        if (window.anatomyExplorer) {
+            this.currentLevel = window.anatomyExplorer.currentLevel;
+        }
+        this.updateDifficultyDisplay();
+
         this.generateQuestions(10);
         this.updateStatsDisplay();
         this.showQuestion();
+    }
+
+    updateDifficultyDisplay() {
+        const difficultyEl = document.getElementById('quiz-difficulty');
+        if (difficultyEl) {
+            const label = this.difficultyLabels[this.currentLevel] || 'Easy';
+            difficultyEl.textContent = `Difficulty: ${label}`;
+            difficultyEl.className = `quiz-difficulty quiz-difficulty--${this.currentLevel}`;
+        }
     }
 
     showQuestion() {
