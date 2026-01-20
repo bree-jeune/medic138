@@ -181,8 +181,51 @@ class AnatomyExplorer {
         element.classList.add('selected');
         this.selectedElement = element;
 
+        // Zoom to the selected element
+        this.zoomToElement(element);
+
         // Update info panel
         this.showInfo(uberonId);
+    }
+
+    zoomToElement(element) {
+        const svg = element.closest('svg');
+        if (!svg) return;
+
+        const container = svg.parentElement;
+        if (!container) return;
+
+        // Get element bounds
+        const bbox = element.getBBox();
+        const centerX = bbox.x + bbox.width / 2;
+        const centerY = bbox.y + bbox.height / 2;
+
+        // Get SVG viewBox
+        const viewBox = svg.viewBox.baseVal;
+        const svgWidth = viewBox.width || svg.clientWidth;
+        const svgHeight = viewBox.height || svg.clientHeight;
+
+        // Calculate zoom (limit to 2x max)
+        const scale = Math.min(2, Math.min(
+            svgWidth / (bbox.width * 3),
+            svgHeight / (bbox.height * 3)
+        ));
+
+        // Apply transform with smooth transition
+        svg.style.transition = 'transform 0.4s ease-out';
+        svg.style.transformOrigin = `${(centerX / svgWidth) * 100}% ${(centerY / svgHeight) * 100}%`;
+        svg.style.transform = `scale(${scale})`;
+    }
+
+    resetZoom() {
+        const containers = document.querySelectorAll('.svg-container');
+        containers.forEach(container => {
+            const svg = container.querySelector('svg');
+            if (svg) {
+                svg.style.transition = 'transform 0.3s ease-out';
+                svg.style.transform = 'scale(1)';
+            }
+        });
     }
 
     deselectAll() {
@@ -190,6 +233,7 @@ class AnatomyExplorer {
             this.selectedElement.classList.remove('selected');
             this.selectedElement = null;
         }
+        this.resetZoom();
         this.showEmptyState();
     }
 

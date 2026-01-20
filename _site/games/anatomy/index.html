@@ -267,8 +267,18 @@
                         // Handle filter for system-specific views
                         if (systemFilter) {
                             const anatomyData = ANATOMY_DATA[el.id];
-                            if (anatomyData && anatomyData.system !== systemFilter) {
-                                el.style.opacity = '0.1';
+                            const matchesSystem = anatomyData && anatomyData.system === systemFilter;
+                            
+                            if (matchesSystem) {
+                                // Highlight matching structures with brighter colors
+                                elements.forEach(pathEl => {
+                                    pathEl.style.fill = 'rgba(6, 182, 212, 0.3)';
+                                    pathEl.style.stroke = 'rgba(6, 182, 212, 0.8)';
+                                    pathEl.style.strokeWidth = '1';
+                                });
+                            } else {
+                                // Dim non-matching structures
+                                el.style.opacity = '0.08';
                                 el.style.pointerEvents = 'none';
                             }
                         }
