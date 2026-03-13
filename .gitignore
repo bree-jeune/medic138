@@ -40,3 +40,10 @@ serve.sh
 .env.local
 *.pem
 node_modules
+
+# Next.js
+/.next/
+/out/
+/.vercel
+*.tsbuildinfo
+next-env.d.ts
