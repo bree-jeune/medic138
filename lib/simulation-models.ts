@@ -58,6 +58,14 @@ export interface DynamicVitalsSystem {
   generateBP: (pathology: string) => { systolic: number; diastolic: number };
 }
 
+export interface PatientVitals {
+  rr: number;
+  hr: number;
+  bp: { systolic: number; diastolic: number };
+  gcs: number;
+  spo2: number;
+}
+
 // ---------------------------------------------------------
 // 3. Interactive Assessment Components
 // ---------------------------------------------------------
@@ -149,6 +157,6 @@ export interface NREMTSimulation {
   // The generator builds the full phase structure based on dynamic vitals
   generateSimulation: (seed?: number) => {
     phases: Record<SimulationPhaseName, SimulationPhase>;
-    initialVitals: Record<string, any>;
+    initialVitals: PatientVitals;
   };
 }

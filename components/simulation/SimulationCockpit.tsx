@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useMemo } from "react";
 import { useClinicalSimulation } from "@/hooks/useClinicalSimulation";
 import { SimulationAction } from "@/lib/simulation-models";
 import { INITIAL_SCENARIOS } from "@/lib/simulation-scenarios";
-import { PatientAvatar } from "./PatientAvatar";
+import { InteractiveAvatar } from "./InteractiveAvatar";
 import { BloodPressureMinigame } from "./BloodPressureMinigame";
 import { SimulatedMonitor } from "./SimulatedMonitor";
 import { MedicationPanel } from "./MedicationPanel";
@@ -50,14 +50,16 @@ export function SimulationCockpit({
 
   const {
     scenarioMetadata,
+    initialVitals,
     currentPhase,
     simulatedTimeRemainingMs,
     readinessScore,
     isComplete,
     completedActionIds,
-    actionHistory,
+    eventLog,
     penaltyLockoutMs,
     executeAction,
+    addLogEvent,
     canAdvancePhase,
     advancePhase,
   } = useClinicalSimulation(scenarioId);
@@ -125,6 +127,7 @@ export function SimulationCockpit({
                   initialRhythmText: "Sinus Tachycardia",
                 }
               }
+              vitals={initialVitals}
               onInterventionSelect={(id) => executeAction(id)}
             />
           )}
@@ -132,16 +135,22 @@ export function SimulationCockpit({
           <div
             className={`grid gap-4 ${isALS ? "grid-cols-2" : "grid-cols-1"}`}
           >
-            <PatientAvatar
-              assessmentData={activePhaseData.assessmentData}
-              onAuscultate={(point) => console.log(point)}
-            />
+            <div className="h-[450px]">
+              <InteractiveAvatar 
+                assessmentMode={true}
+                onOrganClick={(id) => {
+                  console.log("Region clicked:", id);
+                  addLogEvent(`Auscultated/assessed region: ${id}.`, "clinical");
+                }} 
+              />
+            </div>
 
             <div className="space-y-4 flex flex-col h-full">
               {isALS && (
                 <MedicationPanel
                   onAdminister={(drug, dose, route) => {
-                    console.log(`Administered ${drug} ${dose} ${route}`);
+                    executeAction(`administer_${drug}`);
+                    addLogEvent(`Administered ${dose} ${drug} via ${route}.`, "clinical");
                   }}
                 />
               )}
@@ -150,7 +159,7 @@ export function SimulationCockpit({
                 <BloodPressureMinigame
                   config={activePhaseData.assessmentData.bpConfig}
                   onComplete={(sys, dia, isAccurate) => {
-                    console.log("BP Checked:", sys, dia, isAccurate);
+                    addLogEvent(`Manual Blood Pressure recorded as ${sys}/${dia} (Accuracy: ${isAccurate ? 'Within limits' : 'Outside margins'}).`, "clinical");
                   }}
                 />
               )}
@@ -304,30 +313,33 @@ export function SimulationCockpit({
             </div>
           )}
 
-          {/* Render Completed Action Log */}
-          {actionHistory.map((historyItem, i) => {
-            const act = historyItem.action;
-            const foundText = act.text;
-            const foundFeedback = act.feedback || "";
-            const foundCompetency = act.competencyRef
-              ? `${act.competencyRef.source}: ${act.competencyRef.standardId}`
-              : "";
-
+          {/* Render Universal Event Log */}
+          {eventLog.map((log) => {
             return (
               <div
-                key={i}
-                className="pl-4 border-l-2 border-cyan-800/50 space-y-2"
+                key={log.id}
+                className={`pl-4 border-l-2 space-y-2 ${
+                  log.type === "action" 
+                    ? "border-cyan-800/50" 
+                    : "border-slate-700/50"
+                }`}
               >
-                <div className="text-sm font-semibold text-cyan-500 flex items-center gap-2">
-                  <CheckCircle className="w-3 h-3" />
-                  Action Taken: {foundText}
+                <div className={`text-sm font-semibold flex items-center gap-2 ${
+                  log.type === "action" ? "text-cyan-500" : "text-slate-400"
+                }`}>
+                  {log.type === "action" ? (
+                      log.isCorrect === false ? <XCircle className="w-3 h-3 text-rose-500" /> : <CheckCircle className="w-3 h-3 text-emerald-500" />
+                  ) : (
+                      <Activity className="w-3 h-3" />
+                  )}
+                  {log.type === "action" ? "Action Taken: " : ""}{log.text}
                 </div>
-                {foundFeedback && (
+                {log.feedback && (
                   <div className="text-sm text-slate-400 bg-slate-900/30 p-3 rounded-r-lg border border-slate-800/50 leading-relaxed italic">
-                    {foundFeedback}
-                    {foundCompetency && (
+                    {log.feedback}
+                    {log.competency && (
                       <div className="mt-2 text-xs text-slate-600 font-medium not-italic">
-                        Ref: {foundCompetency}
+                        Ref: {log.competency}
                       </div>
                     )}
                   </div>

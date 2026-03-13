@@ -16,6 +16,15 @@ interface SimulationState {
     action: SimulationAction;
     timestampAtExecutionMs: number;
   }[];
+  eventLog: {
+    id: string;
+    timestampMs: number;
+    text: string;
+    type: "action" | "clinical" | "system";
+    isCorrect?: boolean;
+    feedback?: string;
+    competency?: string;
+  }[];
 }
 
 const PHASE_ORDER: SimulationPhaseName[] = [
@@ -49,6 +58,7 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
     readinessScore: 100, // Start at 100, deduct for mistakes/inefficiencies
     isComplete: false,
     history: [],
+    eventLog: [],
   });
 
   // Current phase data block for components to render
@@ -89,6 +99,21 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
     return () => clearInterval(interval);
   }, [state.currentPhaseName, state.isComplete]);
 
+  const addLogEvent = useCallback((text: string, type: "action" | "clinical" | "system" = "clinical") => {
+    setState((prev) => ({
+      ...prev,
+      eventLog: [
+        ...prev.eventLog,
+        {
+          id: Math.random().toString(36).substring(7),
+          timestampMs: prev.simulatedTimeRemainingMs,
+          text,
+          type
+        }
+      ]
+    }));
+  }, []);
+
   // 4. Action Execution
   const executeAction = useCallback(
     (actionId: string) => {
@@ -116,6 +141,16 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
 
         newTime -= action.timeCostMs;
 
+        const newLogEntry = {
+          id: Math.random().toString(36).substring(7),
+          timestampMs: prev.simulatedTimeRemainingMs,
+          text: action.text,
+          type: "action" as const,
+          isCorrect: action.isCorrect,
+          feedback: action.feedback,
+          competency: action.competencyRef ? `${action.competencyRef.source}: ${action.competencyRef.standardId}` : undefined,
+        };
+
         // Fail condition: out of simulated time
         if (newTime <= 0) {
           return {
@@ -126,6 +161,7 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
               ...prev.history,
               { action, timestampAtExecutionMs: newTime },
             ],
+            eventLog: [...prev.eventLog, newLogEntry],
           };
         }
 
@@ -138,6 +174,7 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
             ...prev.history,
             { action, timestampAtExecutionMs: newTime },
           ],
+          eventLog: [...prev.eventLog, newLogEntry],
         };
       });
     },
@@ -190,10 +227,12 @@ export function useClinicalSimulation(scenarioId: string, seed?: number) {
     isComplete: state.isComplete,
     completedActionIds: state.completedActionIds,
     actionHistory: state.history,
+    eventLog: state.eventLog,
     penaltyLockoutMs,
 
     // Controls
     executeAction,
+    addLogEvent,
     canAdvancePhase: canAdvancePhase(),
     advancePhase,
   };

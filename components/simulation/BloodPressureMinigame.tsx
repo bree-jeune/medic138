@@ -14,9 +14,20 @@ export function BloodPressureMinigame({ config, onComplete }: BloodPressureMinig
   const [userSystolic, setUserSystolic] = useState<number | ''>('');
   const [userDiastolic, setUserDiastolic] = useState<number | ''>('');
   
-  // This is a simplified simulation
-  // In a full build, we would use requestAnimationFrame to drop pressure from 220 to 0
-  // and trigger audio slices of Korotkoff sounds between the target systolic & diastolic.
+  // Visual simulation for Korotkoff sounds
+  const isKorotkoffActive = pressureDeflating && 
+                            currentPressure <= config.actualSystolic && 
+                            currentPressure >= config.actualDiastolic;
+  
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (pressureDeflating && currentPressure > 0) {
+      interval = setInterval(() => {
+        setCurrentPressure((prev) => Math.max(0, prev - 2)); 
+      }, 50); // Deflates about 40 mmHg per second while button is held
+    }
+    return () => clearInterval(interval);
+  }, [pressureDeflating, currentPressure]);
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,13 +55,18 @@ export function BloodPressureMinigame({ config, onComplete }: BloodPressureMinig
         <div className="absolute inset-0 rounded-full border border-slate-300 m-2"></div>
         {/* Needle */}
         <div 
-          className="absolute w-1 bg-red-500 origin-bottom transition-transform duration-100"
+          className={`absolute w-1 origin-bottom transition-all duration-75 ${
+            isKorotkoffActive ? 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,1)] animate-ping' : 'bg-red-600'
+          }`}
           style={{ height: '40%', bottom: '50%', transform: `rotate(${currentPressure - 135}deg)` }}
         ></div>
         
         <div className="absolute top-1/4 text-center w-full text-slate-400 text-xs font-bold uppercase tracking-widest">mmHg</div>
         <div className="w-4 h-4 rounded-full bg-slate-800 z-10"></div>
-        <div className="absolute bottom-8 font-mono text-2xl font-bold text-slate-800">{currentPressure}</div>
+        <div className="absolute bottom-6 font-mono text-2xl font-bold text-slate-800 flex flex-col items-center">
+           {currentPressure}
+           {isKorotkoffActive && <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse mt-1 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>}
+        </div>
       </div>
       
       {/* Controls */}

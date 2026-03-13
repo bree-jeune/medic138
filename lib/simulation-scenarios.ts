@@ -171,7 +171,7 @@ export const buildOverdoseScenario = (): NREMTSimulation => {
         Assessment: {
           phaseName: "Assessment",
           scenarioText:
-            "Patient is unresponsive to painful stimuli (GCS 3). He has pinpoint pupils. Airway is patent but respirations are extremeley shallow and agonal. Carotid pulse is palpable but slow.",
+            "Patient is unresponsive to painful stimuli (GCS 3). He has pinpoint pupils. Airway is patent but respirations are extremely shallow and agonal. Carotid pulse is palpable but slow.",
           assessmentData: {
             avatarImageUrl: "", // Epic LDA
             auscultationPoints: [
@@ -213,7 +213,7 @@ export const buildOverdoseScenario = (): NREMTSimulation => {
             },
             {
               id: "assess02",
-              text: "Check orthostatic orthostatic blood pressure",
+              text: "Check orthostatic blood pressure",
               isCorrect: false,
               timeCostMs: 90000,
               competencyRef: {
@@ -229,6 +229,32 @@ export const buildOverdoseScenario = (): NREMTSimulation => {
         Treatment: {
           phaseName: "Treatment",
           scenarioText: `Respiratory rate is ${initialVitals.rr}/min. SpO2 is ${initialVitals.spo2}%.`,
+          assessmentData: {
+            avatarImageUrl: "", // Epic LDA
+            auscultationPoints: [
+              {
+                anatomicalLocation: "RUL",
+                soundFileUrl: "",
+                correctFindingText: "Minimal air movement, no wheezes",
+              },
+              {
+                anatomicalLocation: "LLL",
+                soundFileUrl: "",
+                correctFindingText: "Diminished bases bilaterally",
+              },
+            ],
+            bpConfig: {
+              actualSystolic: initialVitals.bp.systolic,
+              actualDiastolic: initialVitals.bp.diastolic,
+              marginOfErrorAllowed: 4,
+              korotkoffSoundUrl: "",
+            },
+            visualFindings: [
+              "Cyanosis to lips and nailbeds",
+              "Track marks on left antecubital",
+              "Pinpoint pupils (1mm)",
+            ],
+          },
           availableActions: [
             {
               id: "tx01",
@@ -552,6 +578,32 @@ export const buildAsthmaScenario = (): NREMTSimulation => {
           phaseName: "Treatment",
           scenarioText:
             'The patient shows a "silent chest" and is becoming lethargic. SpO2 is 82% on room air.',
+          assessmentData: {
+            avatarImageUrl: "",
+            auscultationPoints: [
+              {
+                anatomicalLocation: "RUL",
+                soundFileUrl: "",
+                correctFindingText: "No air movement heard (Silent Chest)",
+              },
+              {
+                anatomicalLocation: "LLL",
+                soundFileUrl: "",
+                correctFindingText: "No air movement heard (Silent Chest)",
+              },
+            ],
+            bpConfig: {
+              actualSystolic: initialVitals.bp.systolic,
+              actualDiastolic: initialVitals.bp.diastolic,
+              marginOfErrorAllowed: 4,
+              korotkoffSoundUrl: "",
+            },
+            visualFindings: [
+              "Severe supraclavicular retractions",
+              "Cyanosis around lips",
+              "Lethargy",
+            ],
+          },
           availableActions: [
             {
               id: "tx01",
