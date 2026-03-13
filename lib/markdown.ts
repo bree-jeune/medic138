@@ -4,17 +4,14 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = path.join(process.cwd(), '_lessons');
-const coursesDirectory = path.join(process.cwd(), '_courses');
-
-export async function getLessonData(slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+export async function getMarkdownData(directory: string, slug: string) {
+  const fullPath = path.join(process.cwd(), directory, `${slug}.md`);
   let fileContents = '';
   
   try {
     fileContents = fs.readFileSync(fullPath, 'utf8');
   } catch (err) {
-    const backupPath = path.join(postsDirectory, `${slug}.markdown`);
+    const backupPath = path.join(process.cwd(), directory, `${slug}.markdown`);
     try {
       fileContents = fs.readFileSync(backupPath, 'utf8');
     } catch {
@@ -22,16 +19,12 @@ export async function getLessonData(slug: string) {
     }
   }
 
-  // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
-
-  // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
-  // Combine the data with the id and contentHtml
   return {
     slug,
     contentHtml,
@@ -39,10 +32,11 @@ export async function getLessonData(slug: string) {
   };
 }
 
-export function getAllLessonSlugs() {
+export function getAllMarkdownSlugs(directory: string) {
+  const dirPath = path.join(process.cwd(), directory);
   let fileNames: string[] = [];
   try {
-    fileNames = fs.readdirSync(postsDirectory);
+    fileNames = fs.readdirSync(dirPath);
   } catch {
     return [];
   }
