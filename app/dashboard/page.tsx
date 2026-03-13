@@ -101,10 +101,13 @@ export default function DashboardPage() {
                     <span className="text-medicTeal">&rarr;</span>
                   </div>
                 </Link>
-                <Link href="/games" className="block p-4 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-750 transition">
+                <Link href="/simulation" className="block p-4 rounded-lg border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-750 transition group">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">Launch Skills Drills Simulator</span>
-                    <span className="text-medicTeal">&rarr;</span>
+                    <div>
+                      <span className="font-bold block text-gray-900 dark:text-white">NREMT Simulation Lab</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">Test your clinical decision making</span>
+                    </div>
+                    <span className="text-medicTeal group-hover:translate-x-1 transition-transform">&rarr;</span>
                   </div>
                 </Link>
              </div>
