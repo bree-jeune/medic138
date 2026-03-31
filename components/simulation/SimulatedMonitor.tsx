@@ -23,6 +23,8 @@ export function SimulatedMonitor({
     spo2: false,
     nibp: false
   });
+  const [defibState, setDefibState] = useState<'idle' | 'charging' | 'charged'>('idle');
+  const [isSync, setIsSync] = useState(false);
   
   // Fake animated ECG path
   const [offset, setOffset] = useState(0);
@@ -47,12 +49,26 @@ export function SimulatedMonitor({
     } else {
       setIsPowered(false);
       setLeads({ ecg: false, spo2: false, nibp: false });
+      setDefibState('idle');
+      setIsSync(false);
     }
   };
 
   const handleAttach = (sensor: keyof typeof leads) => {
     if (!isPowered || booting) return;
     setLeads(prev => ({ ...prev, [sensor]: !prev[sensor] }));
+  };
+
+  const handleCharge = () => {
+    if (defibState !== 'idle') return;
+    setDefibState('charging');
+    setTimeout(() => setDefibState('charged'), 3000);
+  };
+
+  const handleShock = () => {
+    if (defibState !== 'charged') return;
+    onInterventionSelect(isSync ? 'sync_shock' : 'shock');
+    setDefibState('idle');
   };
 
   // Generate a continuous looking wave by repeating a pattern
@@ -102,7 +118,12 @@ export function SimulatedMonitor({
               <div className="absolute top-0 left-0 w-full flex justify-between px-4 py-2 bg-gradient-to-b from-black/80 to-transparent z-10">
                 <div className="text-emerald-500 text-sm font-bold flex gap-4">
                   <span>{leads.ecg ? config.initialRhythmText : 'NO RHYTHM DETECTED'}</span>
-                  <span>Adult</span>
+                  <span className="flex items-center gap-2">
+                    Adult 
+                    {isSync && <span className="text-[10px] bg-amber-600 text-white px-1 py-0.5 rounded animate-pulse">SYNC</span>}
+                    {defibState === 'charging' && <span className="text-[10px] bg-amber-500 text-black px-1 py-0.5 rounded">CHARGING...</span>}
+                    {defibState === 'charged' && <span className="text-[10px] bg-red-500 text-white px-1 py-0.5 rounded animate-pulse">DEFIB 200J READY</span>}
+                  </span>
                 </div>
                 <div className="flex gap-2">
                    <button 
@@ -213,19 +234,27 @@ export function SimulatedMonitor({
         )}
         {config.supportsDefibrillation && (
           <button 
-            disabled={!isPowered}
-            className="flex-1 bg-rose-900 hover:bg-rose-800 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[10px] font-bold py-2 rounded uppercase transition-colors shadow-sm flex items-center justify-center gap-1"
+            disabled={!isPowered || defibState === 'charging'}
+            onClick={defibState === 'charged' ? handleShock : handleCharge}
+            className={`flex-1 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[10px] font-bold py-2 rounded uppercase transition-colors shadow-sm flex items-center justify-center gap-1 ${
+              defibState === 'idle' ? 'bg-rose-900 hover:bg-rose-800' : 
+              defibState === 'charging' ? 'bg-amber-600 animate-pulse' : 
+              'bg-red-600 hover:bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]'
+            }`}
           >
             <ShieldAlert className="w-3 h-3" />
-            Charge
+            {defibState === 'idle' ? 'Charge' : defibState === 'charging' ? 'Wait...' : 'SHOCK 200J'}
           </button>
         )}
         {config.supportsSynchronizedCardioversion && (
           <button 
             disabled={!isPowered || !leads.ecg}
-            className="flex-1 bg-amber-900 hover:bg-amber-800 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[10px] font-bold py-2 rounded uppercase transition-colors shadow-sm"
+            onClick={() => setIsSync(!isSync)}
+            className={`flex-1 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[10px] font-bold py-2 rounded uppercase transition-colors shadow-sm ${
+              isSync ? 'bg-amber-600 hover:bg-amber-500 shadow-[0_0_10px_rgba(217,119,6,0.5)]' : 'bg-amber-900 hover:bg-amber-800'
+            }`}
           >
-            Sync
+            {isSync ? 'SYNC ON' : 'Sync'}
           </button>
         )}
         {config.supportsPacing && (

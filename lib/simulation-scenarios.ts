@@ -719,4 +719,366 @@ export const buildAsthmaScenario = (): NREMTSimulation => {
   };
 };
 
-export const INITIAL_SCENARIOS = [buildOverdoseScenario, buildAsthmaScenario];
+export const buildSTEMIScenario = (): NREMTSimulation => {
+  const age = Math.floor(Math.random() * 20) + 55; // 55-75
+  const initialVitals = generateVitals("STEMI", age);
+
+  return {
+    id: "nremt-cardiac-001",
+    title: "Chest Pain - Suspected Inferior STEMI",
+    targetCertification: ["AEMT", "Paramedic", "Critical Care"],
+    clinicalDomain: "Cardiology & Resuscitation",
+    estimatedDurationMs: 900000, // 15 mins
+    sourceFootnotes: [
+      "American Heart Association. (2020). Guidelines for CPR and ECC.",
+      "National EMS Educational Standards. Cardiology."
+    ],
+    walkthrough: {
+      title: "Managing the Acute Myocardial Infarction",
+      competenciesMatched: [
+        {
+          source: "AHA",
+          standardId: "ACLS - Acute Coronary Syndromes",
+          description: "Early acquisition and interpretation of 12-lead ECG."
+        }
+      ],
+      learningObjectives: [
+        "Prioritize early 12-Lead ECG in patients with non-traumatic chest pain.",
+        "Recognize contraindications for Nitroglycerin (Inferior wall involvement / Hypotension).",
+        "Administer Aspirin early in the absence of allergies."
+      ],
+      clinicalGuidelines: [
+        "AHA guidelines recommend a 12-lead ECG within 10 minutes of initial contact for suspected ACS.",
+        "Nitroglycerin should be held if signs of Right Ventricular involvement are present (often seen in Inferior STEMIs) due to risk of profound hypotension."
+      ]
+    },
+    generateSimulation: () => ({
+      initialVitals,
+      phases: {
+        Dispatch: {
+          phaseName: "Dispatch",
+          scenarioText: "Dispatched to a local hardware store for a 62-year-old male clutching his chest and sweating profusely.",
+          availableActions: [
+            {
+              id: "disp01",
+              text: "Acknowledge and respond Code 3",
+              isCorrect: true,
+              timeCostMs: 0,
+              competencyRef: { source: "NREMT", standardId: "Response", description: "Appropriate response mode." },
+              feedback: "Appropriate."
+            }
+          ],
+          requiredActionsToAdvance: ["disp01"]
+        },
+        PreArrival: {
+          phaseName: "PreArrival",
+          scenarioText: "En route. Traffic is light. ETA 4 minutes.",
+          availableActions: [
+            {
+              id: "pre01",
+              text: "Assign roles: One provider to grab monitor, one to assess airway.",
+              isCorrect: true,
+              timeCostMs: 0,
+              competencyRef: { source: "NREMT", standardId: "Crew Resource Management", description: "Role assignment." },
+              feedback: "Good delegation."
+            }
+          ],
+          requiredActionsToAdvance: ["pre01"]
+        },
+        SceneArrival: {
+          phaseName: "SceneArrival",
+          scenarioText: "Patient is found sitting on a bucket in aisle 4, pale, diaphoretic, and in obvious distress.",
+          availableActions: [
+            {
+              id: "arr01",
+              text: "Ensure Scene Safety and BSI",
+              isCorrect: true,
+              timeCostMs: 5000,
+              competencyRef: { source: "NREMT", standardId: "Scene Size Up", description: "Standard precautions." },
+              feedback: "Always."
+            }
+          ],
+          requiredActionsToAdvance: ["arr01"]
+        },
+        Assessment: {
+          phaseName: "Assessment",
+          scenarioText: `Patient states the pain feels like "an elephant sitting on my chest" and radiates to his left jaw. Occurred at rest.`,
+          assessmentData: {
+            avatarImageUrl: "",
+            auscultationPoints: [
+              { anatomicalLocation: "Aortic", soundFileUrl: "", correctFindingText: "Regular rate, S1/S2 present, no murmurs." },
+              { anatomicalLocation: "LLL", soundFileUrl: "", correctFindingText: "Clear bilaterally." }
+            ],
+            bpConfig: { actualSystolic: initialVitals.bp.systolic, actualDiastolic: initialVitals.bp.diastolic, marginOfErrorAllowed: 4, korotkoffSoundUrl: "" },
+            visualFindings: ["Pale, cool, diaphoretic skin", "Levine's sign (clutching chest)"]
+          },
+          availableActions: [
+            {
+              id: "assess01",
+              text: "Acquire 12-Lead ECG",
+              isCorrect: true,
+              timeCostMs: 45000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "ECG within 10 min." },
+              feedback: "12-Lead shows ST elevation in II, III, and aVF (Inferior STEMI)."
+            },
+            {
+              id: "assess02",
+              text: "Instruct patient to wait for transport before checking vitals",
+              isCorrect: false,
+              timeCostMs: 60000,
+              competencyRef: { source: "NREMT", standardId: "Assessment", description: "Delay of care." },
+              feedback: "Critical failure. Time is muscle. Evaluate immediately."
+            }
+          ],
+          requiredActionsToAdvance: ["assess01"]
+        },
+        Treatment: {
+          phaseName: "Treatment",
+          scenarioText: `Monitor shows Sinus Rhythm with ST elevation in inferior leads. Vitals: HR ${initialVitals.hr}, BP ${initialVitals.bp.systolic}/${initialVitals.bp.diastolic}.`,
+          assessmentData: {
+            avatarImageUrl: "",
+            auscultationPoints: [],
+            bpConfig: { actualSystolic: initialVitals.bp.systolic, actualDiastolic: initialVitals.bp.diastolic, marginOfErrorAllowed: 4, korotkoffSoundUrl: "" },
+            visualFindings: ["Continues to complain of 9/10 chest pain."]
+          },
+          availableActions: [
+            {
+              id: "tx01",
+              text: "Administer Aspirin 324mg PO (Chewed)",
+              isCorrect: true,
+              timeCostMs: 15000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Antiplatelet therapy." },
+              feedback: "Correct. Decreases platelet aggregation."
+            },
+            {
+              id: "tx02",
+              text: "Administer Nitroglycerin 0.4mg SL",
+              isCorrect: false,
+              timeCostMs: 15000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Contraindications for NTG." },
+              feedback: "DANGEROUS. Patient has an Inferior STEMI. Need to rule out Right Ventricular infarct first; NTG can cause severe hypotension."
+            },
+            {
+              id: "tx03",
+              text: "Establish IV Access",
+              isCorrect: true,
+              timeCostMs: 45000,
+              competencyRef: { source: "NREMT", standardId: "Treatment", description: "IV access for ACS." },
+              feedback: "IV established. Ready for fluid bolus if required."
+            }
+          ],
+          requiredActionsToAdvance: ["tx01", "tx03"]
+        },
+        TransportDecision: {
+          phaseName: "TransportDecision",
+          scenarioText: "Patient is packaged. He still has 9/10 chest pain but is stable.",
+          availableActions: [
+            {
+              id: "trans01",
+              text: "Transport Code 3 to nearest PCI-capable facility and transmit ECG",
+              isCorrect: true,
+              timeCostMs: 60000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Early STEMI alert and PCI center." },
+              feedback: "Correct. Goal is door-to-balloon time < 90 minutes."
+            },
+            {
+              id: "trans02",
+              text: "Transport Code 2 to local freestanding ER (non-PCI)",
+              isCorrect: false,
+              timeCostMs: 60000,
+              competencyRef: { source: "NREMT", standardId: "Transport", description: "Appropriate destination." },
+              feedback: "Incorrect. Patient needs emergency catheterization. Transporting to a non-PCI center delays definitive care."
+            }
+          ],
+          requiredActionsToAdvance: ["trans01"]
+        },
+        Destination: {
+          phaseName: "Destination",
+          scenarioText: "En route to St. Jude's PCI Center. Cath lab has been activated based on your ECG transmission.",
+          availableActions: [
+            {
+              id: "dest01",
+              text: "Continue monitoring and transport",
+              isCorrect: true,
+              timeCostMs: 300000,
+              competencyRef: { source: "NREMT", standardId: "En Route Care", description: "Reassessment." },
+              feedback: "Good catch. You saved the myocardium."
+            }
+          ],
+          requiredActionsToAdvance: ["dest01"]
+        }
+      }
+    })
+  };
+};
+
+export const buildVFibScenario = (): NREMTSimulation => {
+  const age = Math.floor(Math.random() * 20) + 45; // 45-65
+  const initialVitals = generateVitals("VFibArrest", age);
+
+  return {
+    id: "nremt-cardiac-002",
+    title: "Cardiac Arrest - Ventricular Fibrillation",
+    targetCertification: ["Paramedic", "Critical Care"],
+    clinicalDomain: "Cardiology & Resuscitation",
+    estimatedDurationMs: 1200000,
+    sourceFootnotes: [
+      "American Heart Association. (2020). Guidelines for CPR and ECC. Adult Cardiac Arrest Algorithm."
+    ],
+    walkthrough: {
+      title: "Managing Ventricular Fibrillation",
+      competenciesMatched: [
+        { source: "AHA", standardId: "ACLS - Cardiac Arrest", description: "Early defibrillation for shockable rhythms." }
+      ],
+      learningObjectives: [
+        "Prioritize immediate defibrillation for witnessed or monitored VFib.",
+        "Minimize interruptions in CPR (resume immediately after shock).",
+        "Administer Epinephrine 1mg every 3-5 minutes."
+      ],
+      clinicalGuidelines: [
+        "AHA guidelines emphasize high-quality CPR and early defibrillation as the primary survival factors.",
+        "Do not conduct a rhythm check immediately after a shock; immediately resume chest compressions for 2 minutes."
+      ]
+    },
+    generateSimulation: () => ({
+      initialVitals,
+      phases: {
+        Dispatch: {
+          phaseName: "Dispatch",
+          scenarioText: "Dispatched to a tennis court for a 52-year-old male who collapsed suddenly. Bystander CPR is in progress.",
+          availableActions: [
+            {
+              id: "disp01",
+              text: "Acknowledge and respond Code 3",
+              isCorrect: true, timeCostMs: 0,
+              competencyRef: { source: "NREMT", standardId: "Response", description: "Appropriate response mode." },
+              feedback: "Appropriate."
+            }
+          ],
+          requiredActionsToAdvance: ["disp01"]
+        },
+        PreArrival: {
+          phaseName: "PreArrival",
+          scenarioText: "En route. ETA 3 minutes.",
+          availableActions: [
+            {
+              id: "pre01",
+              text: "Prepare monitor/defibrillator and airway gear",
+              isCorrect: true, timeCostMs: 0,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Anticipate arrest needs." },
+              feedback: "Excellent anticipation."
+            }
+          ],
+          requiredActionsToAdvance: ["pre01"]
+        },
+        SceneArrival: {
+          phaseName: "SceneArrival",
+          scenarioText: "You arrive to find a bystander performing inadequate compressions. Patient is apneic and cyanotic.",
+          availableActions: [
+            {
+              id: "arr01",
+              text: "Take over high-quality CPR",
+              isCorrect: true, timeCostMs: 5000,
+              competencyRef: { source: "AHA", standardId: "BLS", description: "High-quality CPR." },
+              feedback: "Good. Compressions are the priority while the monitor is being applied."
+            }
+          ],
+          requiredActionsToAdvance: ["arr01"]
+        },
+        Assessment: {
+          phaseName: "Assessment",
+          scenarioText: `CPR is ongoing. You need to analyze the rhythm.`,
+          assessmentData: {
+            avatarImageUrl: "",
+            auscultationPoints: [
+              { anatomicalLocation: "Aortic", soundFileUrl: "", correctFindingText: "No heart sounds." }
+            ],
+            bpConfig: { actualSystolic: 0, actualDiastolic: 0, marginOfErrorAllowed: 4, korotkoffSoundUrl: "" },
+            visualFindings: ["Apneic", "Unresponsive"]
+          },
+          availableActions: [
+            {
+              id: "assess01",
+              text: "Attach monitor pads and pause CPR for rhythm analysis",
+              isCorrect: true, timeCostMs: 10000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Rhythm check." },
+              feedback: "Rhythm is Coarse Ventricular Fibrillation."
+            }
+          ],
+          requiredActionsToAdvance: ["assess01"]
+        },
+        Treatment: {
+          phaseName: "Treatment",
+          scenarioText: `Monitor shows Ventricular Fibrillation.`,
+          assessmentData: {
+            avatarImageUrl: "",
+            auscultationPoints: [],
+            bpConfig: { actualSystolic: 0, actualDiastolic: 0, marginOfErrorAllowed: 4, korotkoffSoundUrl: "" },
+            visualFindings: ["Unresponsive"]
+          },
+          availableActions: [
+            {
+              id: "shock", // Matches the monitor button
+              text: "Hardware: Defibrillate (Deliver Shock)",
+              isCorrect: true, timeCostMs: 15000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Immediate defibrillation." },
+              feedback: "Shock delivered. 200 Joules. Note: you must manually resume CPR."
+            },
+            {
+              id: "tx02",
+              text: "Resume CPR immediately and establish IV/IO",
+              isCorrect: true, timeCostMs: 120000, // Represents the 2 minute cycle
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "CPR post-shock." },
+              feedback: "Correct. Never delay compressions for a post-shock rhythm check."
+            },
+            {
+              id: "tx03",
+              text: "Check pulse immediately after shock",
+              isCorrect: false, timeCostMs: 10000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Avoid pulse checks post-shock." },
+              feedback: "CRITICAL FAILURE. AHA guidelines strictly mandate resuming CPR for 2 minutes immediately after a shock."
+            },
+            {
+              id: "tx04",
+              text: "Administer Epinephrine 1mg (1:10,000) IV/IO",
+              isCorrect: true, timeCostMs: 15000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Epinephrine in arrest." },
+              feedback: "Epinephrine 1mg administered."
+            }
+          ],
+          requiredActionsToAdvance: ["shock", "tx02", "tx04"]
+        },
+        TransportDecision: {
+          phaseName: "TransportDecision",
+          scenarioText: "After the 2-minute cycle, the patient converts to Sinus Tachycardia with a strong palpable pulse. ROSC achieved.",
+          availableActions: [
+            {
+              id: "trans01",
+              text: "Transport Code 3 to nearest STEMI Center and begin Post-Arrest Care",
+              isCorrect: true, timeCostMs: 60000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Post-Cardiac Arrest Care." },
+              feedback: "Correct. Patient needs targeted temperature management and possible PCI."
+            }
+          ],
+          requiredActionsToAdvance: ["trans01"]
+        },
+        Destination: {
+          phaseName: "Destination",
+          scenarioText: "En route. Patient remains hemodynamically stable.",
+          availableActions: [
+            {
+              id: "dest01",
+              text: "Continue monitoring core temperature, BP, and 12-lead ECG",
+              isCorrect: true, timeCostMs: 300000,
+              competencyRef: { source: "AHA", standardId: "ACLS", description: "Post-ROSC maintenance." },
+              feedback: "Great job running the code."
+            }
+          ],
+          requiredActionsToAdvance: ["dest01"]
+        }
+      }
+    })
+  };
+};
+
+export const INITIAL_SCENARIOS = [buildOverdoseScenario, buildAsthmaScenario, buildSTEMIScenario, buildVFibScenario];

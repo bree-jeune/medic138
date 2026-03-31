@@ -43,17 +43,20 @@ export interface PreScenarioWalkthrough {
 // ---------------------------------------------------------
 // 2. Dynamic Vitals & Pathologies
 // ---------------------------------------------------------
-export type RespiratoryPathology =
+export type ClinicalPathology =
   | "Normal"
   | "Asthma"
   | "COPD"
   | "OpiateOverdose"
   | "Anaphylaxis"
-  | "CHF";
+  | "CHF"
+  | "STEMI"
+  | "VFibArrest"
+  | "SVT";
 
 export interface DynamicVitalsSystem {
   // Functions to generate vitals based on pathology
-  generateRR: (pathology: RespiratoryPathology) => number; // e.g. <12 for opiate, >20 for Asthma
+  generateRR: (pathology: ClinicalPathology) => number; // e.g. <12 for opiate, >20 for Asthma
   generateHR: (age: number, distressLevel: number) => number;
   generateBP: (pathology: string) => { systolic: number; diastolic: number };
 }
